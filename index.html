@@ -15,8 +15,8 @@ button{ -webkit-appearance:none;appearance:none; }
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 .bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}#countdown{display:none;position:absolute;inset:0;z-index:7;place-items:center;font-size:min(34vh,220px);font-weight:900;color:#fff;text-shadow:0 8px 40px #000a,0 0 30px #ffb347;pointer-events:none;animation:cdpop .9s ease-out}@keyframes cdpop{from{transform:scale(1.9);opacity:0}30%{opacity:1}to{transform:scale(1);opacity:1}}</style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.3 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.3</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startHeist">🚨 שוד ומשטרה ▶</button> <button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.4 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc">גז<br>▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.4</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startHeist">🚨 שוד ומשטרה ▶</button> <button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -312,14 +312,14 @@ function buildCar(color,kind='formula'){
 function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/(w.r*car.group.scale.x);if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
-const keys={left:false,right:false,boost:false,brake:false,item:false,item2:false};
+const keys={left:false,right:false,boost:false,brake:false,item:false,item2:false,gas:false};
 const startPos=curve.getPointAt(0),startTan=curve.getTangentAt(0).normalize();
 let carPos=startPos.clone(),yaw=Math.atan2(-startTan.x,-startTan.z),roadIndex=0,passed=0,checkpoint=0,drift=0;
 const checkpointCount=8;
 function resetDrive(){lastBeepLap=1;laneOffset=0;visualYaw=0;resetRivals();resetPickups();cdT=3;cdShown=-1;goT=0;carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
 for(const ev of ['contextmenu','selectstart','dragstart']) document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
 for(let key of Object.keys(keys)){let el=document.getElementById(key);const set=v=>{keys[key]=v;el.classList.toggle('active',v)};el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);set(true)});for(let ev of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(ev,()=>set(false))}
-addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown')keys.brake=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown')keys.brake=false});
+addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown'||e.key==='s')keys.brake=true;if(e.key==='ArrowUp'||e.key==='w')keys.gas=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown'||e.key==='s')keys.brake=false;if(e.key==='ArrowUp'||e.key==='w')keys.gas=false});
 
 addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=true});addEventListener('keyup',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=false});addEventListener('keydown',e=>{if(e.key==='g'||e.key==='G')keys.item2=true});addEventListener('keyup',e=>{if(e.key==='g'||e.key==='G')keys.item2=false});
 // ---------- Sound (synthesized, no files needed) ----------
@@ -507,6 +507,56 @@ function zoneViz(x,z,c,r){
  const ring=new THREE.Mesh(new THREE.RingGeometry(r-1.4,r,40),new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.85,side:THREE.DoubleSide}));ring.rotation.x=-Math.PI/2;ring.position.set(x,.3,z);
  const beam=new THREE.Mesh(new THREE.CylinderGeometry(r*.55,r*.55,80,16,1,true),new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.22,side:THREE.DoubleSide,depthWrite:false}));beam.position.set(x,40,z);
  cityGroup.add(ring);cityGroup.add(beam);return {ring,beam}}
+// ---- realistic facades: tiled window textures + merged geometry ----
+const FAC_CACHE={};
+const shd=(hex,f)=>{const r=(hex>>16)&255,g=(hex>>8)&255,b=hex&255,c=v=>Math.max(0,Math.min(255,(v*f)|0));return 'rgb('+c(r)+','+c(g)+','+c(b)+')'};
+function facTex(style,hex){
+ const key=style+':'+hex;if(FAC_CACHE[key])return FAC_CACHE[key];
+ const t=textTex(128,64,(g,w,h)=>{
+  const R=Math.random;
+  if(style==='office'){ // glass curtain wall
+   g.fillStyle=shd(hex,.35);g.fillRect(0,0,w,h);
+   for(let i=0;i<2;i++){const x=i*64+2,gr=g.createLinearGradient(x,0,x+60,h);gr.addColorStop(0,shd(hex,1.15));gr.addColorStop(.55,shd(hex,.8));gr.addColorStop(1,shd(hex,.6));
+    g.fillStyle=gr;g.fillRect(x,3,60,h-18);g.fillStyle='rgba(255,255,255,.18)';g.fillRect(x+4,5,10,h-22);
+    g.fillStyle=shd(hex,.28);g.fillRect(x,h-14,60,11)}}
+  else if(style==='apt'){ // apartments with framed windows and balconies
+   g.fillStyle=shd(hex,1);g.fillRect(0,0,w,h);g.fillStyle='rgba(0,0,0,.05)';for(let y=0;y<h;y+=4)g.fillRect(0,y,w,1);
+   for(let i=0;i<2;i++){const x=i*64+14,lit=R()<.35;g.fillStyle='#f5f2ea';g.fillRect(x-3,8,38,40);
+    g.fillStyle=lit?'#ffd98a':'#35495c';g.fillRect(x,11,32,34);if(!lit){g.fillStyle='rgba(255,255,255,.25)';g.fillRect(x+2,13,9,30)}
+    g.fillStyle='#f5f2ea';g.fillRect(x+15,11,2,34);
+    g.fillStyle=shd(hex,.6);g.fillRect(x-8,50,48,5);g.fillStyle=shd(hex,.45);g.fillRect(x-8,55,48,2)}}
+  else if(style==='brick'){
+   g.fillStyle=shd(hex,.78);g.fillRect(0,0,w,h);g.fillStyle='rgba(0,0,0,.18)';
+   for(let y=0;y<h;y+=5){g.fillRect(0,y,w,1);for(let x=(y/5%2)*6;x<w;x+=12)g.fillRect(x,y,1,5)}
+   for(let i=0;i<2;i++){const x=i*64+16;g.fillStyle='#e9e2d0';g.fillRect(x-3,6,36,44);g.fillStyle=R()<.3?'#ffcf7a':'#2c3d4d';g.fillRect(x,9,30,38);g.fillStyle='#e9e2d0';g.fillRect(x,27,30,2);g.fillRect(x+14,9,2,38)}}
+  else{ // ribbon: concrete bands with continuous glazing
+   g.fillStyle=shd(hex,1);g.fillRect(0,0,w,h);
+   const gr=g.createLinearGradient(0,10,0,50);gr.addColorStop(0,'#5d86a3');gr.addColorStop(1,'#27475f');g.fillStyle=gr;g.fillRect(0,12,w,34);
+   g.fillStyle='rgba(255,255,255,.15)';g.fillRect(10,14,24,30);g.fillRect(80,14,16,30);
+   g.fillStyle=shd(hex,.6);for(let x=0;x<w;x+=32)g.fillRect(x,12,2,34);g.fillStyle=shd(hex,.7);g.fillRect(0,46,w,3)}
+ });
+ t.wrapS=t.wrapT=THREE.RepeatWrapping;FAC_CACHE[key]=t;return t}
+function shopTex(){
+ if(FAC_CACHE.shop)return FAC_CACHE.shop;
+ const t=textTex(128,64,(g,w,h)=>{g.fillStyle='#3b3f45';g.fillRect(0,0,w,h);
+  for(let i=0;i<2;i++){const x=i*64+5;const gr=g.createLinearGradient(0,6,0,h-4);gr.addColorStop(0,Math.random()<.5?'#ffe3a6':'#bfe3ee');gr.addColorStop(1,'#46606f');g.fillStyle=gr;g.fillRect(x,8,54,h-14);
+   g.fillStyle='#22262b';g.fillRect(x+26,8,2,h-14)}
+  g.fillStyle='#22262b';g.fillRect(0,h-6,w,6)});
+ t.wrapS=t.wrapT=THREE.RepeatWrapping;FAC_CACHE.shop=t;return t}
+function mkBatch(){return {p:[],n:[],u:[],c:[],i:[]}}
+function pushBox(B,cx,cy,cz,w,h,d,us,vs,col,top=true){
+ const x0=cx-w/2,x1=cx+w/2,y0=cy-h/2,y1=cy+h/2,z0=cz-d/2,z1=cz+d/2,cr=((col>>16)&255)/255,cg=((col>>8)&255)/255,cb=(col&255)/255;
+ const F=[[[1,0,0],[[x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1]],d,h],[[-1,0,0],[[x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0]],d,h],
+  [[0,0,1],[[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]],w,h],[[0,0,-1],[[x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0]],w,h]];
+ if(top)F.push([[0,1,0],[[x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[x0,y1,z0]],w,d]);
+ for(const [nm,vs4,a,b] of F){const base=B.p.length/3;
+  vs4.forEach((v,k)=>{B.p.push(v[0],v[1],v[2]);B.n.push(nm[0],nm[1],nm[2]);B.c.push(cr,cg,cb);B.u.push((k===1||k===2?a:0)*us,(k>=2?b:0)*vs)});
+  B.i.push(base,base+1,base+2,base,base+2,base+3)}}
+function batchMesh(B,mat){
+ if(!B.p.length)return null;
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(B.p,3));g.setAttribute('normal',new THREE.Float32BufferAttribute(B.n,3));
+ g.setAttribute('uv',new THREE.Float32BufferAttribute(B.u,2));g.setAttribute('color',new THREE.Float32BufferAttribute(B.c,3));g.setIndex(B.i);
+ const m=new THREE.Mesh(g,mat);m.castShadow=true;m.receiveShadow=true;m.frustumCulled=false;return m}
 function buildCity(){
  if(cityGroup)return;cityGroup=new THREE.Group();scene.add(cityGroup);
  const I=(g,m,l)=>{const im=inst(g,m,l);if(im)cityGroup.add(im);return im};
@@ -521,6 +571,44 @@ function buildCity(){
  RX.forEach((x,i)=>{for(let z=-520;z<520;z+=14){if(RZ.some((rz,j)=>Math.abs(z-rz)<RWZ[j]/2+3))continue;dash.push([x,.125,z,0,.5,.02,6,i===5?0xffd24a:0xf4f4ec])}});
  RZ.forEach((z,j)=>{for(let x=-430;x<430;x+=14){if(RX.some((rx,i)=>Math.abs(x-rx)<RWX[i]/2+3))continue;dash.push([x,.125,z,0,6,.02,.5,0xf4f4ec])}});
  I(unitBox,iBasic,dash);
+ // zebra crossings at every intersection
+ {const zb=[];RX.forEach((x,i)=>RZ.forEach((z,j)=>{const hx=RWX[i]/2,hz=RWZ[j]/2;
+  for(let q=-hz+2;q<=hz-2;q+=2.6){zb.push([x-hx-3.5,.13,z+q,0,4,.02,1.3,0xf2f2ee]);zb.push([x+hx+3.5,.13,z+q,0,4,.02,1.3,0xf2f2ee])}
+  for(let q=-hx+2;q<=hx-2;q+=2.6){zb.push([x+q,.13,z-hz-3.5,0,1.3,.02,4,0xf2f2ee]);zb.push([x+q,.13,z+hz+3.5,0,1.3,.02,4,0xf2f2ee])}}));
+  I(unitBox,iBasic,zb)}
+ // ---- buildings: each gets a shop base, textured facade (+ setback tower), roof props ----
+ const BB={},PAL_W=[0xf2e6cf,0xd9c3a5,0xe4cfc2,0xc8d3d9,0xd7d9c6,0xcfa98f],GLASS=[0x6f9fc0,0x5b8fa6,0x7a9bb8,0x6ca3b0];
+ const getB=(k,mk)=>BB[k]||(BB[k]={B:mkBatch(),mk});
+ const AWN=[0xc0392b,0x2e86c1,0x27ae60,0xe67e22,0x8e44ad,0xf1c40f];
+ function addBuilding(cx,cz,w,d,h,col,isSp){
+  const BASE=4.8,pick=a=>a[(rnd()*a.length)|0];
+  let style;const tall=h>55;
+  if(isSp)style='apt';else if(tall)style=rnd()<.6?'office':'ribbon';else if(h>28)style=pick(['apt','office','ribbon','brick']);else style=pick(['apt','brick','apt','ribbon']);
+  const hex=style==='office'?pick(GLASS):isSp?col:pick(PAL_W),k=style+':'+hex;
+  const T=getB(k,()=>new THREE.MeshStandardMaterial({map:facTex(style,hex),vertexColors:true,roughness:.8,metalness:style==='office'?.25:.03}));
+  const sh=getB('shop',()=>new THREE.MeshStandardMaterial({map:shopTex(),vertexColors:true,roughness:.7})),
+   pl=getB('plain',()=>new THREE.MeshStandardMaterial({vertexColors:true,roughness:.9})),
+   gl=getB('glow',()=>new THREE.MeshBasicMaterial({vertexColors:true}));
+  const US=1/8.4,VS=1/3.6;
+  // shop base, slightly proud of the facade
+  pushBox(sh.B,cx,BASE/2,cz,w+.5,BASE,d+.5,US,1/BASE,0xffffff,false);
+  // awnings over the street-facing sides
+  const ac=pick(AWN);pushBox(pl.B,cx,BASE+.1,cz+d/2+1,Math.min(w-4,w*.8),.3,2.4,1,1,ac);pushBox(pl.B,cx,BASE+.1,cz-d/2-1,Math.min(w-4,w*.8),.3,2.4,1,1,pick(AWN));
+  pushBox(pl.B,cx,BASE+.12,cz,w+.9,.5,d+.9,1,1,0x8d8f93,false); // cornice
+  let top=BASE;
+  if(tall){const h1=BASE+(h-BASE)*.62;pushBox(T.B,cx,(BASE+h1)/2,cz,w,h1-BASE,d,US,VS,0xffffff,true);
+   const w2=w*.68,d2=d*.68;pushBox(pl.B,cx,h1+.2,cz,w2+.8,.4,d2+.8,1,1,0x7c8086);pushBox(T.B,cx,(h1+h)/2+.2,cz,w2,h-h1,d2,US,VS,0xffffff,true);top=h;
+   pushBox(pl.B,cx,h+.5,cz,w2+.7,.8,d2+.7,1,1,0x6d7176,false);
+   pushBox(pl.B,cx+w2*.2,h+7,cz-d2*.2,.5,13,.5,1,1,0x9aa0a6);pushBox(gl.B,cx+w2*.2,h+13.8,cz-d2*.2,1.2,1.2,1.2,1,1,0xff3030)}
+  else{pushBox(T.B,cx,(BASE+h)/2,cz,w,h-BASE,d,US,VS,0xffffff,true);top=h;
+   pushBox(pl.B,cx,h+.35,cz,w+.8,.9,d+.8,1,1,0x8a8d91,false);
+   pushBox(pl.B,cx,h+.02,cz,w+.6,.1,d+.6,1,1,0x55585d); }
+  // rooftop clutter (sits on top of the main roof / upper tier)
+  const rw=tall?w*.6:w,rd=tall?d*.6:d,n=1+((rnd()*3)|0);
+  for(let q=0;q<n;q++)pushBox(pl.B,cx+(rnd()-.5)*(rw-6),top+1.5,cz+(rnd()-.5)*(rd-6),2.8+rnd()*2,2,2.4+rnd()*2,1,1,pick([0xa5abb0,0xc2c6c9,0x8e9399]));
+  if(!tall&&rnd()<.4)pushBox(pl.B,cx+(rnd()-.5)*(w-10),top+3.2,cz+(rnd()-.5)*(d-10),3.2,3.6,3.2,1,1,0x7a5b3f);
+ }
+ function flushBuildings(){for(const k in BB){const m=batchMesh(BB[k].B,BB[k].mk());if(m)cityGroup.add(m)}}
  // cells
  const cx=[],cz=[];let s=-438;for(let i=0;i<RX.length;i++){cx.push([s,RX[i]-RWX[i]/2]);s=RX[i]+RWX[i]/2}
  s=-532.5;for(let j=0;j<RZ.length;j++){cz.push([s,RZ[j]-RWZ[j]/2]);s=RZ[j]+RWZ[j]/2}cz.push([s,532.5]);
@@ -540,14 +628,14 @@ function buildCity(){
    const bx0=ux+a*(bw+al),bz0=uz+b*(bd+al),ccx=bx0+bw/2,ccz=bz0+bd/2;
    const isSp=sp&&(!sp.maxz||b===nz-1);
    const dc=Math.hypot(ccx-60,ccz+20),h=isSp?sp.h:(dc<280?30+rnd()*50:14+rnd()*26),col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
-   (h<28?lo:h<55?mid:hi).push([ccx,h/2,ccz,0,bw,h,bd,col]);
+   addBuilding(ccx,ccz,bw,bd,h,col,isSp);
    bl.push({x0:bx0,x1:bx0+bw,z0:bz0,z1:bz0+bd});
    if(isSp)signs.push([ccx,h+1.6,ccz,0,Math.min(bw*.7,36),3.2,3,sp.sign])}
  }
+
  // street lamps
  RX.forEach((x,i)=>{if(i===1||i===3)return;for(let z=-500;z<500;z+=70){if(RZ.some((rz,j)=>Math.abs(z-rz)<RWZ[j]/2+4))continue;for(const sd of [-1,1]){const lx=x+sd*(RWX[i]/2+2);lamps.push([lx,5,z,0,.5,10,.5,0x6a7782]);lampHeads.push([lx-sd*1.2,10.2,z,0,3,.4,.8,0xfff2c4])}}});
- I(unitBox,iMat,slabs);I(bGeo(3,2),new THREE.MeshStandardMaterial({map:winTex,roughness:.85,metalness:.05}),lo);
- const bm=new THREE.MeshStandardMaterial({map:winTex,roughness:.85,metalness:.05});I(bGeo(3,4),bm,mid);I(bGeo(3,8),bm,hi);
+ I(unitBox,iMat,slabs);flushBuildings();
  I(unitBox,iBasic,signs);I(unitTrunk,iMat,trunks);I(unitBall,iMat,balls);I(unitBox,iMat,lamps);I(unitBox,iBasic,lampHeads);
  // pier
  const pier=new THREE.Mesh(new THREE.BoxGeometry(120,.5,14),new THREE.MeshStandardMaterial({color:0x8a6a3b,roughness:.9}));pier.position.set(510,.0,157.5);cityGroup.add(pier);
@@ -570,7 +658,7 @@ function setMode(m){
  for(const o of raceObjs){if(o.isLight||o===sky||clouds.includes(o)||o===hillsIM)continue;o.visible=!h}
  player.group.visible=!h;for(const r of rivals)r.group.visible=!h;
  if(cityGroup)cityGroup.visible=h;for(const c of heistCars)c.group.visible=h&&(c===hero||c.group.visible);
- hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('item').style.display=h?'none':'';hel('item2').style.display=h?'none':'';
+ hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('item').style.display=h?'none':'';hel('item2').style.display=h?'none':'';hel('gas').style.display=h?'':'none';
  if(!h)hel('hprog').style.display='none';
  scene.fog.density=h?.0022:.0038;if(!h){camera.fov=BASE_FOV;camera.updateProjectionMatrix()}}
 function hReset(){
@@ -617,6 +705,8 @@ function endHeist(title,txt,win){
 function hCam(dt,snap){
  const fx=-Math.sin(H.th),fz=-Math.cos(H.th),dist=24+Math.abs(H.v)*.14,hg=14+Math.abs(H.v)*.07;
  _hd.set(H.x-fx*dist,hg,H.z-fz*dist);
+ {const dx=_hd.x-H.x,dz=_hd.z-H.z;let k=1;const free=(x,z)=>{for(const b of bl)if(x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false;return true};
+  while(k>.2&&!free(H.x+dx*k,H.z+dz*k))k-=.1;_hd.x=H.x+dx*k;_hd.z=H.z+dz*k;_hd.y+=(1-k)*12}
  if(snap)camera.position.copy(_hd);else camera.position.lerp(_hd,Math.min(1,dt*5));
  camTarget.set(H.x+fx*14,2,H.z+fz*14);camera.lookAt(camTarget);
  const fovT=BASE_FOV+Math.min(14,Math.abs(H.v)/83*14);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
@@ -624,18 +714,23 @@ function hCam(dt,snap){
 function hPlaceHero(){hero.group.position.set(H.x,CAR_Y,H.z);hero.group.rotation.y=H.th;hero.group.rotation.z=-H.steer*Math.min(1,Math.abs(H.v)/50)*.05}
 function hStep(dt,now){
  H.t+=dt;
- const br=keys.brake,boosting=keys.boost&&!br&&H.turbo>0;
+ const br=keys.brake,gas=keys.gas||(keys.boost&&H.turbo>0&&!br),boosting=keys.boost&&!br&&H.turbo>0&&H.v>3;
  if(boosting)H.turbo=Math.max(0,H.turbo-dt);
- const st=Number(keys.left)-Number(keys.right);H.steer+=(st-H.steer)*Math.min(1,dt*8);
- let tgt=boosting?83:50;tgt*=1-.25*Math.abs(H.steer);if(br)tgt=-8;
- const acc=br?(H.v>0?3.2:1.5):(tgt>H.v?(boosting?2.2:1.1):1.4);
- H.v+=(tgt-H.v)*Math.min(1,dt*acc);
- const om=Math.max(.75,2.5-Math.abs(H.v)*.021);
- H.th+=H.steer*om*Math.min(1,Math.abs(H.v)/8)*(H.v>=0?1:-1)*dt;
- H.x+=-Math.sin(H.th)*H.v*dt;H.z+=-Math.cos(H.th)*H.v*dt;
+ const st=Number(keys.left)-Number(keys.right);H.steer+=(st-H.steer)*Math.min(1,dt*12);
+ // throttle / brake / coasting: the car only accelerates while gas is held
+ if(br){if(H.v>.5)H.v=Math.max(0,H.v-40*dt);else H.v=Math.max(-11,H.v-10*dt)}
+ else if(gas){
+  if(H.v<0)H.v=Math.min(0,H.v+34*dt);
+  else{const tgt=(boosting?83:52)*(1-.1*Math.abs(H.steer));H.v+=(tgt-H.v)*Math.min(1,dt*(boosting?2.2:.95))}}
+ else{const dr=Math.min(Math.abs(H.v),(5+Math.abs(H.v)*.14)*dt);H.v-=Math.sign(H.v)*dr}
+ const om=Math.max(1.55,3.2-Math.abs(H.v)*.022);
+ const turn=H.steer*om*Math.min(1,Math.abs(H.v)/5)*(H.v>=0?1:-1)*dt;
  H.hitCd-=dt;
- const hit=hCollide(H,3.2);
- if(hit>0){H.v*=.55;if(hit>12&&H.hitCd<=0){H.hp-=(hit-12)*.35;H.hitCd=.4;burst(_hp.set(H.x,0,H.z),false);beep(80,.25,'sawtooth',.25);flashMsg('💥 התנגשות!')}}
+ // sub-steps so the car can never tunnel through a wall at boost speed
+ const sub=Math.max(1,Math.min(6,Math.ceil(Math.abs(H.v)*dt/1.1)));let hit=0;
+ for(let q=0;q<sub;q++){H.th+=turn/sub;H.x+=-Math.sin(H.th)*H.v*dt/sub;H.z+=-Math.cos(H.th)*H.v*dt/sub;hit=Math.max(hit,hCollide(H,3.2))}
+ if(hit>0){if(hit>12&&H.hitCd<=0){H.hp-=(hit-12)*.35;H.hitCd=.4;burst(_hp.set(H.x,0,H.z),false);beep(80,.25,'sawtooth',.25);flashMsg('💥 התנגשות!')}
+  H.v*=hit>12?.45:.8}
  // heists
  let inside=false;
  for(const z of ZN){if(z.done)continue;const d=Math.hypot(H.x-z.x,H.z-z.z);
@@ -658,10 +753,10 @@ function hStep(dt,now){
    if(H.safeHold>=3)endHeist('🏆 הצלחת לברוח!','שלל: '+H.money.toLocaleString('en-US')+'$ • זמן: '+H.t.toFixed(0)+' שניות',true)}else H.safeHold=Math.max(0,H.safeHold-dt*2)}
  // police
  let near=0,anyNear=false;
- for(const p of pol){if(!p.active)continue;p.base=[0,45,50,54][Math.max(1,H.wanted)]+(pol.indexOf(p)%2)*2;policeStep(p,dt);
+ for(const p of pol){if(!p.active)continue;p.base=[0,42,46,50][Math.max(1,H.wanted)]+(pol.indexOf(p)%2)*2;policeStep(p,dt);
   const d=Math.hypot(H.x-p.x,H.z-p.z);if(d<170)anyNear=true;
   if(d<7.4){const nx=(H.x-p.x)/(d||1),nz=(H.z-p.z)/(d||1),ov=7.4-d;H.x+=nx*ov*.5;H.z+=nz*ov*.5;p.x-=nx*ov*.5;p.z-=nz*ov*.5;
-   if(p.hitCd<=0){p.hitCd=.7;H.hp-=7;H.v*=.82;p.v*=.55;burst(_hp.set(H.x,0,H.z),false);beep(90,.2,'square',.25);flashMsg('🚔 המשטרה פגעה בך!')}}
+   if(p.hitCd<=0){p.hitCd=1;H.hp-=5;H.v*=.82;p.v*=.55;burst(_hp.set(H.x,0,H.z),false);beep(90,.2,'square',.25);flashMsg('🚔 המשטרה פגעה בך!')}}
   if(d<11)near++}
  if(near>0&&Math.abs(H.v)<9){H.bust+=dt;if(H.bust>2.5)endHeist('🚔 נתפסת!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
  if(H.hp<=0&&!hOver)endHeist('💥 הרכב נהרס','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
@@ -681,7 +776,7 @@ function hHud(now){
  setT('hh_h',String(H.heists));setT('hh_s','★'.repeat(H.wanted)+'☆'.repeat(3-H.wanted));setT('hh_m',H.money.toLocaleString('en-US')+'$');
  hel('hh_hp').style.width=Math.max(0,H.hp)+'%';hel('hh_t').style.width=(H.turbo/8*100)+'%';hel('boost').style.opacity=H.turbo>0?1:.4;
  if(!garageOpen){let t;
-  if(msgT>0)t=msgText;else if(H.safe)t='🏠 הגע לבית המפלט (העיגול הירוק)';else if(H.heists===0)t='🎯 נסע לעיגול צהוב או סגול וחכה בתוכו כדי לשדוד';else t='🚓 עוד '+(3-H.heists)+' שודים — המשטרה בעקבותיך';
+  if(msgT>0)t=msgText;else if(H.safe)t='🏠 הגע לבית המפלט (העיגול הירוק)';else if(H.heists===0)t='⛽ גז = ▲ / W • בלם = ▼ / S • נסע לעיגול זוהר וחכה בתוכו כדי לשדוד';else t='🚓 עוד '+(3-H.heists)+' שודים — המשטרה בעקבותיך';
   setT('msg',t)}
  H.mapT-=1;if(H.mapT<=0){H.mapT=5;hMapDraw(now)}}
 function hMapDraw(now){
