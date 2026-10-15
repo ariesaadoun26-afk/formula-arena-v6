@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><title>FORMULA ARENA V6 | Coastal Circuit</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071522;color:white;font-family:Arial,system-ui;touch-action:none}canvas{display:block}#hud{position:absolute;inset:0;pointer-events:none}#top{position:absolute;top:max(9px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));display:flex;align-items:start;justify-content:space-between;gap:6px;direction:ltr}.pill{background:#071526d9;border:1px solid #ffffff44;border-radius:12px;padding:7px 12px;box-shadow:0 6px 22px #0006;backdrop-filter:blur(6px)}.brand{color:#ffd66b;font-size:13px;font-weight:900;letter-spacing:1px}.small{font-size:10px;color:#c3d4e7}.big{font-size:21px;font-weight:900}.controls{position:absolute;bottom:max(13px,env(safe-area-inset-bottom));left:max(18px,env(safe-area-inset-left));right:max(18px,env(safe-area-inset-right));display:flex;justify-content:space-between;align-items:end;direction:ltr;pointer-events:auto}.cluster{display:flex;gap:10px;align-items:end}.btn{border:1px solid #ffffff77;background:#0b1c33c9;color:#fff;border-radius:19px;width:72px;height:72px;font-size:31px;font-weight:900;touch-action:none;user-select:none;cursor:pointer;box-shadow:0 6px 22px #0008}.btn:active,.btn.active{background:#2c5885}.boost{width:88px;height:88px;border-radius:50%;font-size:17px;background:radial-gradient(circle at 35% 25%,#ffc66e,#e4492b 60%,#8b183e);border:3px solid #ffbf70}.brake{width:65px;height:65px;font-size:13px}.message{position:absolute;top:75px;left:50%;transform:translateX(-50%);background:#091728c9;border:1px solid #ffffff44;border-radius:11px;padding:8px 14px;font-size:12px;white-space:nowrap}#rotate{display:none;position:absolute;inset:0;background:#071526f5;z-index:9;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px;gap:12px}#rotate strong{font-size:24px}#loading{position:absolute;inset:0;display:grid;place-items:center;background:#071526;z-index:12;font-weight:bold;color:#ffdf8b}#finish{display:none;position:absolute;inset:0;z-index:8;background:#04101dd9;align-items:center;justify-content:center;flex-direction:column;gap:15px}#finish h1{font-size:34px;margin:0;color:#ffd56d}#again{border:0;background:#ffd56d;color:#102031;padding:14px 25px;border-radius:14px;font-size:18px;font-weight:bold;cursor:pointer}#map{position:absolute;top:74px;right:max(12px,env(safe-area-inset-right));width:124px;height:110px;border-radius:12px;background:#071526a9;border:1px solid #ffffff44} @media(orientation:portrait){#rotate{display:flex}}@media(max-height:400px){.btn{width:58px;height:58px}.boost{width:72px;height:72px}.brake{width:54px;height:54px}.message{display:none}#map{width:100px;height:88px}}
+
+/* iOS Safari: prevent long-press text selection and callout on game controls */
+html,body,canvas,#hud,#hud *,button{ -webkit-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important;touch-action:none!important; }
+button{ -webkit-appearance:none;appearance:none; }
+
+#garage{position:absolute;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#071324ed,#153653ee);padding:14px;overflow:auto;touch-action:pan-y}
+#garage.hidden{display:none}.garagebox{width:min(760px,96vw);background:#0b1b2bf0;border:1px solid #ffffff44;border-radius:18px;padding:18px;text-align:center;box-shadow:0 15px 60px #0009}
+.garagetitle{font-size:clamp(19px,3vw,30px);font-weight:900;color:#ffdc78;margin:0 0 7px}.garagehint{color:#b9cddd;font-size:13px;margin-bottom:13px}
+.carchoices{display:flex;gap:12px;justify-content:center;direction:ltr}.carchoice{flex:1;max-width:260px;border:2px solid #536b80;border-radius:16px;background:#152b3f;color:white;padding:12px;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none}.carchoice.selected{border-color:#ffd45f;background:#25415b}.carart{height:64px;display:flex;align-items:center;justify-content:center;font-size:55px}.carname{font-weight:800;font-size:17px}.cardesc{color:#b6ccda;font-size:11px;margin-top:6px}#startRace{margin-top:13px;padding:11px 32px;background:#ffd35e;border:0;border-radius:12px;font-size:18px;font-weight:900;color:#1b2935;cursor:pointer;touch-action:manipulation}#changeCar{position:absolute;top:78px;left:max(12px,env(safe-area-inset-left));pointer-events:auto;background:#0b1c33d9;border:1px solid #ffffff55;color:white;border-radius:10px;padding:8px;font-size:12px;touch-action:manipulation}
+@media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
+</style></head><body>
+<div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.6 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V6.6</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
+<script type="module">
+import * as THREE from 'https://esm.sh/three@0.169.0';
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x9bcde2);scene.fog=new THREE.FogExp2(0x9acde1,.0038);
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.45;document.body.prepend(renderer.domElement);
+const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,1100);
+scene.add(new THREE.HemisphereLight(0xe0f4ff,0x647154,2.3));const sun=new THREE.DirectionalLight(0xffe9bc,2.8);sun.position.set(-80,110,-50);scene.add(sun);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-140;sun.shadow.camera.right=140;sun.shadow.camera.top=140;sun.shadow.camera.bottom=-140;sun.shadow.bias=-.0005;
+const mat=(c,r=.75,m=0)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:m,side:THREE.DoubleSide});
+const asphalt=mat(0x30363c,.94),sand=mat(0xd6c28d),grass=mat(0x37734e),sea=mat(0x1599b9,.26,.16),white=mat(0xf4f4ec),red=mat(0xe74c47),yellow=mat(0xffc84a),black=mat(0x131820),glass=mat(0x172c3b,.22,.45),rubber=mat(0x0d1219),metal=mat(0x9da8b2,.3,.7),blue=mat(0x2479e6,.3,.25);
+function box(w,h,d,m,x,y,z,p=scene){let o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=h>.5;o.receiveShadow=true;p.add(o);return o}
+function cyl(rt,rb,h,m,x,y,z,p=scene){let o=new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,h,9),m);o.position.set(x,y,z);p.add(o);return o}
+box(1400,.1,1400,sea,0,-.45,0);box(760,.18,720,sand,0,-.18,0);box(650,.12,610,grass,0,-.04,0);
+// A smooth closed circuit: straights, S-bends, and a broad hairpin.
+const nodes=[[-210,-90],[-120,-145],[10,-153],[145,-125],[216,-65],[222,25],[174,102],[75,135],[5,85],[-65,52],[-115,105],[-187,110],[-239,45],[-241,-28]];
+const curve=new THREE.CatmullRomCurve3(nodes.map(([x,z])=>new THREE.Vector3(x,0,z)),true,'centripetal',.42);
+const N=700,roadWidth=29,points=[],tangents=[],normals=[];
+for(let i=0;i<N;i++){let u=i/N,p=curve.getPointAt(u),t=curve.getTangentAt(u).normalize();points.push(p);tangents.push(t);normals.push(new THREE.Vector3(-t.z,0,t.x))}
+function ribbon(inner,outer,m,y){let v=[],idx=[];for(let i=0;i<N;i++){const p=points[i],n=normals[i];v.push(p.x+n.x*inner,y,p.z+n.z*inner,p.x+n.x*outer,y,p.z+n.z*outer)}for(let i=0;i<N;i++){let j=(i+1)%N,a=i*2,b=j*2;idx.push(a,b,a+1,a+1,b,b+1)}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));g.setIndex(idx);g.computeVertexNormals();let mesh=new THREE.Mesh(g,m);mesh.receiveShadow=true;scene.add(mesh);return mesh}
+ribbon(-roadWidth/2-3,roadWidth/2+3,mat(0x575c63),.07);ribbon(-roadWidth/2,roadWidth/2,asphalt,.12);
+for(let s of [-1,1]){ribbon(s*(roadWidth/2-.9),s*(roadWidth/2),white,.16);ribbon(s*(roadWidth/2),s*(roadWidth/2+1.7),red,.14)}
+// Subtle asphalt grain and racing-line patches; instancing keeps iPhone draw calls low.
+const grainGeo=new THREE.PlaneGeometry(.55,1.9),grainMat=new THREE.MeshBasicMaterial({color:0x77818a,transparent:true,opacity:.12,depthWrite:false,side:THREE.DoubleSide});
+const grain=new THREE.InstancedMesh(grainGeo,grainMat,480);const dummy=new THREE.Object3D();
+for(let k=0;k<480;k++){let i=(k*47)%N,p=points[i],n=normals[i],t=tangents[i],offset=((k*19)%27-13)*.92;dummy.position.set(p.x+n.x*offset,.177,p.z+n.z*offset);dummy.rotation.set(-Math.PI/2,0,Math.atan2(t.x,t.z));dummy.scale.set(.4+(k%4)*.3,.65+(k%3)*.45,1);dummy.updateMatrix();grain.setMatrixAt(k,dummy.matrix)}grain.instanceMatrix.needsUpdate=true;scene.add(grain);
+// Alternating curb blocks and guardrails define the edges of the circuit.
+const rail=mat(0xbfcbd2,.42,.3),railPost=mat(0x44525d);
+for(let i=0;i<N;i+=16){let p=points[i],t=tangents[i],n=normals[i],heading=Math.atan2(-t.x,-t.z);for(let side of [-1,1]){let x=p.x+n.x*side*(roadWidth/2+5),z=p.z+n.z*side*(roadWidth/2+5);let post=box(.32,1.7,.36,railPost,x,.95,z);post.rotation.y=heading;let beam=box(.23,.38,13,rail,x,1.4,z);beam.rotation.y=heading}}
+const stripeMat=new THREE.MeshBasicMaterial({color:0xf2e9ca});
+for(let k=1;k<4;k++){let offset=-roadWidth/2+k*roadWidth/4;for(let i=0;i<N;i+=13){let p=points[i],n=normals[i],t=tangents[i];let stripe=box(.35,.025,5,stripeMat,p.x+n.x*offset,.18,p.z+n.z*offset);stripe.rotation.y=Math.atan2(-t.x,-t.z)}}
+const checkA=points[0],checkT=tangents[0],checkN=normals[0];for(let k=0;k<12;k++){let x=-roadWidth/2+(k+.5)*roadWidth/12;for(let z of [-1,1]){let o=box(roadWidth/12,.03,1.25,(k+((z+1)/2))%2===0?white:black,checkA.x+checkN.x*x+checkT.x*z*.65,.2,checkA.z+checkN.z*x+checkT.z*z*.65);o.rotation.y=Math.atan2(-checkT.x,-checkT.z)}}
+
+// Track wear and edge detailing: low-cost decals and occasional marker posts.
+const rubberMark=mat(0x242930,.98);
+for(let i=5;i<N;i+=7){
+ const p=points[i],t=tangents[i],n=normals[i];
+ for(let lane of [-5,5]){
+  const x=p.x+n.x*lane,z=p.z+n.z*lane;
+  let mark=box(.17,.016,4.5,rubberMark,x,.188,z);
+  mark.rotation.y=Math.atan2(-t.x,-t.z);
+ }
+}
+const curbLight=mat(0xfff4df),curbDark=mat(0xdc3835);
+for(let i=0;i<N;i+=7){
+ const p=points[i],t=tangents[i],n=normals[i];
+ for(let side of [-1,1]){
+  let o=box(1.8,.11,4.6,(Math.floor(i/7)%2)?curbLight:curbDark,
+  p.x+n.x*side*(roadWidth/2+1),.24,p.z+n.z*side*(roadWidth/2+1));
+  o.rotation.y=Math.atan2(-t.x,-t.z)
+ }
+}
+const trunk=mat(0x805b3c),leaf=mat(0x26774d),wall=mat(0xe5e4df);
+for(let i=0;i<N;i+=10){let p=points[i],n=normals[i];for(let side of [-1,1]){let d=roadWidth/2+6;let x=p.x+n.x*d*side,z=p.z+n.z*d*side;let a=box(3,1.1,3,wall,x,.75,z);a.rotation.y=Math.atan2(-tangents[i].x,-tangents[i].z)}}
+
+// Sparse palm silhouettes placed outside the track.
+const palmLeaf=mat(0x2e8655),palmTrunk=mat(0x97724e);
+function palm(x,z,h){
+ cyl(.45,.78,h,palmTrunk,x,h/2,z);
+ for(let j=0;j<6;j++){
+  const a=j*Math.PI/3;
+  const branch=box(.65,.19,7.2,palmLeaf,x+Math.sin(a)*2.9,h+.9,z+Math.cos(a)*2.9);
+  branch.rotation.y=a;branch.rotation.x=.13;
+ }
+}
+for(let i=0;i<75;i++){
+ let a=i*2.39996,r=198+(i%7)*17,x=Math.cos(a)*r,z=Math.sin(a)*r;
+ let minDist=Infinity;
+ for(let j=0;j<N;j+=14)minDist=Math.min(minDist,Math.hypot(points[j].x-x,points[j].z-z));
+ if(minDist<35||Math.abs(x)>345||Math.abs(z)>310)continue;
+ palm(x,z,8+(i%4)*1.4)
+}
+// A small coastal town, grandstand and simple marina silhouettes.
+const stucco=[mat(0xf4e9d5),mat(0xcadbe0),mat(0xf1d4b2)];
+for(let i=0;i<12;i++){
+ let x=-330+i*16,h=10+(i%4)*4;
+ box(13,h,14,stucco[i%3],x,h/2,-225);
+ box(14,.6,15,mat(0x995c46),x,h+.2,-225);
+ for(let j=0;j<3;j++)box(2.3,2.8,.12,glass,x-3+j*3,h*.55,-217.9)
+}
+const dock=mat(0xa6b1b9),sail=mat(0xf3f4f0);
+for(let i=0;i<5;i++){
+ let x=250+i*20,z=-205+(i%2)*18;
+ box(9,1.4,22,sail,x,.8,z);
+ box(1,7,1,dock,x,4,z);
+ let canopy=new THREE.Mesh(new THREE.ConeGeometry(4.3,7,4),sail);
+ canopy.position.set(x,7.4,z);scene.add(canopy)
+}
+// Low-poly coastal details: striped beach umbrellas, spectator stands, and race banners.
+const umbrellaColors=[mat(0xf26b54),mat(0xffdb76),mat(0x68b8cc)];
+for(let i=0;i<16;i++){let x=260+(i%8)*10,z=145+Math.floor(i/8)*16;let stem=box(.22,3,.22,white,x,1.5,z);let shade=new THREE.Mesh(new THREE.ConeGeometry(4,1.4,6),umbrellaColors[i%3]);shade.position.set(x,3.3,z);scene.add(shade)}
+for(let i=0;i<9;i++){let x=-280+i*8,z=205;box(7,2.5,12,mat(i%2?0x4b708e:0x6e8292),x,1.2,z);for(let j=0;j<3;j++)box(6,.28,.9,white,x,2.6+j*.8,z-4+j*2)}
+const bannerColors=[mat(0xe8423d),mat(0x244f84),mat(0xf5cf4c)];
+for(let i=0;i<N;i+=85){let p=points[i],n=normals[i],t=tangents[i];let x=p.x+n.x*(roadWidth/2+8),z=p.z+n.z*(roadWidth/2+8);box(8,2,.3,bannerColors[(i/85)%3],x,3.2,z).rotation.y=Math.atan2(-t.x,-t.z);box(.28,5,.28,metal,x-3.7,2.5,z)}
+// A few rocks along the shore; intentionally low polygon count.
+const rockMat=mat(0x9d9e90);for(let i=0;i<38;i++){let a=i*2.39996,r=328+(i%4)*12,x=Math.cos(a)*r,z=Math.sin(a)*r;let rock=new THREE.Mesh(new THREE.DodecahedronGeometry(2.4+(i%3),0),rockMat);rock.position.set(x,.7,z);rock.scale.y=.42;scene.add(rock)}
+function buildCar(color,kind='formula'){
+ const group=new THREE.Group(),body=mat(color,.38,.24),accent=mat(0xf1f4f4,.48,.1),carbon=mat(0x1b2030,.84),seat=mat(0x202b3c),helmet=mat(0xffe5b0,.38,.22),visor=mat(0x142536,.15,.4),light=mat(0xfff4c7,.24),taillight=mat(0xd32637,.3);
+ const isF=kind==='formula';
+ function part(w,h,d,m,x,y,z){return box(w,h,d,m,x,y,z,group)}
+ function wedge(coords,height,m,y){const shape=new THREE.Shape();shape.moveTo(coords[0][0],coords[0][1]);for(let i=1;i<coords.length;i++)shape.lineTo(coords[i][0],coords[i][1]);shape.closePath();const g=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:false});g.rotateX(Math.PI/2);const mesh=new THREE.Mesh(g,m);mesh.position.y=y+height;mesh.castShadow=true;group.add(mesh);return mesh}
+ function wheel(x,z,r=.85){let tire=new THREE.Mesh(new THREE.CylinderGeometry(r,r,.78,12),rubber);tire.rotation.z=Math.PI/2;tire.position.set(x,r+.08,z);tire.castShadow=true;group.add(tire);let rim=new THREE.Mesh(new THREE.CylinderGeometry(r*.46,r*.46,.8,10),metal);rim.rotation.z=Math.PI/2;rim.position.set(x,r+.08,z);group.add(rim);let hub=new THREE.Mesh(new THREE.CylinderGeometry(r*.18,r*.18,.83,8),carbon);hub.rotation.z=Math.PI/2;hub.position.set(x,r+.08,z);group.add(hub)}
+ if(isF){
+  // Long tapered nose and sharply cut sidepods, inspired by the supplied red Formula reference.
+  part(1.35,.42,3.2,body,0,1.02,-1.35);
+  wedge([[-.3,-3.75],[.3,-3.75],[.82,-1.25],[-.82,-1.25]],.42,body,1.05);
+  wedge([[-1.63,-.85],[-1.3,-2.1],[-.65,-1.75],[-.7,1.45],[-1.7,1.7]],.5,body,.85);
+  wedge([[1.63,-.85],[1.3,-2.1],[.65,-1.75],[.7,1.45],[1.7,1.7]],.5,body,.85);
+  part(1.48,.62,2.45,body,0,1.13,1.05);
+  part(1.08,.25,1.45,carbon,0,1.56,-.15);
+  part(.82,.24,1.25,seat,0,1.62,.1);
+  const head=new THREE.Mesh(new THREE.SphereGeometry(.48,10,7),helmet);head.position.set(0,2.02,.15);group.add(head);
+  part(.72,.15,.28,visor,0,2.03,-.25);
+  part(1.15,.18,.12,carbon,0,1.83,-.67);part(.14,.3,1.0,carbon,0,1.77,-.1);
+  // Front wing is at negative Z, rear wing at positive Z.
+  part(4.7,.14,.65,accent,0,.64,-3.78);part(3.75,.12,.5,carbon,0,.78,-3.4);
+  for(let x of [-2.1,2.1]){part(.12,.42,.85,body,x,.9,-3.75);part(.12,.2,1.15,accent,x,1.2,-3.72)}
+  part(4.1,.16,.7,accent,0,2.1,3.0);part(4.1,.46,.13,body,0,1.85,3.34);
+  for(let x of [-1.55,1.55]){part(.17,.9,.18,carbon,x,1.55,2.95);part(.24,.25,1.15,carbon,x,.93,1.15)}
+  part(.65,.12,2.3,accent,0,1.36,-2.15);
+  for(let x of [-1.95,1.95])for(let z of [-2.45,2.35])wheel(x,z,.85);
+ }else{
+  // Angular GT silhouette with a sloped hood, glazed cabin and rear wing.
+  part(3.55,.65,6.55,body,0,1.05,0);
+  wedge([[-1.65,-3.3],[1.65,-3.3],[1.5,-1.1],[-1.5,-1.1]],.22,body,1.36);
+  wedge([[-1.45,-1.4],[1.45,-1.4],[1.25,1.45],[-1.25,1.45]],.48,body,1.63);
+  part(2.65,.08,1.45,glass,0,2.13,-.65);
+  part(2.52,.09,.95,glass,0,2.12,1.05);
+  for(let x of [-1.12,1.12]){part(.62,.14,.22,light,x,1.38,-3.31);part(.72,.16,.2,taillight,x,1.4,3.31)}
+  part(4.0,.17,.55,carbon,0,2.28,2.92);
+  for(let x of [-1.35,1.35])part(.12,.55,.2,carbon,x,1.99,2.9);
+  for(let x of [-1.8,1.8])for(let z of [-2.18,2.1])wheel(x,z,.75);
+  part(2.4,.18,.25,carbon,0,.85,-3.35);
+ }
+ const flame=new THREE.Mesh(new THREE.ConeGeometry(.42,2.4,7),new THREE.MeshBasicMaterial({color:0x36d7ff,transparent:true,opacity:.8}));flame.rotation.x=Math.PI/2;flame.position.set(0,.9,4.65);flame.visible=false;group.add(flame);
+ scene.add(group);return {group,flame,kind}
+}
+let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
+let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
+const keys={left:false,right:false,boost:false,brake:false};
+const startPos=curve.getPointAt(0),startTan=curve.getTangentAt(0).normalize();
+let carPos=startPos.clone(),yaw=Math.atan2(-startTan.x,-startTan.z),roadIndex=0,passed=0,checkpoint=0,drift=0;
+const checkpointCount=8;
+function resetDrive(){laneOffset=0;visualYaw=0;rivalsProgress[0]=.025;rivalsProgress[1]=.046;rivalsProgress[2]=.069;carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
+for(const ev of ['contextmenu','selectstart','dragstart']) document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
+for(let key of Object.keys(keys)){let el=document.getElementById(key);const set=v=>{keys[key]=v;el.classList.toggle('active',v)};el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);set(true)});for(let ev of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(ev,()=>set(false))}
+addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown')keys.brake=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown')keys.brake=false});
+
+let selectedKind='formula',garageOpen=true;
+const garage=document.getElementById('garage');
+function selectCar(kind){selectedKind=kind;for(const b of document.querySelectorAll('.carchoice'))b.classList.toggle('selected',b.dataset.kind===kind)}
+for(const b of document.querySelectorAll('.carchoice'))b.addEventListener('click',()=>selectCar(b.dataset.kind));
+function applyCar(){const old=player.group;scene.remove(old);player=buildCar(0xe83439,selectedKind);resetDrive();garageOpen=false;garage.classList.add('hidden')}
+document.getElementById('startRace').addEventListener('click',applyCar);
+document.getElementById('changeCar').addEventListener('click',()=>{garageOpen=true;garage.classList.remove('hidden');speed=0;for(const k of Object.keys(keys))keys[k]=false});
+const trackLength=curve.getLength();const map=document.getElementById('map'),ctx=map.getContext('2d');
+function mapDraw(){const w=map.width,h=map.height;ctx.clearRect(0,0,w,h);ctx.lineWidth=10;ctx.strokeStyle='#dce3e9';ctx.beginPath();points.forEach((p,i)=>{let x=(p.x+280)/560*(w-20)+10,y=(p.z+195)/390*(h-18)+9;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.closePath();ctx.stroke();let p=carPos;ctx.fillStyle='#ff5959';ctx.beginPath();ctx.arc((p.x+280)/560*(w-20)+10,(p.z+195)/390*(h-18)+9,7,0,Math.PI*2);ctx.fill()}
+let last=performance.now();const camTarget=new THREE.Vector3();camera.position.set(startPos.x+18,38,startPos.z+48);camera.lookAt(startPos);
+function nearestRoad(){let best=Infinity,bestIndex=roadIndex;for(let d=-25;d<=25;d++){const i=(roadIndex+d+N)%N,p=points[i],dx=p.x-carPos.x,dz=p.z-carPos.z,dist=dx*dx+dz*dz;if(dist<best){best=dist;bestIndex=i}}roadIndex=bestIndex;return Math.sqrt(best)}
+// Arcade assisted steering: the track guides heading while player controls lateral placement.
+let laneOffset=0,visualYaw=0;
+const rivalsProgress=[.025,.046,.069];
+const rivalsSpeeds=[137,157,171]; // km/h: independently paced AI, not locked to player
+function tick(now){
+ requestAnimationFrame(tick);
+ const dt=Math.min(.04,(now-last)/1000);last=now;
+ if(!finished&&!garageOpen){
+  const boosting=keys.boost&&!keys.brake;
+  const target=keys.brake?80:boosting?280:208;
+  speed+=(target-speed)*Math.min(1,dt*(keys.brake?3.5:1.5));
+  steer=Number(keys.right)-Number(keys.left);
+  // Gentle lateral movement; car cannot accidentally leave the circuit.
+  const maxOffset=roadWidth/2-3.6;
+  laneOffset=THREE.MathUtils.clamp(laneOffset+steer*dt*(9+speed*.017),-maxOffset,maxOffset);
+  // Slight slowdown when hugging barriers, with no punishing reset.
+  if(Math.abs(laneOffset)>maxOffset-1.3) speed=Math.min(speed,175);
+  progress+=speed/3.6*dt/trackLength;
+  if(progress>=1){
+   progress-=1;lap++;
+   if(lap>3){finished=true;document.getElementById('finish').style.display='flex';document.getElementById('result').textContent='זמן: '+((now-start)/1000).toFixed(1)+' שניות'}
+  }
+  const p=curve.getPointAt(progress),t=curve.getTangentAt(progress).normalize();
+  const n=new THREE.Vector3(-t.z,0,t.x);
+  carPos.copy(p).addScaledVector(n,laneOffset);
+  const roadYaw=Math.atan2(-t.x,-t.z);
+  const angle=roadYaw-steer*.11;
+  visualYaw+=Math.atan2(Math.sin(angle-visualYaw),Math.cos(angle-visualYaw))*Math.min(1,dt*10);
+  player.group.position.copy(carPos);
+  player.group.rotation.y=visualYaw;
+  player.group.rotation.z=-steer*.055;
+  player.flame.visible=boosting;
+  player.flame.scale.setScalar(.85+Math.sin(now*.024)*.2);
+  for(let i=0;i<rivals.length;i++){
+   rivalsProgress[i]=(rivalsProgress[i]+rivalsSpeeds[i]/3.6*dt/trackLength)%1;
+   const rp=rivalsProgress[i],pt=curve.getPointAt(rp),tt=curve.getTangentAt(rp).normalize();
+   const nn=new THREE.Vector3(-tt.z,0,tt.x);
+   rivals[i].group.position.copy(pt).addScaledVector(nn,[-8,0,8][i]);
+   rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z);
+  }
+  const desired=carPos.clone().addScaledVector(t,-30).add(new THREE.Vector3(0,32,0));
+  camera.position.lerp(desired,Math.min(1,dt*4));
+  camTarget.copy(carPos).addScaledVector(t,26);camTarget.y=1.4;camera.lookAt(camTarget);
+  document.getElementById('speed').textContent=Math.round(speed);
+  document.getElementById('lap').textContent=Math.min(lap,3);
+  document.getElementById('msg').textContent=boosting?'⚡ טורבו פעיל — עקוף את היריבים!':keys.brake?'🏁 בלימה':'🏎️ היגוי קל • עקיפות אמיתיות • מסלול חוף';
+  mapDraw();
+ }
+ renderer.render(scene,camera);
+}
+document.getElementById('again').onclick=()=>{garageOpen=true;garage.classList.remove('hidden');document.getElementById('finish').style.display='none'};
+function resize(){renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()}addEventListener('resize',resize);document.getElementById('loading').remove();requestAnimationFrame(tick);
+</script></body></html>
