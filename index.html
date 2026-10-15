@@ -12,10 +12,10 @@ button{ -webkit-appearance:none;appearance:none; }
 .garagetitle{font-size:clamp(19px,3vw,30px);font-weight:900;color:#ffdc78;margin:0 0 7px}.garagehint{color:#b9cddd;font-size:13px;margin-bottom:13px}
 .carchoices{display:flex;gap:12px;justify-content:center;direction:ltr}.carchoice{flex:1;max-width:260px;border:2px solid #536b80;border-radius:16px;background:#152b3f;color:white;padding:12px;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none}.carchoice.selected{border-color:#ffd45f;background:#25415b}.carart{height:64px;display:flex;align-items:center;justify-content:center;font-size:55px}.carname{font-weight:800;font-size:17px}.cardesc{color:#b6ccda;font-size:11px;margin-top:6px}#startRace{margin-top:13px;padding:11px 32px;background:#ffd35e;border:0;border-radius:12px;font-size:18px;font-weight:900;color:#1b2935;cursor:pointer;touch-action:manipulation}#changeCar{position:absolute;top:78px;left:max(12px,env(safe-area-inset-left));pointer-events:auto;background:#0b1c33d9;border:1px solid #ffffff55;color:white;border-radius:10px;padding:8px;font-size:12px;touch-action:manipulation}
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
-.bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}</style></head><body>
+.bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}#countdown{display:none;position:absolute;inset:0;z-index:7;place-items:center;font-size:min(34vh,220px);font-weight:900;color:#fff;text-shadow:0 8px 40px #000a,0 0 30px #ffb347;pointer-events:none;animation:cdpop .9s ease-out}@keyframes cdpop{from{transform:scale(1.9);opacity:0}30%{opacity:1}to{transform:scale(1);opacity:1}}</style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.1 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀<br>נשק</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.1</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.2 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.2</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -310,16 +310,16 @@ function buildCar(color,kind='formula'){
 function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/(w.r*car.group.scale.x);if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
-const keys={left:false,right:false,boost:false,brake:false,item:false};
+const keys={left:false,right:false,boost:false,brake:false,item:false,item2:false};
 const startPos=curve.getPointAt(0),startTan=curve.getTangentAt(0).normalize();
 let carPos=startPos.clone(),yaw=Math.atan2(-startTan.x,-startTan.z),roadIndex=0,passed=0,checkpoint=0,drift=0;
 const checkpointCount=8;
-function resetDrive(){lastBeepLap=1;laneOffset=0;visualYaw=0;resetRivals();resetPickups();carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
+function resetDrive(){lastBeepLap=1;laneOffset=0;visualYaw=0;resetRivals();resetPickups();cdT=3;cdShown=-1;goT=0;carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
 for(const ev of ['contextmenu','selectstart','dragstart']) document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
 for(let key of Object.keys(keys)){let el=document.getElementById(key);const set=v=>{keys[key]=v;el.classList.toggle('active',v)};el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);set(true)});for(let ev of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(ev,()=>set(false))}
 addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown')keys.brake=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown')keys.brake=false});
 
-addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=true});addEventListener('keyup',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=false});
+addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=true});addEventListener('keyup',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=false});addEventListener('keydown',e=>{if(e.key==='g'||e.key==='G')keys.item2=true});addEventListener('keyup',e=>{if(e.key==='g'||e.key==='G')keys.item2=false});
 // ---------- Sound (synthesized, no files needed) ----------
 let AC=null,eng=null,engGain=null,eng2=null,noiseGain=null,muted=false,windFilter=null;
 function initAudio(){
@@ -335,7 +335,7 @@ function initAudio(){
 }
 function beep(f,dur=.15,type='sine',vol=.25,when=0){if(!AC||muted)return;const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime+when;o.type=type;o.frequency.value=f;g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);o.connect(g);g.connect(window._master);o.start(t);o.stop(t+dur+.02)}
 function updateAudio(spd,boosting,braking,dt){
- if(!AC)return;const t=AC.currentTime,k=spd/280,gear=Math.floor(k*5.2),f=(k*5.2-gear),base=55+f*85+gear*14+(boosting?18:0);
+ if(!AC)return;const t=AC.currentTime,k=spd/420,gear=Math.floor(k*5.2),f=(k*5.2-gear),base=55+f*85+gear*14+(boosting?18:0);
  eng.frequency.setTargetAtTime(base,t,.05);eng2.frequency.setTargetAtTime(base*.5,t,.05);
  engGain.gain.setTargetAtTime(muted?0:.1+k*.1+(boosting?.05:0),t,.08);
  noiseGain.gain.setTargetAtTime(muted?0:Math.min(.28,k*k*.3)+(boosting?.06:0)+(braking?.04:0),t,.1);
@@ -359,16 +359,16 @@ let last=performance.now();const camTarget=new THREE.Vector3();camera.position.s
 function nearestRoad(){let best=Infinity,bestIndex=roadIndex;for(let d=-25;d<=25;d++){const i=(roadIndex+d+N)%N,p=points[i],dx=p.x-carPos.x,dz=p.z-carPos.z,dist=dx*dx+dz*dz;if(dist<best){best=dist;bestIndex=i}}roadIndex=bestIndex;return Math.sqrt(best)}
 // Arcade assisted steering: the track guides heading while player controls lateral placement.
 let laneOffset=0,visualYaw=0;
-const rivalsProgress=[.012,.024,.036],rivalsTotal=[.012,.024,.036],rLat=[-10,0,10],rLane=[-10,0,10],rLaneT=[0,0,0],rBase=[207,212,216],rCap=[283,286,289],rNext=[3,6,9],rLeft=[0,0,0];let bumpCool=0;
-function resetRivals(){[.012,.024,.036].forEach((v,i)=>{rivalsProgress[i]=rivalsTotal[i]=v;rLat[i]=rLane[i]=[-10,0,10][i];rivalsSpeeds[i]=170;rNext[i]=3+i*3;rLeft[i]=0;rLaneT[i]=0});bumpCool=0}
+const rivalsProgress=[.012,.024,.036],rivalsTotal=[.012,.024,.036],rLat=[-10,0,10],rLane=[-10,0,10],rLaneT=[0,0,0],rBase=[310,318,324],rCap=[425,430,435],rNext=[3,6,9],rLeft=[0,0,0];let bumpCool=0;
+function resetRivals(){[.012,.024,.036].forEach((v,i)=>{rivalsProgress[i]=rivalsTotal[i]=v;rLat[i]=rLane[i]=[-10,0,10][i];rivalsSpeeds[i]=255;rNext[i]=3+i*3;rLeft[i]=0;rLaneT[i]=0});bumpCool=0}
 function laneBlocked(i,lat,pT){
- let d=(pT-rivalsTotal[i])*trackLength;if(d>-4&&d<28&&Math.abs(laneOffset-lat)<8.6)return true;
- for(let k=0;k<rivals.length;k++){if(k===i)continue;d=(rivalsTotal[k]-rivalsTotal[i])*trackLength;if(d>-4&&d<28&&Math.abs(rLat[k]-lat)<8.6)return true}
+ let d=(pT-rivalsTotal[i])*trackLength;if(d>-4&&d<36&&Math.abs(laneOffset-lat)<8.6)return true;
+ for(let k=0;k<rivals.length;k++){if(k===i)continue;d=(rivalsTotal[k]-rivalsTotal[i])*trackLength;if(d>-4&&d<36&&Math.abs(rLat[k]-lat)<8.6)return true}
  return false}
-const rivalsSpeeds=[170,170,170]; // km/h: independently paced AI, not locked to player
+const rivalsSpeeds=[255,255,255]; // km/h: independently paced AI, not locked to player
 // ---------- Pickups (turbo orbs + weapon boxes), rockets and oil barrels ----------
 const TL=trackLength,TURBO_MAX=8,SPIN_DUR=1.4,CAR_Y=.13;
-let turbo=0,weapon=null,spinT=0,pShield=0,msgT=0,msgText='',itemWas=false;
+let turbo=0,rk=0,oi=0,spinT=0,pShield=0,msgT=0,msgText='',itemWas=false,item2Was=false;
 const rSpin=[0,0,0],rShield=[0,0,0],rW=[22,30,38],items=[],rockets=[],oils=[];
 function flashMsg(t){msgText=t;msgT=1.8}
 const boxTex=textTex(128,128,(g,w,h)=>{const gr=g.createLinearGradient(0,0,w,h);gr.addColorStop(0,'#7a3cff');gr.addColorStop(1,'#ff9a2e');g.fillStyle=gr;g.fillRect(0,0,w,h);g.strokeStyle='#fff';g.lineWidth=6;g.strokeRect(6,6,w-12,h-12);g.fillStyle='#fff';g.font='bold 96px Arial';g.textAlign='center';g.textBaseline='middle';g.fillText('?',w/2,h/2+6)});
@@ -406,22 +406,21 @@ function dropOil(owner){
  const band=new THREE.Mesh(new THREE.CylinderGeometry(.93,.93,.25,12),mat(0xffd34a));band.rotation.z=Math.PI/2;band.position.set(1.8,.9,1);g.add(band);
  const pl=carPoint(tot,carLat(owner),0);g.position.copy(pl.p);g.rotation.y=Math.atan2(-pl.t.x,-pl.t.z);scene.add(g);
  oils.push({g,u:((tot%1)+1)%1,lat:carLat(owner),life:30});beep(120,.2,'square',.2)}
-function useItem(){
- if(!weapon||spinT>0)return;
- if(weapon==='rocket'){fireRocket(-1);flashMsg('🚀 טיל שוגר!')}else{dropOil(-1);flashMsg('🛢️ שמן נשפך מאחוריך')}
- weapon=null}
+function useItem(kind){
+ if(spinT>0)return;
+ if(kind==='rocket'){if(rk<=0)return;rk--;fireRocket(-1);flashMsg('🚀 טיל שוגר!')}else{if(oi<=0)return;oi--;dropOil(-1);flashMsg('🛢️ שמן נשפך מאחוריך')}}
 function updateItems(dt,now){
  for(const it of items){
   it.g.rotation.y+=dt*(it.kind==='box'?2.2:3);it.g.position.y=2+Math.sin(now*.004+it.u*40)*.35;
   if(!it.on){it.t-=dt;if(it.t<=0){it.on=true;it.g.visible=true}continue}
   const du=(((it.u-progress+1.5)%1)-.5)*TL;
   if(Math.abs(du)<5&&Math.abs(it.lat-laneOffset)<5.5&&spinT<=0){
-   if(it.kind==='turbo'){turbo=Math.min(TURBO_MAX,turbo+.7);beep(900+turbo*40,.1,'sine',.25);it.on=false;it.g.visible=false;it.t=10}
-   else if(!weapon){weapon=Math.random()<.5?'rocket':'oil';beep(520,.08,'triangle',.25);beep(780,.12,'triangle',.25,.08);flashMsg(weapon==='rocket'?'🚀 קיבלת טיל — לחץ על כפתור הנשק':'🛢️ קיבלת חבית שמן — לחץ על כפתור הנשק');it.on=false;it.g.visible=false;it.t=8}}}
- for(let i=rockets.length-1;i>=0;i--){const r=rockets[i];r.life-=dt;r.total+=150*dt/TL;
-  let tk=null,bd=1e9;for(let k=-1;k<rivals.length;k++){if(k===r.owner||(r.owner>=0&&k>=0))continue;const d=(carTotal(k)-r.total)*TL;if(d>-6&&d<260&&d<bd){bd=d;tk=k}}
+   if(it.kind==='turbo'){turbo=Math.min(TURBO_MAX,turbo+1.4);beep(900+turbo*40,.1,'sine',.25);it.on=false;it.g.visible=false;it.t=10}
+   else{const opts=[];if(rk<2)opts.push('rocket');if(oi<2)opts.push('oil');if(opts.length){const w=opts[(Math.random()*opts.length)|0];if(w==='rocket')rk++;else oi++;beep(520,.08,'triangle',.25);beep(780,.12,'triangle',.25,.08);flashMsg(w==='rocket'?'🚀 קיבלת טיל ('+rk+'/2)':'🛢️ קיבלת חבית שמן ('+oi+'/2)');it.on=false;it.g.visible=false;it.t=8}}}}
+ for(let i=rockets.length-1;i>=0;i--){const r=rockets[i];r.life-=dt;r.total+=230*dt/TL;
+  let tk=null,bd=1e9;for(let k=-1;k<rivals.length;k++){if(k===r.owner||(r.owner>=0&&k>=0))continue;const d=(carTotal(k)-r.total)*TL;if(d>-6&&d<380&&d<bd){bd=d;tk=k}}
   let done=false;
-  if(tk!==null){r.lat+=THREE.MathUtils.clamp(carLat(tk)-r.lat,-1,1)*dt*9;
+  if(tk!==null){r.lat+=THREE.MathUtils.clamp(carLat(tk)-r.lat,-1,1)*dt*11;
    if(Math.abs((carTotal(tk)-r.total)*TL)<6&&Math.abs(carLat(tk)-r.lat)<5.2){hitCar(tk);done=true}}
   const pl=carPoint(r.total,r.lat,1.5);r.g.position.copy(pl.p);r.g.rotation.y=Math.atan2(-pl.t.x,-pl.t.z);
   if(!done&&r.life<=0){burst(pl.p,false);done=true}
@@ -429,13 +428,23 @@ function updateItems(dt,now){
  for(let i=oils.length-1;i>=0;i--){const o=oils[i];o.life-=dt;let gone=o.life<=0;
   if(!gone)for(let k=-1;k<rivals.length;k++){const du=(((o.u-(carTotal(k)%1)+1.5)%1)-.5)*TL;if(Math.abs(du)<5.5&&Math.abs(o.lat-carLat(k))<4.8&&hitCar(k)){gone=true;break}}
   if(gone){scene.remove(o.g);oils.splice(i,1)}}}
-function resetPickups(){turbo=0;weapon=null;spinT=0;pShield=0;msgT=0;for(const r of rockets)scene.remove(r.g);rockets.length=0;for(const o of oils)scene.remove(o.g);oils.length=0;for(const it of items){it.on=true;it.g.visible=true}rSpin.fill(0);rShield.fill(0);rW[0]=22;rW[1]=30;rW[2]=38}
+let cdT=0,cdShown=-1,goT=0;const cdEl=document.getElementById('countdown');
+function setCd(txt){cdEl.textContent=txt;cdEl.style.display=txt?'grid':'none';cdEl.style.animation='none';void cdEl.offsetHeight;cdEl.style.animation=''}
+function gridView(dt){
+ const t=startTan;carPos.copy(startPos);visualYaw=Math.atan2(-t.x,-t.z);
+ player.group.position.copy(carPos);player.group.position.y=CAR_Y;player.group.rotation.y=visualYaw;
+ for(let i=0;i<rivals.length;i++){const pt=curve.getPointAt(rivalsProgress[i]),tt=curve.getTangentAt(rivalsProgress[i]).normalize();
+  rivals[i].group.position.copy(pt).addScaledVector(new THREE.Vector3(-tt.z,0,tt.x),rLat[i]);rivals[i].group.position.y=CAR_Y;rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z)}
+ sun.position.set(carPos.x-80,110,carPos.z-50);sun.target.position.copy(carPos);sun.target.updateMatrixWorld();
+ const desired=carPos.clone().addScaledVector(t,-26).add(new THREE.Vector3(0,26,0));camera.position.lerp(desired,Math.min(1,dt*3));
+ camTarget.copy(carPos).addScaledVector(t,26);camTarget.y=1.4;camera.lookAt(camTarget)}
+function resetPickups(){turbo=0;rk=0;oi=0;spinT=0;pShield=0;msgT=0;for(const r of rockets)scene.remove(r.g);rockets.length=0;for(const o of oils)scene.remove(o.g);oils.length=0;for(const it of items){it.on=true;it.g.visible=true}rSpin.fill(0);rShield.fill(0);rW[0]=22;rW[1]=30;rW[2]=38}
 // rivals decide when to attack the player
 function rivalWeapons(i,dt,pT){
  rW[i]-=dt;if(rW[i]>0)return;rW[i]=1;
  const dP=(pT-rivalsTotal[i])*TL,dl=Math.abs(laneOffset-rLat[i]);
  if(rSpin[i]>0)return;
- if(dP>25&&dP<150&&dl<10){fireRocket(i);rW[i]=30+Math.random()*20;flashMsg('🚀 טיל מתקרב מאחור! שנה נתיב')}
+ if(dP>25&&dP<200&&dl<10){fireRocket(i);rW[i]=30+Math.random()*20;flashMsg('🚀 טיל מתקרב מאחור! שנה נתיב')}
  else if(dP<-14&&dP>-70&&dl<7){dropOil(i);rW[i]=32+Math.random()*18}}
 
 // ---------- Spark / smoke particles ----------
@@ -449,23 +458,30 @@ function updateSparks(dt){for(let i=sparks.length-1;i>=0;i--){const s=sparks[i],
 function tick(now){
  requestAnimationFrame(tick);
  const dt=Math.min(.04,(now-last)/1000);last=now;
- if(!finished&&!garageOpen){
+ if(garageOpen&&cdShown!==-1){setCd('');cdShown=-1}
+ if(!finished&&!garageOpen&&cdT>0){
+  if(innerWidth>innerHeight){cdT-=dt;const n=Math.max(1,Math.ceil(cdT));
+   if(cdT<=0){cdT=0;goT=.9;start=performance.now();setCd('GO!');beep(1040,.5,'square',.3)}
+   else if(n!==cdShown){cdShown=n;setCd(String(n));beep(600,.18,'square',.25)}}
+  gridView(dt);updateAudio(0,false,false,dt)}
+ if(goT>0){goT-=dt;if(goT<=0)setCd('')}
+ if(!finished&&!garageOpen&&cdT<=0){
   const boosting=keys.boost&&!keys.brake&&turbo>0&&spinT<=0;
   if(boosting)turbo=Math.max(0,turbo-dt);
   spinT=Math.max(0,spinT-dt);pShield=Math.max(0,pShield-dt);msgT-=dt;
-  if(keys.item&&!itemWas)useItem();itemWas=keys.item;
-  const target=spinT>0?55:keys.brake?80:boosting?280:208;
+  if(keys.item&&!itemWas)useItem('rocket');itemWas=keys.item;if(keys.item2&&!item2Was)useItem('oil');item2Was=keys.item2;
+  const target=spinT>0?80:keys.brake?120:boosting?420:310;
   speed+=(target-speed)*Math.min(1,dt*(keys.brake?3.5:1.5));
   steer=spinT>0?0:Number(keys.right)-Number(keys.left);
   // Gentle lateral movement; car cannot accidentally leave the circuit.
   const maxOffset=roadWidth/2-3.9;
-  laneOffset=THREE.MathUtils.clamp(laneOffset+steer*dt*(9+speed*.017),-maxOffset,maxOffset);
+  laneOffset=THREE.MathUtils.clamp(laneOffset+steer*dt*(9+speed*.02),-maxOffset,maxOffset);
   // Slight slowdown when hugging barriers, with no punishing reset.
-  if(Math.abs(laneOffset)>maxOffset-1.3) speed=Math.min(speed,175);
+  if(Math.abs(laneOffset)>maxOffset-1.3) speed=Math.min(speed,262);
   {const pT=(lap-1)+progress;bumpCool-=dt;
    for(let i=0;i<rivals.length;i++){const dL=(rivalsTotal[i]-pT)*trackLength,dW=rLat[i]-laneOffset;
     if(Math.abs(dL)<10.5&&Math.abs(dW)<7.0){const sg=dW>=0?1:-1;
-     if(dL>0)speed=Math.min(speed,rivalsSpeeds[i]*.97);else rivalsSpeeds[i]=Math.min(rivalsSpeeds[i],speed*.99+8);
+     if(dL>0)speed=Math.min(speed,rivalsSpeeds[i]*.97);else rivalsSpeeds[i]=Math.min(rivalsSpeeds[i],speed*.99+12);
      laneOffset-=sg*dt*14;rLat[i]=THREE.MathUtils.clamp(rLat[i]+sg*dt*9,-11,11);
      if(bumpCool<=0){beep(95,.14,'sawtooth',.22);bumpCool=.5}}}
    laneOffset=THREE.MathUtils.clamp(laneOffset,-maxOffset,maxOffset)}
@@ -488,11 +504,11 @@ function tick(now){
   for(let i=0;i<rivals.length;i++){
    {const pT=(lap-1)+progress,gap=(rivalsTotal[i]-pT)*trackLength;
     rNext[i]-=dt;if(rNext[i]<=0){rLeft[i]=1.8+Math.random()*1.7;rNext[i]=5+Math.random()*7}
-    let tgt=rBase[i]+(rLeft[i]>0?64:0);rLeft[i]=Math.max(0,rLeft[i]-dt);
+    let tgt=rBase[i]+(rLeft[i]>0?96:0);rLeft[i]=Math.max(0,rLeft[i]-dt);
     // stay in the fight: chase hard when behind the player (matching turbo speed), ease off when far ahead
     const want=-40-70*Math.sin((now-start)/1000*.2+i*2.1); // each rival drifts between ~30 m ahead and ~110 m behind the player
-    if(gap<want)tgt=Math.max(tgt,Math.min(rCap[i],speed+5+Math.min(10,(want-gap)/25)));else if(gap>150)tgt*=.92;else if(gap>70)tgt*=.97;
-    if(rSpin[i]>0)tgt=40;rivalsSpeeds[i]+=(tgt-rivalsSpeeds[i])*Math.min(1,dt*(rSpin[i]>0?4:1.4));
+    if(gap<want)tgt=Math.max(tgt,Math.min(rCap[i],speed+8+Math.min(15,(want-gap)/25)));else if(gap>150)tgt*=.92;else if(gap>70)tgt*=.97;
+    if(rSpin[i]>0)tgt=60;rivalsSpeeds[i]+=(tgt-rivalsSpeeds[i])*Math.min(1,dt*(rSpin[i]>0?4:1.4));
     rLaneT[i]-=dt;
     if(rLaneT[i]<=0){rLaneT[i]=.35;if(laneBlocked(i,rLat[i],pT)){const c=[-10,0,10].filter(L=>!laneBlocked(i,L,pT)).sort((a,b)=>Math.abs(a-rLat[i])-Math.abs(b-rLat[i]));if(c.length)rLane[i]=c[0]}}
     rLat[i]+=(rLane[i]-rLat[i])*Math.min(1,dt*2.2);
@@ -503,14 +519,14 @@ function tick(now){
    rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z)+(rSpin[i]>0?(1-rSpin[i]/SPIN_DUR)*Math.PI*4:0);spinWheels(rivals[i],rivalsSpeeds[i]/3.6*dt,0);
   }
   const desired=carPos.clone().addScaledVector(t,-26).add(new THREE.Vector3(0,26,0));
-  camera.position.lerp(desired,Math.min(1,dt*4));
+  camera.position.lerp(desired,Math.min(1,dt*(5+speed*.018)));
   camTarget.copy(carPos).addScaledVector(t,26);camTarget.y=1.4;camera.lookAt(camTarget);
-  updateItems(dt,now);document.getElementById('fuelbar').style.width=(turbo/TURBO_MAX*100)+'%';document.getElementById('slot').textContent=weapon==='rocket'?'🚀':weapon==='oil'?'🛢️':'—';document.getElementById('boost').style.opacity=turbo>0?1:.4;document.getElementById('item').style.opacity=weapon?1:.4;
+  updateItems(dt,now);document.getElementById('fuelbar').style.width=(turbo/TURBO_MAX*100)+'%';document.getElementById('slot').textContent='🚀'+rk+' 🛢️'+oi;{const a='🚀'+rk+'<br>טיל',b='🛢️'+oi+'<br>שמן',e1=document.getElementById('item'),e2=document.getElementById('item2');if(e1._t!==a){e1._t=a;e1.innerHTML=a}if(e2._t!==b){e2._t=b;e2.innerHTML=b}e1.style.opacity=rk?1:.4;e2.style.opacity=oi?1:.4}document.getElementById('boost').style.opacity=turbo>0?1:.4;
   document.getElementById('speed').textContent=Math.round(speed);
   document.getElementById('lap').textContent=Math.min(lap,3);{const pT2=(lap-1)+progress;let pl=1;for(const v of rivalsTotal)if(v>pT2)pl++;document.getElementById('place').textContent=pl}
   document.getElementById('msg').textContent=msgT>0?msgText:boosting?'⚡ טורבו פעיל!':keys.brake?'🏁 בלימה':turbo>0?'⚡ לחץ טורבו • אסוף 🚀 ו־🛢️ כדי לתקוף':'⚡ אין טורבו — אסוף כדורים כחולים!';
   // FOV kick with speed / boost
-  const fovT=BASE_FOV+(speed/280)*14+(boosting?6:0);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
+  const fovT=BASE_FOV+(speed/420)*14+(boosting?6:0);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
   // exhaust / boost sparks
   const em=boosting?3:(speed>150?1:0);for(let e=0;e<em;e++)spawnSpark(carPos,t,n,boosting);
   updateAudio(speed,boosting,keys.brake,dt);
