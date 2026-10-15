@@ -14,8 +14,8 @@ button{ -webkit-appearance:none;appearance:none; }
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 </style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.7 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V6.7</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.8 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V6.8</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -120,47 +120,92 @@ const bannerColors=[mat(0xe8423d),mat(0x244f84),mat(0xf5cf4c)];
 for(let i=0;i<N;i+=85){let p=points[i],n=normals[i],t=tangents[i];let x=p.x+n.x*(roadWidth/2+8),z=p.z+n.z*(roadWidth/2+8);box(8,2,.3,bannerColors[(i/85)%3],x,3.2,z).rotation.y=Math.atan2(-t.x,-t.z);box(.28,5,.28,metal,x-3.7,2.5,z)}
 // A few rocks along the shore; intentionally low polygon count.
 const rockMat=mat(0x9d9e90);for(let i=0;i<38;i++){let a=i*2.39996,r=328+(i%4)*12,x=Math.cos(a)*r,z=Math.sin(a)*r;let rock=new THREE.Mesh(new THREE.DodecahedronGeometry(2.4+(i%3),0),rockMat);rock.position.set(x,.7,z);rock.scale.y=.42;scene.add(rock)}
-function buildCar(color,kind='formula'){
- const group=new THREE.Group(),body=mat(color,.38,.24),accent=mat(0xf1f4f4,.48,.1),carbon=mat(0x1b2030,.84),seat=mat(0x202b3c),helmet=mat(0xffe5b0,.38,.22),visor=mat(0x142536,.15,.4),light=mat(0xfff4c7,.24),taillight=mat(0xd32637,.3);
- const isF=kind==='formula';
- function part(w,h,d,m,x,y,z){return box(w,h,d,m,x,y,z,group)}
- function wedge(coords,height,m,y){const shape=new THREE.Shape();shape.moveTo(coords[0][0],coords[0][1]);for(let i=1;i<coords.length;i++)shape.lineTo(coords[i][0],coords[i][1]);shape.closePath();const g=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:false});g.rotateX(Math.PI/2);const mesh=new THREE.Mesh(g,m);mesh.position.y=y+height;mesh.castShadow=true;group.add(mesh);return mesh}
- function wheel(x,z,r=.85){let tire=new THREE.Mesh(new THREE.CylinderGeometry(r,r,.78,12),rubber);tire.rotation.z=Math.PI/2;tire.position.set(x,r+.08,z);tire.castShadow=true;group.add(tire);let rim=new THREE.Mesh(new THREE.CylinderGeometry(r*.46,r*.46,.8,10),metal);rim.rotation.z=Math.PI/2;rim.position.set(x,r+.08,z);group.add(rim);let hub=new THREE.Mesh(new THREE.CylinderGeometry(r*.18,r*.18,.83,8),carbon);hub.rotation.z=Math.PI/2;hub.position.set(x,r+.08,z);group.add(hub)}
- if(isF){
-  // Long tapered nose and sharply cut sidepods, inspired by the supplied red Formula reference.
-  part(1.35,.42,3.2,body,0,1.02,-1.35);
-  wedge([[-.3,-3.75],[.3,-3.75],[.82,-1.25],[-.82,-1.25]],.42,body,1.05);
-  wedge([[-1.63,-.85],[-1.3,-2.1],[-.65,-1.75],[-.7,1.45],[-1.7,1.7]],.5,body,.85);
-  wedge([[1.63,-.85],[1.3,-2.1],[.65,-1.75],[.7,1.45],[1.7,1.7]],.5,body,.85);
-  part(1.48,.62,2.45,body,0,1.13,1.05);
-  part(1.08,.25,1.45,carbon,0,1.56,-.15);
-  part(.82,.24,1.25,seat,0,1.62,.1);
-  const head=new THREE.Mesh(new THREE.SphereGeometry(.48,10,7),helmet);head.position.set(0,2.02,.15);group.add(head);
-  part(.72,.15,.28,visor,0,2.03,-.25);
-  part(1.15,.18,.12,carbon,0,1.83,-.67);part(.14,.3,1.0,carbon,0,1.77,-.1);
-  // Front wing is at negative Z, rear wing at positive Z.
-  part(4.7,.14,.65,accent,0,.64,-3.78);part(3.75,.12,.5,carbon,0,.78,-3.4);
-  for(let x of [-2.1,2.1]){part(.12,.42,.85,body,x,.9,-3.75);part(.12,.2,1.15,accent,x,1.2,-3.72)}
-  part(4.1,.16,.7,accent,0,2.1,3.0);part(4.1,.46,.13,body,0,1.85,3.34);
-  for(let x of [-1.55,1.55]){part(.17,.9,.18,carbon,x,1.55,2.95);part(.24,.25,1.15,carbon,x,.93,1.15)}
-  part(.65,.12,2.3,accent,0,1.36,-2.15);
-  for(let x of [-1.95,1.95])for(let z of [-2.45,2.35])wheel(x,z,.85);
- }else{
-  // Angular GT silhouette with a sloped hood, glazed cabin and rear wing.
-  part(3.55,.65,6.55,body,0,1.05,0);
-  wedge([[-1.65,-3.3],[1.65,-3.3],[1.5,-1.1],[-1.5,-1.1]],.22,body,1.36);
-  wedge([[-1.45,-1.4],[1.45,-1.4],[1.25,1.45],[-1.25,1.45]],.48,body,1.63);
-  part(2.65,.08,1.45,glass,0,2.13,-.65);
-  part(2.52,.09,.95,glass,0,2.12,1.05);
-  for(let x of [-1.12,1.12]){part(.62,.14,.22,light,x,1.38,-3.31);part(.72,.16,.2,taillight,x,1.4,3.31)}
-  part(4.0,.17,.55,carbon,0,2.28,2.92);
-  for(let x of [-1.35,1.35])part(.12,.55,.2,carbon,x,1.99,2.9);
-  for(let x of [-1.8,1.8])for(let z of [-2.18,2.1])wheel(x,z,.75);
-  part(2.4,.18,.25,carbon,0,.85,-3.35);
- }
- const flame=new THREE.Mesh(new THREE.ConeGeometry(.42,2.4,7),new THREE.MeshBasicMaterial({color:0x36d7ff,transparent:true,opacity:.8}));flame.rotation.x=Math.PI/2;flame.position.set(0,.9,4.65);flame.visible=false;group.add(flame);
- scene.add(group);return {group,flame,kind}
+// ---------- Realistic car models (procedural lofted bodies, clearcoat paint, detailed wheels) ----------
+let envTex=null;
+function getEnv(){
+ if(envTex)return envTex;
+ const pm=new THREE.PMREMGenerator(renderer),es=new THREE.Scene();
+ es.add(new THREE.Mesh(new THREE.SphereGeometry(50,24,16),new THREE.ShaderMaterial({side:THREE.BackSide,
+  uniforms:{top:{value:new THREE.Color(0x4f8fd0)},hor:{value:new THREE.Color(0xe6f3ff)},bot:{value:new THREE.Color(0x7d7a68)}},
+  vertexShader:'varying float h;void main(){h=normalize(position).y;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+  fragmentShader:'uniform vec3 top,hor,bot;varying float h;void main(){gl_FragColor=vec4(h>0.?mix(hor,top,smoothstep(0.,.8,h)):mix(hor,bot,smoothstep(0.,-.4,h)),1.);}'})));
+ const panel=(w,h,d,x,y,z,v)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshBasicMaterial({color:new THREE.Color(v,v,v*.95)}));m.position.set(x,y,z);es.add(m)};
+ panel(30,1,14,0,32,0,6);panel(1,10,30,-34,14,0,3.5);panel(1,10,30,34,14,0,3.5);panel(24,6,1,0,10,-36,2.5);
+ envTex=pm.fromScene(es,.02).texture;pm.dispose();return envTex;
 }
+function buildCar(color,kind='formula'){
+ const group=new THREE.Group(),isF=kind==='formula',base=new THREE.Color(color),env=getEnv(),DS=THREE.DoubleSide;
+ const paint=new THREE.MeshPhysicalMaterial({vertexColors:true,roughness:.3,metalness:.5,clearcoat:1,clearcoatRoughness:.04,envMap:env,envMapIntensity:1.1,side:DS});
+ const pm=(c,r=.5,m=.2)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:m,envMap:env,envMapIntensity:.9,side:DS});
+ const carbon=pm(0x14171d,.5,.4),metalM=pm(0xc2c9d0,.22,.95),brakeM=pm(0x6c7178,.4,.9),rubberM=pm(0x0b0d11,.95,0),darkM=pm(0x06080b,.8,.1);
+ const accentC=new THREE.Color(0xf4f6f6),carbonC=new THREE.Color(0x15181e),glassC=new THREE.Color(0x0a1520);
+ const lightM=new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff2c4,emissiveIntensity:2.2});
+ const tailM=new THREE.MeshStandardMaterial({color:0x300509,emissive:0xff1e2d,emissiveIntensity:.9});
+ const v=(x,y,z)=>new THREE.Vector3(x,y,z),S=a=>a.map(([z,w,t,b,p])=>({z,w,t,b,p}));
+ const wheels=[];
+ function put(o,x,y,z,rx=0){o.position.set(x,y,z);o.rotation.x=rx;o.castShadow=true;group.add(o);return o}
+ const bx=(w,h,d,m,x,y,z,rx)=>put(new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m),x,y,z,rx);
+ function loft(st,m,cf,pw=2.6){const M=20,pos=[],col=[],idx=[],c=new THREE.Color();
+  for(const s of st){const yc=(s.t+s.b)/2,h=(s.t-s.b)/2,e=2/(s.p||pw);
+   for(let k=0;k<M;k++){const a=k/M*Math.PI*2,ca=Math.cos(a),sa=Math.sin(a);
+    const x=s.w*Math.sign(ca)*Math.pow(Math.abs(ca),e),y=yc+h*Math.sign(sa)*Math.pow(Math.abs(sa),e);
+    pos.push(x,y,s.z);if(cf)cf(c,x,y,s.z,sa);else c.set(0xffffff);col.push(c.r,c.g,c.b)}}
+  for(let i=0;i<st.length-1;i++)for(let k=0;k<M;k++){const a=i*M+k,b=i*M+(k+1)%M,d=(i+1)*M+k,e=(i+1)*M+(k+1)%M;idx.push(a,b,d,b,e,d)}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));g.setIndex(idx);g.computeVertexNormals();
+  const o=new THREE.Mesh(g,m);o.castShadow=true;group.add(o);return o}
+ function arm(a,b,r=.035){const d=new THREE.Vector3().subVectors(b,a),L=d.length(),m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,L,6),carbon);m.position.copy(a).addScaledVector(d,.5);m.quaternion.setFromUnitVectors(v(0,1,0),d.normalize());group.add(m)}
+ function wing(span,chord,th,m,x,y,z,tilt=0){const s=new THREE.Shape();s.moveTo(0,0);s.bezierCurveTo(chord*.2,th*1.8,chord*.7,th*1.2,chord,0);s.lineTo(chord,-th*.3);s.bezierCurveTo(chord*.6,-th*.15,chord*.2,-th*.1,0,0);
+  const g=new THREE.ExtrudeGeometry(s,{depth:span,bevelEnabled:false});g.translate(0,0,-span/2);g.rotateY(-Math.PI/2);return put(new THREE.Mesh(g,m),x,y,z,tilt)}
+ function wheelAt(x,z,R,w,spokes){
+  const pivot=new THREE.Group(),spin=new THREE.Group(),side=Math.sign(x),Rr=R*.62;pivot.position.set(x,R+.06,z);pivot.add(spin);group.add(pivot);
+  const tp=[[Rr,-w/2],[R-.1,-w/2],[R-.02,-w/2+.08],[R,-w/2+.22],[R,w/2-.22],[R-.02,w/2-.08],[R-.1,w/2],[Rr,w/2]].map(([r,y])=>new THREE.Vector2(r,y));
+  const tg=new THREE.LatheGeometry(tp,28);tg.rotateZ(Math.PI/2);const tire=new THREE.Mesh(tg,rubberM);tire.castShadow=true;spin.add(tire);
+  const cyl=(r,h,m,px)=>{const o=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,24),m);o.rotation.z=Math.PI/2;o.position.x=px;spin.add(o);return o};
+  cyl(Rr*.93,.06,brakeM,side*(w/2-.32));cyl(Rr*.4,.09,darkM,side*(w/2-.3));
+  cyl(Rr*1.0,.05,metalM,side*(w/2-.1));
+  for(let i=0;i<spokes;i++){const g=new THREE.Group();g.rotation.x=i/spokes*Math.PI*2;const sp=new THREE.Mesh(new THREE.BoxGeometry(.07,Rr*.95,.11),metalM);sp.position.set(side*(w/2-.07),Rr*.47,0);g.add(sp);spin.add(g)}
+  cyl(Rr*.2,.12,metalM,side*(w/2-.05));
+  wheels.push({pivot,spin,r:R,front:z<0});
+ }
+ let flameZ=4.65;
+ if(isF){
+  const fus=S([[-3.85,.06,.78,.62],[-3.3,.22,.9,.58],[-2.5,.4,1.05,.5],[-1.6,.55,1.28,.42],[-.8,.62,1.5,.38],[0,.64,1.55,.36],[1,.6,1.42,.36],[2,.45,1.25,.4],[3,.3,1.05,.5],[3.45,.2,.95,.62]]);
+  loft(fus,paint,(c,x,y,z,sa)=>{if(sa<-.25)c.copy(carbonC);else if(Math.abs(x)<.1&&sa>.5)c.copy(accentC);else if(z<-3.5)c.copy(accentC);else c.copy(base)});
+  const pod=S([[-1.3,.12,.95,.5],[-.6,.42,1.05,.4],[.4,.5,1.08,.38],[1.5,.4,.98,.4],[2.4,.12,.85,.5]]);
+  for(const sd of [-1,1]){const o=loft(pod,paint,(c,x,y,z,sa)=>{if(sa<-.1)c.copy(carbonC);else if(sa>.2&&sa<.45&&z>-.2&&z<1.6)c.copy(accentC);else c.copy(base)});o.position.x=sd*1.1;
+   const inl=bx(.5,.28,.06,darkM,sd*1.1,.78,-.62);}
+  loft(S([[-.6,.05,1.75,1.45],[-.3,.3,2.0,1.45],[.6,.34,1.95,1.4],[2,.18,1.55,1.4],[3,.08,1.3,1.35]]),paint,(c)=>c.copy(base));
+  bx(3.4,.06,6.2,carbon,0,.34,.2);
+  bx(.8,.05,1.1,darkM,0,1.57,-.1);
+  const hm=new THREE.Mesh(new THREE.SphereGeometry(.3,14,10),pm(0xffe0a0,.3,.3));put(hm,0,1.82,.05);
+  bx(.42,.14,.3,pm(0x0e1c28,.1,.6),0,1.84,-.2);
+  const halo=new THREE.Mesh(new THREE.TorusGeometry(.55,.04,8,18,Math.PI),carbon);put(halo,0,1.56,-.3,-.45);
+  arm(v(0,1.5,-1.05),v(0,2.05,-.55),.045);
+  wing(4.3,.75,.07,pm(0xf4f6f6,.4,.2),0,.42,-3.75,.06);wing(3.9,.5,.06,paint.clone(),0,.62,-3.45,.1);
+  for(const sd of [-1,1]){bx(.06,.5,1.1,carbon,sd*2.15,.62,-3.4);bx(.06,.9,1.2,carbon,sd*1.75,2.12,3.15)}
+  wing(3.4,.8,.08,carbon,0,2.15,2.95,-.16);wing(3.3,.5,.07,paint.clone(),0,2.42,3.0,-.28);
+  arm(v(0,1.4,2.85),v(0,2.15,3.1),.05);bx(2.6,.06,.9,carbon,0,.6,3.4);
+  bx(.3,.1,.05,tailM,0,1.2,3.48);
+  for(const sd of [-1,1])bx(.22,.12,.3,carbon,sd*.78,1.72,-.9);
+  for(const [x,z,R,w] of [[-1.95,-2.45,.8,.72],[1.95,-2.45,.8,.72],[-1.95,2.35,.86,.95],[1.95,2.35,.86,.95]]){
+   wheelAt(x,z,R,w,6);const s=Math.sign(x);arm(v(s*.55,.5,z+.55),v(s*(Math.abs(x)-.4),R,z),.04);arm(v(s*.55,1.0,z-.45),v(s*(Math.abs(x)-.4),R+.2,z),.04)}
+ }else{
+  const body=S([[-3.45,.9,.78,.5,3],[-3.2,1.4,.92,.42,3.4],[-2.4,1.72,1.18,.4,3.6],[-1.4,1.78,1.36,.38,3.6],[0,1.78,1.4,.38,3.6],[1.4,1.78,1.44,.38,3.6],[2.7,1.72,1.5,.42,3.4],[3.4,1.5,1.42,.5,3.2]]);
+  loft(body,paint,(c,x,y,z,sa)=>{if(sa<-.3)c.copy(carbonC);else if(Math.abs(x)<.28&&sa>.6)c.copy(accentC);else c.copy(base)});
+  loft(S([[-1.3,.85,1.5,1.3,2.4],[-.5,1.3,2.08,1.3,2.4],[.5,1.32,2.18,1.3,2.4],[1.5,1.24,1.98,1.3,2.4],[2.15,.95,1.62,1.3,2.4]]),paint,(c,x,y,z,sa)=>{if(sa>.8)c.copy(base);else c.copy(glassC)});
+  for(const sd of [-1,1])for(const wz of [-2.18,2.1]){const o=loft(S([[wz-1,.18,1.05,.95,3],[wz-.55,.36,1.62,1.0,3],[wz+.55,.36,1.62,1.0,3],[wz+1,.18,1.05,.95,3]]),paint,(c)=>c.copy(base));o.position.x=sd*1.88}
+  bx(3.6,.07,1.0,carbon,0,.36,-3.3);bx(2.6,.35,1.0,carbon,0,.55,3.3,.3);bx(1.4,.2,.1,darkM,0,.62,-3.4);
+  wing(3.7,.95,.1,carbon,0,2.38,3.0,-.12);
+  for(const sd of [-1,1]){bx(.06,.7,1.1,carbon,sd*1.85,2.15,3.05);bx(.12,.6,.3,carbon,sd*1.2,2.0,2.95);
+   bx(.85,.14,.25,lightM,sd*1.0,.84,-3.0);bx(.35,.18,.25,carbon,sd*1.45,1.62,-.85);
+   const ex=new THREE.Mesh(new THREE.CylinderGeometry(.12,.12,.4,10),metalM);put(ex,sd*.55,.62,3.5,Math.PI/2)}
+  bx(3.0,.12,.1,tailM,0,1.34,3.4);
+  for(const [x,z] of [[-1.92,-2.18],[1.92,-2.18],[-1.92,2.1],[1.92,2.1]])wheelAt(x,z,.76,.82,5);
+ }
+ const flame=new THREE.Mesh(new THREE.ConeGeometry(.42,2.4,7),new THREE.MeshBasicMaterial({color:0x36d7ff,transparent:true,opacity:.8}));flame.rotation.x=Math.PI/2;flame.position.set(0,.9,flameZ);flame.visible=false;group.add(flame);
+ scene.add(group);return {group,flame,kind,wheels,tail:tailM}
+}
+function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/w.r;if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
 const keys={left:false,right:false,boost:false,brake:false};
@@ -249,13 +294,13 @@ function tick(now){
   player.group.rotation.y=visualYaw;
   player.group.rotation.z=-steer*.055;
   player.flame.visible=boosting;
-  player.flame.scale.setScalar(.85+Math.sin(now*.024)*.2);
+  player.flame.scale.setScalar(.85+Math.sin(now*.024)*.2);spinWheels(player,speed/3.6*dt,steer);player.tail.emissiveIntensity=keys.brake?3.2:.9;
   for(let i=0;i<rivals.length;i++){
    rivalsProgress[i]=(rivalsProgress[i]+rivalsSpeeds[i]/3.6*dt/trackLength)%1;
    const rp=rivalsProgress[i],pt=curve.getPointAt(rp),tt=curve.getTangentAt(rp).normalize();
    const nn=new THREE.Vector3(-tt.z,0,tt.x);
    rivals[i].group.position.copy(pt).addScaledVector(nn,[-8,0,8][i]);
-   rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z);
+   rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z);spinWheels(rivals[i],rivalsSpeeds[i]/3.6*dt,0);
   }
   const desired=carPos.clone().addScaledVector(t,-30).add(new THREE.Vector3(0,32,0));
   camera.position.lerp(desired,Math.min(1,dt*4));
