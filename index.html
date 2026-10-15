@@ -14,8 +14,8 @@ button{ -webkit-appearance:none;appearance:none; }
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 </style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.8 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V6.8</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.9 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V6.9</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -203,9 +203,9 @@ function buildCar(color,kind='formula'){
   for(const [x,z] of [[-1.92,-2.18],[1.92,-2.18],[-1.92,2.1],[1.92,2.1]])wheelAt(x,z,.76,.82,5);
  }
  const flame=new THREE.Mesh(new THREE.ConeGeometry(.42,2.4,7),new THREE.MeshBasicMaterial({color:0x36d7ff,transparent:true,opacity:.8}));flame.rotation.x=Math.PI/2;flame.position.set(0,.9,flameZ);flame.visible=false;group.add(flame);
- scene.add(group);return {group,flame,kind,wheels,tail:tailM}
+ const CAR_SCALE=1.6;group.scale.setScalar(CAR_SCALE);scene.add(group);return {group,flame,kind,wheels,tail:tailM}
 }
-function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/w.r;if(w.front)w.pivot.rotation.y=-st*.4}}
+function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/(w.r*car.group.scale.x);if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
 const keys={left:false,right:false,boost:false,brake:false};
@@ -302,7 +302,7 @@ function tick(now){
    rivals[i].group.position.copy(pt).addScaledVector(nn,[-8,0,8][i]);
    rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z);spinWheels(rivals[i],rivalsSpeeds[i]/3.6*dt,0);
   }
-  const desired=carPos.clone().addScaledVector(t,-30).add(new THREE.Vector3(0,32,0));
+  const desired=carPos.clone().addScaledVector(t,-26).add(new THREE.Vector3(0,26,0));
   camera.position.lerp(desired,Math.min(1,dt*4));
   camTarget.copy(carPos).addScaledVector(t,26);camTarget.y=1.4;camera.lookAt(camTarget);
   document.getElementById('speed').textContent=Math.round(speed);
