@@ -12,10 +12,10 @@ button{ -webkit-appearance:none;appearance:none; }
 .garagetitle{font-size:clamp(19px,3vw,30px);font-weight:900;color:#ffdc78;margin:0 0 7px}.garagehint{color:#b9cddd;font-size:13px;margin-bottom:13px}
 .carchoices{display:flex;gap:12px;justify-content:center;direction:ltr}.carchoice{flex:1;max-width:260px;border:2px solid #536b80;border-radius:16px;background:#152b3f;color:white;padding:12px;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none}.carchoice.selected{border-color:#ffd45f;background:#25415b}.carart{height:64px;display:flex;align-items:center;justify-content:center;font-size:55px}.carname{font-weight:800;font-size:17px}.cardesc{color:#b6ccda;font-size:11px;margin-top:6px}#startRace{margin-top:13px;padding:11px 32px;background:#ffd35e;border:0;border-radius:12px;font-size:18px;font-weight:900;color:#1b2935;cursor:pointer;touch-action:manipulation}#changeCar{position:absolute;top:78px;left:max(12px,env(safe-area-inset-left));pointer-events:auto;background:#0b1c33d9;border:1px solid #ffffff55;color:white;border-radius:10px;padding:8px;font-size:12px;touch-action:manipulation}
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
-</style></head><body>
+.bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}</style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.0 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.0</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.1 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀<br>נשק</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.1</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -32,7 +32,7 @@ sky.renderOrder=-1;scene.add(sky);
 const cloudMat=new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.92,fog:false});
 const clouds=[];for(let i=0;i<14;i++){const g=new THREE.Group();for(let j=0;j<4;j++){const m=new THREE.Mesh(new THREE.IcosahedronGeometry(14+(j%2)*6,0),cloudMat);m.position.set(j*17-26,(j%2)*4,(j%3)*6);m.scale.y=.5;g.add(m)}
  const a=i*2.4,r=420+(i%4)*60;g.position.set(Math.cos(a)*r,150+(i%5)*22,Math.sin(a)*r);g.userData.s=.8+(i%3)*.5;scene.add(g);clouds.push(g)}
-scene.add(new THREE.HemisphereLight(0xe0f4ff,0x647154,2.3));const sun=new THREE.DirectionalLight(0xffe9bc,2.8);sun.position.set(-80,110,-50);scene.add(sun);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-140;sun.shadow.camera.right=140;sun.shadow.camera.top=140;sun.shadow.camera.bottom=-140;sun.shadow.bias=-.0005;
+scene.add(new THREE.HemisphereLight(0xe0f4ff,0x647154,2.3));const sun=new THREE.DirectionalLight(0xffe9bc,2.8);sun.position.set(-80,110,-50);scene.add(sun);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-70;sun.shadow.camera.right=70;sun.shadow.camera.top=70;sun.shadow.camera.bottom=-70;scene.add(sun.target);sun.shadow.bias=-.0005;
 const mat=(c,r=.75,m=0)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:m,side:THREE.DoubleSide});
 const asphalt=mat(0x30363c,.94),sand=mat(0xd6c28d),grass=mat(0x37734e),sea=mat(0x1599b9,.26,.16),white=mat(0xf4f4ec),red=mat(0xe74c47),yellow=mat(0xffc84a),black=mat(0x131820),glass=mat(0x172c3b,.22,.45),rubber=mat(0x0d1219),metal=mat(0x9da8b2,.3,.7),blue=mat(0x2479e6,.3,.25);
 function box(w,h,d,m,x,y,z,p=scene){let o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=h>.5;o.receiveShadow=true;p.add(o);return o}
@@ -220,6 +220,7 @@ const foamMat=new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opaci
 box(766,.06,7,foamMat,0,-.3,362);box(766,.06,7,foamMat,0,-.3,-362);box(7,.06,726,foamMat,382,-.3,0);box(7,.06,726,foamMat,-382,-.3,0);
 
 // ---------- Realistic car models (procedural lofted bodies, clearcoat paint, detailed wheels) ----------
+const blobMat=new THREE.MeshBasicMaterial({map:textTex(128,128,(g,w,h)=>{const r=g.createRadialGradient(w/2,h/2,4,w/2,h/2,w/2);r.addColorStop(0,'rgba(0,0,0,.8)');r.addColorStop(.6,'rgba(0,0,0,.4)');r.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=r;g.fillRect(0,0,w,h)}),transparent:true,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-4});
 let envTex=null;
 function getEnv(){
  if(envTex)return envTex;
@@ -302,20 +303,23 @@ function buildCar(color,kind='formula'){
   for(const [x,z] of [[-1.92,-2.18],[1.92,-2.18],[-1.92,2.1],[1.92,2.1]])wheelAt(x,z,.76,.82,5);
  }
  const flame=new THREE.Mesh(new THREE.ConeGeometry(.42,2.4,7),new THREE.MeshBasicMaterial({color:0x36d7ff,transparent:true,opacity:.8}));flame.rotation.x=Math.PI/2;flame.position.set(0,.9,flameZ);flame.visible=false;group.add(flame);
- const CAR_SCALE=1.6;group.scale.setScalar(CAR_SCALE);scene.add(group);return {group,flame,kind,wheels,tail:tailM}
+ const blob=new THREE.Mesh(new THREE.PlaneGeometry(6.8,11.5),blobMat);blob.rotation.x=-Math.PI/2;blob.position.set(0,.06,.2);blob.renderOrder=2;group.add(blob);
+ const bodyG=new THREE.Group();for(const ch of [...group.children]){if(ch===blob||wheels.some(w=>w.pivot===ch))continue;bodyG.add(ch)}bodyG.position.y=isF?-.22:-.24;group.add(bodyG);
+ const CAR_SCALE=1.4;group.scale.setScalar(CAR_SCALE);scene.add(group);return {group,flame,kind,wheels,tail:tailM}
 }
 function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/(w.r*car.group.scale.x);if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
-const keys={left:false,right:false,boost:false,brake:false};
+const keys={left:false,right:false,boost:false,brake:false,item:false};
 const startPos=curve.getPointAt(0),startTan=curve.getTangentAt(0).normalize();
 let carPos=startPos.clone(),yaw=Math.atan2(-startTan.x,-startTan.z),roadIndex=0,passed=0,checkpoint=0,drift=0;
 const checkpointCount=8;
-function resetDrive(){lastBeepLap=1;laneOffset=0;visualYaw=0;resetRivals();carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
+function resetDrive(){lastBeepLap=1;laneOffset=0;visualYaw=0;resetRivals();resetPickups();carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
 for(const ev of ['contextmenu','selectstart','dragstart']) document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
 for(let key of Object.keys(keys)){let el=document.getElementById(key);const set=v=>{keys[key]=v;el.classList.toggle('active',v)};el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);set(true)});for(let ev of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(ev,()=>set(false))}
 addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown')keys.brake=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown')keys.brake=false});
 
+addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=true});addEventListener('keyup',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=false});
 // ---------- Sound (synthesized, no files needed) ----------
 let AC=null,eng=null,engGain=null,eng2=null,noiseGain=null,muted=false,windFilter=null;
 function initAudio(){
@@ -362,6 +366,78 @@ function laneBlocked(i,lat,pT){
  for(let k=0;k<rivals.length;k++){if(k===i)continue;d=(rivalsTotal[k]-rivalsTotal[i])*trackLength;if(d>-4&&d<28&&Math.abs(rLat[k]-lat)<8.6)return true}
  return false}
 const rivalsSpeeds=[170,170,170]; // km/h: independently paced AI, not locked to player
+// ---------- Pickups (turbo orbs + weapon boxes), rockets and oil barrels ----------
+const TL=trackLength,TURBO_MAX=8,SPIN_DUR=1.4,CAR_Y=.13;
+let turbo=0,weapon=null,spinT=0,pShield=0,msgT=0,msgText='',itemWas=false;
+const rSpin=[0,0,0],rShield=[0,0,0],rW=[22,30,38],items=[],rockets=[],oils=[];
+function flashMsg(t){msgText=t;msgT=1.8}
+const boxTex=textTex(128,128,(g,w,h)=>{const gr=g.createLinearGradient(0,0,w,h);gr.addColorStop(0,'#7a3cff');gr.addColorStop(1,'#ff9a2e');g.fillStyle=gr;g.fillRect(0,0,w,h);g.strokeStyle='#fff';g.lineWidth=6;g.strokeRect(6,6,w-12,h-12);g.fillStyle='#fff';g.font='bold 96px Arial';g.textAlign='center';g.textBaseline='middle';g.fillText('?',w/2,h/2+6)});
+const boltTex=textTex(128,128,(g,w,h)=>{g.beginPath();g.moveTo(74,6);g.lineTo(30,70);g.lineTo(58,70);g.lineTo(48,122);g.lineTo(100,48);g.lineTo(70,48);g.closePath();g.fillStyle='#fff6a8';g.fill();g.lineWidth=5;g.strokeStyle='#ff8a1e';g.stroke()});
+const boxGeo=new THREE.BoxGeometry(2.6,2.6,2.6),boxMat=new THREE.MeshStandardMaterial({map:boxTex,emissive:0x5a24d8,emissiveIntensity:.7,roughness:.4,metalness:.2});
+const orbGeo=new THREE.SphereGeometry(1.45,16,12),orbMat=new THREE.MeshBasicMaterial({color:0x33d9ff,transparent:true,opacity:.5}),boltMat=new THREE.SpriteMaterial({map:boltTex,depthWrite:false});
+function addItem(kind,u,lat){
+ const g=new THREE.Group();
+ if(kind==='box')g.add(new THREE.Mesh(boxGeo,boxMat));else{g.add(new THREE.Mesh(orbGeo,orbMat));const sp=new THREE.Sprite(boltMat);sp.scale.set(2.9,2.9,1);g.add(sp)}
+ const p=curve.getPointAt(u),t=curve.getTangentAt(u).normalize();
+ g.position.set(p.x-t.z*lat,2,p.z+t.x*lat);scene.add(g);items.push({kind,u,lat,g,on:true,t:0})}
+[.08,.24,.40,.56,.72,.88].forEach((u,k)=>{[[-10,10],[0,10],[-10,0]][k%3].forEach(l=>addItem('box',u,l))});
+[[.16,10],[.32,-10],[.48,0],[.64,10],[.80,-10],[.96,0]].forEach(([u,l])=>{for(let j=0;j<3;j++)addItem('turbo',(u+j*.0077)%1,l)});
+
+function carTotal(k){return k<0?(lap-1)+progress:rivalsTotal[k]}
+function carLat(k){return k<0?laneOffset:rLat[k]}
+function carPoint(total,lat,y){const u=((total%1)+1)%1,t=curve.getTangentAt(u).normalize(),p=curve.getPointAt(u);return {p:new THREE.Vector3(p.x-t.z*lat,y,p.z+t.x*lat),t}}
+function burst(pos,big){for(let i=0;i<(big?26:10);i++){if(sparks.length>150)break;const m=new THREE.Mesh(sparkGeo,sparkMats[i%2].clone());m.position.copy(pos);m.position.y=1.2;
+ const a=Math.random()*6.283,sp=6+Math.random()*(big?16:8);m.userData={v:new THREE.Vector3(Math.cos(a)*sp,4+Math.random()*10,Math.sin(a)*sp),life:.8,max:.8};scene.add(m);sparks.push(m)}}
+function hitCar(k){
+ const P=k<0?carPos:rivals[k].group.position;
+ if(k<0){if(pShield>0)return false;spinT=SPIN_DUR;pShield=SPIN_DUR+1.6;speed*=.4;flashMsg('💥 נפגעת! איבדת שליטה')}
+ else{if(rShield[k]>0)return false;rSpin[k]=SPIN_DUR;rShield[k]=SPIN_DUR+1.6;rivalsSpeeds[k]*=.35}
+ burst(P,true);beep(70,.45,'sawtooth',.3);beep(150,.25,'square',.2,.05);return true}
+function mkRocket(){
+ const g=new THREE.Group(),b=new THREE.Mesh(new THREE.CylinderGeometry(.38,.38,3.4,10),mat(0xf2f4f5,.35,.4));b.rotation.x=Math.PI/2;g.add(b);
+ const n=new THREE.Mesh(new THREE.ConeGeometry(.38,1.1,10),mat(0xe23b32,.4,.3));n.rotation.x=-Math.PI/2;n.position.z=-2.25;g.add(n);
+ for(let k=0;k<3;k++){const f=new THREE.Mesh(new THREE.BoxGeometry(.07,1.0,.9),mat(0xe23b32,.5,.2));f.rotation.z=k*2.094;f.position.z=1.3;g.add(f)}
+ const fl=new THREE.Mesh(new THREE.ConeGeometry(.32,2.0,8),new THREE.MeshBasicMaterial({color:0xffa030}));fl.rotation.x=Math.PI/2;fl.position.z=2.7;g.add(fl);return g}
+function fireRocket(owner){const g=mkRocket();scene.add(g);rockets.push({g,owner,total:carTotal(owner)+9/TL,lat:carLat(owner),life:5});beep(190,.35,'sawtooth',.22);beep(380,.25,'triangle',.18,.05)}
+function dropOil(owner){
+ const tot=carTotal(owner)-14/TL,g=new THREE.Group();
+ const pud=new THREE.Mesh(new THREE.CircleGeometry(3.8,18),new THREE.MeshStandardMaterial({color:0x07090c,roughness:.06,metalness:.7,transparent:true,opacity:.93,side:THREE.DoubleSide,polygonOffset:true,polygonOffsetFactor:-2}));pud.rotation.x=-Math.PI/2;pud.position.y=.23;g.add(pud);
+ const bar=new THREE.Mesh(new THREE.CylinderGeometry(.9,.9,1.7,12),mat(0xc23a2c,.5,.3));bar.rotation.z=Math.PI/2;bar.position.set(1.8,.9,1);g.add(bar);
+ const band=new THREE.Mesh(new THREE.CylinderGeometry(.93,.93,.25,12),mat(0xffd34a));band.rotation.z=Math.PI/2;band.position.set(1.8,.9,1);g.add(band);
+ const pl=carPoint(tot,carLat(owner),0);g.position.copy(pl.p);g.rotation.y=Math.atan2(-pl.t.x,-pl.t.z);scene.add(g);
+ oils.push({g,u:((tot%1)+1)%1,lat:carLat(owner),life:30});beep(120,.2,'square',.2)}
+function useItem(){
+ if(!weapon||spinT>0)return;
+ if(weapon==='rocket'){fireRocket(-1);flashMsg('🚀 טיל שוגר!')}else{dropOil(-1);flashMsg('🛢️ שמן נשפך מאחוריך')}
+ weapon=null}
+function updateItems(dt,now){
+ for(const it of items){
+  it.g.rotation.y+=dt*(it.kind==='box'?2.2:3);it.g.position.y=2+Math.sin(now*.004+it.u*40)*.35;
+  if(!it.on){it.t-=dt;if(it.t<=0){it.on=true;it.g.visible=true}continue}
+  const du=(((it.u-progress+1.5)%1)-.5)*TL;
+  if(Math.abs(du)<5&&Math.abs(it.lat-laneOffset)<5.5&&spinT<=0){
+   if(it.kind==='turbo'){turbo=Math.min(TURBO_MAX,turbo+.7);beep(900+turbo*40,.1,'sine',.25);it.on=false;it.g.visible=false;it.t=10}
+   else if(!weapon){weapon=Math.random()<.5?'rocket':'oil';beep(520,.08,'triangle',.25);beep(780,.12,'triangle',.25,.08);flashMsg(weapon==='rocket'?'🚀 קיבלת טיל — לחץ על כפתור הנשק':'🛢️ קיבלת חבית שמן — לחץ על כפתור הנשק');it.on=false;it.g.visible=false;it.t=8}}}
+ for(let i=rockets.length-1;i>=0;i--){const r=rockets[i];r.life-=dt;r.total+=150*dt/TL;
+  let tk=null,bd=1e9;for(let k=-1;k<rivals.length;k++){if(k===r.owner||(r.owner>=0&&k>=0))continue;const d=(carTotal(k)-r.total)*TL;if(d>-6&&d<260&&d<bd){bd=d;tk=k}}
+  let done=false;
+  if(tk!==null){r.lat+=THREE.MathUtils.clamp(carLat(tk)-r.lat,-1,1)*dt*9;
+   if(Math.abs((carTotal(tk)-r.total)*TL)<6&&Math.abs(carLat(tk)-r.lat)<5.2){hitCar(tk);done=true}}
+  const pl=carPoint(r.total,r.lat,1.5);r.g.position.copy(pl.p);r.g.rotation.y=Math.atan2(-pl.t.x,-pl.t.z);
+  if(!done&&r.life<=0){burst(pl.p,false);done=true}
+  if(done){scene.remove(r.g);rockets.splice(i,1)}}
+ for(let i=oils.length-1;i>=0;i--){const o=oils[i];o.life-=dt;let gone=o.life<=0;
+  if(!gone)for(let k=-1;k<rivals.length;k++){const du=(((o.u-(carTotal(k)%1)+1.5)%1)-.5)*TL;if(Math.abs(du)<5.5&&Math.abs(o.lat-carLat(k))<4.8&&hitCar(k)){gone=true;break}}
+  if(gone){scene.remove(o.g);oils.splice(i,1)}}}
+function resetPickups(){turbo=0;weapon=null;spinT=0;pShield=0;msgT=0;for(const r of rockets)scene.remove(r.g);rockets.length=0;for(const o of oils)scene.remove(o.g);oils.length=0;for(const it of items){it.on=true;it.g.visible=true}rSpin.fill(0);rShield.fill(0);rW[0]=22;rW[1]=30;rW[2]=38}
+// rivals decide when to attack the player
+function rivalWeapons(i,dt,pT){
+ rW[i]-=dt;if(rW[i]>0)return;rW[i]=1;
+ const dP=(pT-rivalsTotal[i])*TL,dl=Math.abs(laneOffset-rLat[i]);
+ if(rSpin[i]>0)return;
+ if(dP>25&&dP<150&&dl<10){fireRocket(i);rW[i]=30+Math.random()*20;flashMsg('🚀 טיל מתקרב מאחור! שנה נתיב')}
+ else if(dP<-14&&dP>-70&&dl<7){dropOil(i);rW[i]=32+Math.random()*18}}
+
 // ---------- Spark / smoke particles ----------
 const sparks=[],sparkGeo=new THREE.BoxGeometry(.28,.28,.28);
 const sparkMats=[new THREE.MeshBasicMaterial({color:0xffb347,transparent:true}),new THREE.MeshBasicMaterial({color:0x66e0ff,transparent:true}),new THREE.MeshBasicMaterial({color:0xc9d1d6,transparent:true})];
@@ -374,10 +450,13 @@ function tick(now){
  requestAnimationFrame(tick);
  const dt=Math.min(.04,(now-last)/1000);last=now;
  if(!finished&&!garageOpen){
-  const boosting=keys.boost&&!keys.brake;
-  const target=keys.brake?80:boosting?280:208;
+  const boosting=keys.boost&&!keys.brake&&turbo>0&&spinT<=0;
+  if(boosting)turbo=Math.max(0,turbo-dt);
+  spinT=Math.max(0,spinT-dt);pShield=Math.max(0,pShield-dt);msgT-=dt;
+  if(keys.item&&!itemWas)useItem();itemWas=keys.item;
+  const target=spinT>0?55:keys.brake?80:boosting?280:208;
   speed+=(target-speed)*Math.min(1,dt*(keys.brake?3.5:1.5));
-  steer=Number(keys.right)-Number(keys.left);
+  steer=spinT>0?0:Number(keys.right)-Number(keys.left);
   // Gentle lateral movement; car cannot accidentally leave the circuit.
   const maxOffset=roadWidth/2-3.9;
   laneOffset=THREE.MathUtils.clamp(laneOffset+steer*dt*(9+speed*.017),-maxOffset,maxOffset);
@@ -385,7 +464,7 @@ function tick(now){
   if(Math.abs(laneOffset)>maxOffset-1.3) speed=Math.min(speed,175);
   {const pT=(lap-1)+progress;bumpCool-=dt;
    for(let i=0;i<rivals.length;i++){const dL=(rivalsTotal[i]-pT)*trackLength,dW=rLat[i]-laneOffset;
-    if(Math.abs(dL)<11.5&&Math.abs(dW)<7.6){const sg=dW>=0?1:-1;
+    if(Math.abs(dL)<10.5&&Math.abs(dW)<7.0){const sg=dW>=0?1:-1;
      if(dL>0)speed=Math.min(speed,rivalsSpeeds[i]*.97);else rivalsSpeeds[i]=Math.min(rivalsSpeeds[i],speed*.99+8);
      laneOffset-=sg*dt*14;rLat[i]=THREE.MathUtils.clamp(rLat[i]+sg*dt*9,-11,11);
      if(bumpCool<=0){beep(95,.14,'sawtooth',.22);bumpCool=.5}}}
@@ -401,8 +480,8 @@ function tick(now){
   const roadYaw=Math.atan2(-t.x,-t.z);
   const angle=roadYaw-steer*.11;
   visualYaw+=Math.atan2(Math.sin(angle-visualYaw),Math.cos(angle-visualYaw))*Math.min(1,dt*10);
-  player.group.position.copy(carPos);
-  player.group.rotation.y=visualYaw;
+  player.group.position.copy(carPos);player.group.position.y=CAR_Y;sun.position.set(carPos.x-80,110,carPos.z-50);sun.target.position.copy(carPos);sun.target.updateMatrixWorld();
+  player.group.rotation.y=visualYaw+(spinT>0?(1-spinT/SPIN_DUR)*Math.PI*4:0);
   player.group.rotation.z=-steer*.055;
   player.flame.visible=boosting;
   player.flame.scale.setScalar(.85+Math.sin(now*.024)*.2);spinWheels(player,speed/3.6*dt,steer);player.tail.emissiveIntensity=keys.brake?3.2:.9;
@@ -413,22 +492,23 @@ function tick(now){
     // stay in the fight: chase hard when behind the player (matching turbo speed), ease off when far ahead
     const want=-40-70*Math.sin((now-start)/1000*.2+i*2.1); // each rival drifts between ~30 m ahead and ~110 m behind the player
     if(gap<want)tgt=Math.max(tgt,Math.min(rCap[i],speed+5+Math.min(10,(want-gap)/25)));else if(gap>150)tgt*=.92;else if(gap>70)tgt*=.97;
-    rivalsSpeeds[i]+=(tgt-rivalsSpeeds[i])*Math.min(1,dt*1.4);
+    if(rSpin[i]>0)tgt=40;rivalsSpeeds[i]+=(tgt-rivalsSpeeds[i])*Math.min(1,dt*(rSpin[i]>0?4:1.4));
     rLaneT[i]-=dt;
     if(rLaneT[i]<=0){rLaneT[i]=.35;if(laneBlocked(i,rLat[i],pT)){const c=[-10,0,10].filter(L=>!laneBlocked(i,L,pT)).sort((a,b)=>Math.abs(a-rLat[i])-Math.abs(b-rLat[i]));if(c.length)rLane[i]=c[0]}}
     rLat[i]+=(rLane[i]-rLat[i])*Math.min(1,dt*2.2);
-    rivalsTotal[i]+=rivalsSpeeds[i]/3.6*dt/trackLength;rivalsProgress[i]=rivalsTotal[i]%1}
+    rivalsTotal[i]+=rivalsSpeeds[i]/3.6*dt/trackLength;rivalsProgress[i]=rivalsTotal[i]%1;rSpin[i]=Math.max(0,rSpin[i]-dt);rShield[i]=Math.max(0,rShield[i]-dt);rivalWeapons(i,dt,pT)}
    const rp=rivalsProgress[i],pt=curve.getPointAt(rp),tt=curve.getTangentAt(rp).normalize();
    const nn=new THREE.Vector3(-tt.z,0,tt.x);
-   rivals[i].group.position.copy(pt).addScaledVector(nn,rLat[i]);
-   rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z);spinWheels(rivals[i],rivalsSpeeds[i]/3.6*dt,0);
+   rivals[i].group.position.copy(pt).addScaledVector(nn,rLat[i]);rivals[i].group.position.y=CAR_Y;
+   rivals[i].group.rotation.y=Math.atan2(-tt.x,-tt.z)+(rSpin[i]>0?(1-rSpin[i]/SPIN_DUR)*Math.PI*4:0);spinWheels(rivals[i],rivalsSpeeds[i]/3.6*dt,0);
   }
   const desired=carPos.clone().addScaledVector(t,-26).add(new THREE.Vector3(0,26,0));
   camera.position.lerp(desired,Math.min(1,dt*4));
   camTarget.copy(carPos).addScaledVector(t,26);camTarget.y=1.4;camera.lookAt(camTarget);
+  updateItems(dt,now);document.getElementById('fuelbar').style.width=(turbo/TURBO_MAX*100)+'%';document.getElementById('slot').textContent=weapon==='rocket'?'🚀':weapon==='oil'?'🛢️':'—';document.getElementById('boost').style.opacity=turbo>0?1:.4;document.getElementById('item').style.opacity=weapon?1:.4;
   document.getElementById('speed').textContent=Math.round(speed);
   document.getElementById('lap').textContent=Math.min(lap,3);{const pT2=(lap-1)+progress;let pl=1;for(const v of rivalsTotal)if(v>pT2)pl++;document.getElementById('place').textContent=pl}
-  document.getElementById('msg').textContent=boosting?'⚡ טורבו פעיל — עקוף את היריבים!':keys.brake?'🏁 בלימה':'🏎️ היגוי קל • עקיפות אמיתיות • מסלול חוף';
+  document.getElementById('msg').textContent=msgT>0?msgText:boosting?'⚡ טורבו פעיל!':keys.brake?'🏁 בלימה':turbo>0?'⚡ לחץ טורבו • אסוף 🚀 ו־🛢️ כדי לתקוף':'⚡ אין טורבו — אסוף כדורים כחולים!';
   // FOV kick with speed / boost
   const fovT=BASE_FOV+(speed/280)*14+(boosting?6:0);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
   // exhaust / boost sparks
