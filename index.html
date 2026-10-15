@@ -2,10 +2,20 @@
 <html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><title>FORMULA ARENA V6 | Coastal Circuit</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071522;color:white;font-family:Arial,system-ui;touch-action:none}canvas{display:block}#hud{position:absolute;inset:0;pointer-events:none}#top{position:absolute;top:max(9px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));display:flex;align-items:start;justify-content:space-between;gap:6px;direction:ltr}.pill{background:#071526d9;border:1px solid #ffffff44;border-radius:12px;padding:7px 12px;box-shadow:0 6px 22px #0006;backdrop-filter:blur(6px)}.brand{color:#ffd66b;font-size:13px;font-weight:900;letter-spacing:1px}.small{font-size:10px;color:#c3d4e7}.big{font-size:21px;font-weight:900}.controls{position:absolute;bottom:max(13px,env(safe-area-inset-bottom));left:max(18px,env(safe-area-inset-left));right:max(18px,env(safe-area-inset-right));display:flex;justify-content:space-between;align-items:end;direction:ltr;pointer-events:auto}.cluster{display:flex;gap:10px;align-items:end}.btn{border:1px solid #ffffff77;background:#0b1c33c9;color:#fff;border-radius:19px;width:72px;height:72px;font-size:31px;font-weight:900;touch-action:none;user-select:none;cursor:pointer;box-shadow:0 6px 22px #0008}.btn:active,.btn.active{background:#2c5885}.boost{width:88px;height:88px;border-radius:50%;font-size:17px;background:radial-gradient(circle at 35% 25%,#ffc66e,#e4492b 60%,#8b183e);border:3px solid #ffbf70}.brake{width:65px;height:65px;font-size:13px}.message{position:absolute;top:75px;left:50%;transform:translateX(-50%);background:#091728c9;border:1px solid #ffffff44;border-radius:11px;padding:8px 14px;font-size:12px;white-space:nowrap}#rotate{display:none;position:absolute;inset:0;background:#071526f5;z-index:9;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px;gap:12px}#rotate strong{font-size:24px}#loading{position:absolute;inset:0;display:grid;place-items:center;background:#071526;z-index:12;font-weight:bold;color:#ffdf8b}#finish{display:none;position:absolute;inset:0;z-index:8;background:#04101dd9;align-items:center;justify-content:center;flex-direction:column;gap:15px}#finish h1{font-size:34px;margin:0;color:#ffd56d}#again{border:0;background:#ffd56d;color:#102031;padding:14px 25px;border-radius:14px;font-size:18px;font-weight:bold;cursor:pointer}#map{position:absolute;top:74px;right:max(12px,env(safe-area-inset-right));width:124px;height:110px;border-radius:12px;background:#071526a9;border:1px solid #ffffff44} @media(orientation:portrait){#rotate{display:flex}}@media(max-height:400px){.btn{width:58px;height:58px}.boost{width:72px;height:72px}.brake{width:54px;height:54px}.message{display:none}#map{width:100px;height:88px}}
+
+/* iOS Safari: prevent long-press text selection and callout on game controls */
+html,body,canvas,#hud,#hud *,button{ -webkit-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important;touch-action:none!important; }
+button{ -webkit-appearance:none;appearance:none; }
+
+#garage{position:absolute;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#071324ed,#153653ee);padding:14px;overflow:auto;touch-action:pan-y}
+#garage.hidden{display:none}.garagebox{width:min(760px,96vw);background:#0b1b2bf0;border:1px solid #ffffff44;border-radius:18px;padding:18px;text-align:center;box-shadow:0 15px 60px #0009}
+.garagetitle{font-size:clamp(19px,3vw,30px);font-weight:900;color:#ffdc78;margin:0 0 7px}.garagehint{color:#b9cddd;font-size:13px;margin-bottom:13px}
+.carchoices{display:flex;gap:12px;justify-content:center;direction:ltr}.carchoice{flex:1;max-width:260px;border:2px solid #536b80;border-radius:16px;background:#152b3f;color:white;padding:12px;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none}.carchoice.selected{border-color:#ffd45f;background:#25415b}.carart{height:64px;display:flex;align-items:center;justify-content:center;font-size:55px}.carname{font-weight:800;font-size:17px}.cardesc{color:#b6ccda;font-size:11px;margin-top:6px}#startRace{margin-top:13px;padding:11px 32px;background:#ffd35e;border:0;border-radius:12px;font-size:18px;font-weight:900;color:#1b2935;cursor:pointer;touch-action:manipulation}#changeCar{position:absolute;top:78px;left:max(12px,env(safe-area-inset-left));pointer-events:auto;background:#0b1c33d9;border:1px solid #ffffff55;color:white;border-radius:10px;padding:8px;font-size:12px;touch-action:manipulation}
+@media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 </style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.4 • REAL DRIVING</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V6.5 • CAR SELECTION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V6.5</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -131,15 +141,24 @@ function buildCar(color,kind='formula'){
  flame.rotation.x=Math.PI/2;flame.position.set(0,.9,5.2);flame.visible=false;group.add(flame);
  scene.add(group);return {group,flame,kind}
 }
-const player=buildCar(0xe83439,'formula'),rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
+let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
 const keys={left:false,right:false,boost:false,brake:false};
 const startPos=curve.getPointAt(0),startTan=curve.getTangentAt(0).normalize();
 let carPos=startPos.clone(),yaw=Math.atan2(-startTan.x,-startTan.z),roadIndex=0,passed=0,checkpoint=0,drift=0;
 const checkpointCount=8;
 function resetDrive(){laneOffset=0;visualYaw=0;rivalsProgress[0]=.025;rivalsProgress[1]=.046;rivalsProgress[2]=.069;carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
+for(const ev of ['contextmenu','selectstart','dragstart']) document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
 for(let key of Object.keys(keys)){let el=document.getElementById(key);const set=v=>{keys[key]=v;el.classList.toggle('active',v)};el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);set(true)});for(let ev of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(ev,()=>set(false))}
 addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown')keys.brake=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown')keys.brake=false});
+
+let selectedKind='formula',garageOpen=true;
+const garage=document.getElementById('garage');
+function selectCar(kind){selectedKind=kind;for(const b of document.querySelectorAll('.carchoice'))b.classList.toggle('selected',b.dataset.kind===kind)}
+for(const b of document.querySelectorAll('.carchoice'))b.addEventListener('click',()=>selectCar(b.dataset.kind));
+function applyCar(){const old=player.group;scene.remove(old);player=buildCar(0xe83439,selectedKind);resetDrive();garageOpen=false;garage.classList.add('hidden')}
+document.getElementById('startRace').addEventListener('click',applyCar);
+document.getElementById('changeCar').addEventListener('click',()=>{garageOpen=true;garage.classList.remove('hidden');speed=0;for(const k of Object.keys(keys))keys[k]=false});
 const trackLength=curve.getLength();const map=document.getElementById('map'),ctx=map.getContext('2d');
 function mapDraw(){const w=map.width,h=map.height;ctx.clearRect(0,0,w,h);ctx.lineWidth=10;ctx.strokeStyle='#dce3e9';ctx.beginPath();points.forEach((p,i)=>{let x=(p.x+280)/560*(w-20)+10,y=(p.z+195)/390*(h-18)+9;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.closePath();ctx.stroke();let p=carPos;ctx.fillStyle='#ff5959';ctx.beginPath();ctx.arc((p.x+280)/560*(w-20)+10,(p.z+195)/390*(h-18)+9,7,0,Math.PI*2);ctx.fill()}
 let last=performance.now();const camTarget=new THREE.Vector3();
@@ -151,7 +170,7 @@ const rivalsSpeeds=[137,157,171]; // km/h: independently paced AI, not locked to
 function tick(now){
  requestAnimationFrame(tick);
  const dt=Math.min(.04,(now-last)/1000);last=now;
- if(!finished){
+ if(!finished&&!garageOpen){
   const boosting=keys.boost&&!keys.brake;
   const target=keys.brake?80:boosting?280:208;
   speed+=(target-speed)*Math.min(1,dt*(keys.brake?3.5:1.5));
@@ -194,6 +213,6 @@ function tick(now){
  }
  renderer.render(scene,camera);
 }
-document.getElementById('again').onclick=resetDrive;
+document.getElementById('again').onclick=()=>{garageOpen=true;garage.classList.remove('hidden');document.getElementById('finish').style.display='none'};
 function resize(){renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()}addEventListener('resize',resize);document.getElementById('loading').remove();requestAnimationFrame(tick);
 </script></body></html>
