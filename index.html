@@ -15,7 +15,7 @@ button{ -webkit-appearance:none;appearance:none; }
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 .bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}#countdown{display:none;position:absolute;inset:0;z-index:7;place-items:center;font-size:min(34vh,220px);font-weight:900;color:#fff;text-shadow:0 8px 40px #000a,0 0 30px #ffb347;pointer-events:none;animation:cdpop .9s ease-out}@keyframes cdpop{from{transform:scale(1.9);opacity:0}30%{opacity:1}to{transform:scale(1);opacity:1}}</style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V8.1 • BANK HEIST</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small" id="hh_tl">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn brake" id="act" style="display:none" aria-label="יציאה/כניסה לרכב">🚪</button><button class="btn" id="jump" style="display:none;background:#3a7bd5cc" aria-label="קפיצה">⤴</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc" aria-label="גז">▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V8.2 • COMBAT</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small" id="hh_tl">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn brake" id="act" style="display:none" aria-label="יציאה/כניסה לרכב">🚪</button><button class="btn" id="jump" style="display:none;background:#3a7bd5cc" aria-label="קפיצה">⤴</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc" aria-label="גז">▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
 <div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.7</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startHeist">🚨 שוד ומשטרה ▶</button> <button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
@@ -714,7 +714,7 @@ function buildCity(){
    if(nz===2)add(ux+uw*(.3+rnd()*.4),uz+bd+al/2,.35,al,1.2,0x6f7378)}
  }
 
- buildBank();
+ buildBank();cbInit();
  // street lamps
  RX.forEach((x,i)=>{if(i===1||i===3)return;for(let z=-500;z<500;z+=70){if(RZ.some((rz,j)=>Math.abs(z-rz)<RWZ[j]/2+4))continue;for(const sd of [-1,1]){const lx=x+sd*(RWX[i]/2+2);lamps.push([lx,6.5,z,0,.5,13,.5,0x6a7782]);lampHeads.push([lx-sd*1.4,13.2,z,0,3.4,.4,.9,0xfff2c4])}}});
  I(unitBox,iMat,slabs);flushBuildings();
@@ -732,7 +732,7 @@ function buildCity(){
  for(let i=0;i<4;i++){const c=buildRoadCar(0xf2f4f5,['wagon','sedan','hatch','wagon'][i],true);
   c.group.visible=false;pol.push({car:c,x:0,z:0,th:0,v:0,active:false,hitCd:0,stuck:0,pathT:0,wp:null,lt:i*.3,lights:c.lights,base:0,parked:false,dis:0,spinDir:1})}
 
- for(let i=0;i<4;i++){const c=buildHuman(0x1d3f8a,0x1a2330,0x10264f,{cop:true});c.group.visible=false;c.group.scale.setScalar(PSC);cityGroup.add(c.group);cops.push({m:c,x:0,z:0,th:0,v:0,active:false,car:null,bias:1,lostT:0,ph:i,stun:0,hp:100,fireT:1.5})}
+ for(let i=0;i<4;i++){const c=buildHuman(0x1d3f8a,0x1a2330,0x10264f,{cop:true});c.group.visible=false;c.group.scale.setScalar(PSC);cityGroup.add(c.group);cops.push({m:c,x:0,z:0,th:0,v:0,active:false,car:null,bias:1,lostT:0,ph:i,stun:0,hp:100,fireT:1.5,atkT:0,swing:0,flinch:0,fall:0,kx:0,kz:0,blkT:0,aimT:0,hitDone:false,prov:false,rushT:0,holdT:0,react:0})}
  A.model=buildHuman(0x2a2d33,0x3a4250,0xd7263d,{mask:true,bag:true});A.model.group.visible=false;A.model.group.scale.setScalar(PSC);cityGroup.add(A.model.group);A.guns=buildGuns(A.model.group);
  A.flash=new THREE.Mesh(new THREE.SphereGeometry(.13,6,4),new THREE.MeshBasicMaterial({color:0xffe27a}));A.flash.visible=false;A.model.group.add(A.flash);
  // crowd: one instanced mesh per body part, positions recycled around the camera
@@ -892,7 +892,7 @@ function buildBank(){
  // guards
  const gp=[[[-201,-358],[-188,-358]],[[-166,-362],[-153,-362]],[[-201,-371],[-190,-369]],[[-176,-395],[-166,-395]]];
  gp.forEach((pts,i)=>{const m=buildHuman(0x23262b,0x15171b,0x111214,{cop:true});m.group.scale.setScalar(PSC);cityGroup.add(m.group);
-  guards.push({m,x:pts[0][0],z:pts[0][1],th:0,v:0,hp:90,stun:0,active:true,guard:true,alert:false,fireT:1.2,pts,pi:1,ph:i,navI:null,lostT:0,home:pts[0]})});
+  guards.push({m,x:pts[0][0],z:pts[0][1],th:0,v:0,hp:90,stun:0,active:true,guard:true,alert:false,fireT:1.2,pts,pi:1,ph:i,navI:null,lostT:0,home:pts[0],atkT:0,swing:0,flinch:0,fall:0,kx:0,kz:0,blkT:0,aimT:0,hitDone:false,prov:false})});
  BK.mk=zoneViz(BKDX,-349,0xffd24a,2.6);
  bankInitUI();BK.ready=true;bankReset()}
 function bankInitUI(){
@@ -934,7 +934,8 @@ function bankAct(){
  return false}
 function guardStep(g,dt){
  const m=g.m,gg=m.group;
- if(g.stun>0){g.stun-=dt;g.v=0;gg.rotation.x=-1.45;gg.position.set(g.x,.2,g.z);animHuman(m,0,0,false);if(g.stun<=0){gg.rotation.x=0;gg.position.y=0;g.hp=60;g.alert=true}return}
+ if(foeDown(g,dt)){if(g.stun<=0)g.alert=true;return}
+ g.atkT-=dt;g.blkT-=dt;g.flinch-=dt;if(g.swing>0)g.swing-=dt;
  const dx=T.x-g.x,dz=T.z-g.z,dist=Math.hypot(dx,dz),see=dist<(g.alert?42:18)&&losClear(g.x,g.z,T.x,T.z);
  if(!g.alert&&see&&(inBank(T.x,T.z,2)||dist<12))bankAlertAll();
  let tx=g.x,tz=g.z,spd=0;
@@ -945,12 +946,16 @@ function guardStep(g,dt){
   else if(dist>9&&dist<70){tx=T.x;tz=T.z;spd=5.4}
   else if(dist<5){tx=2*g.x-T.x;tz=2*g.z-T.z;spd=2.4}}
  else{const q=g.pts[g.pi];if(Math.hypot(q[0]-g.x,q[1]-g.z)<.8)g.pi=(g.pi+1)%g.pts.length;else{tx=q[0];tz=q[1];spd=1.8}}
+ if(g.flinch>0||g.swing>0)spd*=.2;
+ if(g.kx||g.kz){g.x+=g.kx*dt;g.z+=g.kz*dt;const kk=Math.max(0,1-dt*7);g.kx*=kk;g.kz*=kk;footCollide(g,.5)}
  if(spd>0){const ex=tx-g.x,ez=tz-g.z,d=Math.hypot(ex,ez)||1;g.x+=ex/d*spd*dt;g.z+=ez/d*spd*dt;footCollide(g,.5);
   const th=Math.atan2(-ex/d,-ez/d);g.th+=wrapA(th-g.th)*Math.min(1,dt*8);g.ph+=dt*spd*1.15}
  else if(g.alert){const th=Math.atan2(-dx,-dz);g.th+=wrapA(th-g.th)*Math.min(1,dt*8)}
- g.v=spd;gg.position.set(g.x,0,g.z);gg.rotation.y=g.th;animHuman(m,g.ph,Math.min(1,spd/6)*.9,false);
- if(g.alert&&see&&dist<28){g.fireT-=dt;if(g.fireT<=0){g.fireT=1.2+Math.random()*1;tracer(g.x,1.5,g.z,T.x,1.2,T.z,0xffd0a0);beep(200,.06,'square',.09);
-  if(Math.random()<.3){if(H.foot)A.hp-=4;else H.hp-=2.5;flashMsg('🔫 מאבטח יורה עליך!')}}}}
+ g.v=spd;gg.position.set(g.x,0,g.z);gg.rotation.y=g.th;animHuman(m,g.ph,Math.min(1,spd/6)*.9,false);foeAnim(g,dt);
+ if(g.alert&&H.foot&&dist<2&&g.atkT<=0&&g.swing<=0&&g.flinch<=0&&!CB.dead){g.swing=.4;g.atkT=1.2+Math.random()*.6;g.hitDone=false;noiseHit(.08,.1,1400,.6)}
+ if(g.swing>0&&!g.hitDone&&g.swing<.22){g.hitDone=true;if(dist<2.5)hurtPlayer(6,g.x,g.z,'melee')}
+ if(g.alert&&see&&dist<28&&g.flinch<=0){g.fireT-=dt;if(g.fireT<=0){g.fireT=GUARDGUN.rate*(.8+Math.random()*.6);
+  if(H.foot)copFire(g,GUARDGUN,dist);else{tracer(g.x,1.5,g.z,T.x,1.2,T.z,0xffd0a0);beep(200,.06,'square',.09);if(Math.random()<.3){H.hp-=2.5;flashMsg('🔫 מאבטח יורה עליך!')}}}}}
 function bankUpdate(dt,now){
  if(!BK.ready)return;
  // door / vault animation
@@ -1000,6 +1005,250 @@ function bankUpdate(dt,now){
  if(BK.mOn){BK.mk.ring.position.set(mx,.35,mz);BK.mk.beam.position.set(mx,40,mz);BK.mk.beam.material.opacity=.2+.1*Math.sin(now*.006)}
  if(BK.ui){const e=BK.ui.o;if(o){if(e._t!==o){e._t=o;e.textContent=o}e.style.display='block'}else e.style.display='none'}}
 
+// ================= COMBAT SYSTEM (melee, block, dodge, cover, cop AI, drops) =================
+const CK={punchQ:false,kickQ:false,dodgeQ:false,coverQ:false,block:false};
+const CB={kind:'',t:0,hitAt:.1,dur:.3,dmg:9,hitDone:false,combo:0,comboT:0,queue:'',blocking:false,guard:100,dodgeT:0,dodgeCd:0,dv:[0,0],dk:'f',iT:0,hurtT:0,stagger:0,shake:0,
+ crouch:false,expT:0,dead:false,deadT:0,lock:null,ring:null,covered:false,sinceHurt:99,busy:false,lunge:0,vig:-1,ui:null,invKey:'',coverMsgT:0};
+const COPLV=[null,
+ {gun:0,range:0,rate:9,acc:0,dmg:0,melee:5,spd:7.0,keep:0,blk:.15},
+ {gun:1,range:24,rate:1.9,acc:.30,dmg:5,melee:7,spd:7.6,keep:8,blk:.25},
+ {gun:2,range:32,rate:.5,acc:.18,dmg:4,melee:8,spd:8.3,keep:12,blk:.35}];
+const GUARDGUN={acc:.28,dmg:4,rate:1.4};
+const drops=[];
+// ---- sound helpers (synthesized; nothing to download) ----
+let _nb=null;
+function noiseHit(dur=.08,vol=.2,freq=900,q=.8){
+ if(!AC||muted||!window._master)return;
+ if(!_nb){const n=(AC.sampleRate*.4)|0;_nb=AC.createBuffer(1,n,AC.sampleRate);const d=_nb.getChannelData(0);for(let i=0;i<n;i++)d[i]=Math.random()*2-1}
+ const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),t=AC.currentTime;s.buffer=_nb;f.type='bandpass';f.frequency.value=freq;f.Q.value=q;
+ g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);s.connect(f);f.connect(g);g.connect(window._master);s.start(t,Math.random()*.2);s.stop(t+dur+.02)}
+function sweep(f0,f1,dur,type='sine',vol=.25){
+ if(!AC||muted||!window._master)return;const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.type=type;o.frequency.setValueAtTime(f0,t);o.frequency.exponentialRampToValueAtTime(Math.max(20,f1),t+dur);
+ g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);o.connect(g);g.connect(window._master);o.start(t);o.stop(t+dur+.02)}
+const sfxWhoosh=()=>noiseHit(.13,.13,1700,.6),sfxPunch=()=>{noiseHit(.07,.3,700,.9);sweep(180,60,.09,'sine',.32)},sfxKick=()=>{noiseHit(.1,.34,500,.8);sweep(140,45,.13,'sine',.38)},
+ sfxBlock=()=>{noiseHit(.05,.22,2600,2);sweep(950,520,.09,'square',.1)},sfxPain=()=>sweep(330,140,.2,'sawtooth',.13),sfxDodge=()=>{noiseHit(.2,.12,1100,.5);sweep(500,250,.18,'sine',.06)};
+const burstAt=(x,z)=>{_hp.set(x,0,z);burst(_hp,false)};
+// ---- cover: low walls / counters / crates / parked cars ----
+function segBox(ax,az,bx,bz,x0,x1,z0,z1){ // slab test, returns entry fraction or -1
+ let t0=0,t1=1;const dx=bx-ax,dz=bz-az;
+ if(Math.abs(dx)<1e-9){if(ax<x0||ax>x1)return -1}else{let a=(x0-ax)/dx,b=(x1-ax)/dx;if(a>b){const q=a;a=b;b=q}t0=Math.max(t0,a);t1=Math.min(t1,b);if(t0>t1)return -1}
+ if(Math.abs(dz)<1e-9){if(az<z0||az>z1)return -1}else{let a=(z0-az)/dz,b=(z1-az)/dz;if(a>b){const q=a;a=b;b=q}t0=Math.max(t0,a);t1=Math.min(t1,b);if(t0>t1)return -1}
+ return t0}
+function coverCars(fn){ // calls fn(cx,cz,th) for static cars that can be hidden behind
+ if(H.foot)fn(H.x,H.z,H.th);for(const p of pol)if(p.active&&(p.parked||Math.abs(p.v)<3))fn(p.x,p.z,p.th)}
+function shotCover(ax,az,bx,bz,crouched){
+ let best=-1;const mnx=Math.min(ax,bx)-1,mxx=Math.max(ax,bx)+1,mnz=Math.min(az,bz)-1,mxz=Math.max(az,bz)+1;
+ for(const b of bl){const h=b.hh;if(h===undefined||h<.7||h>4||b.door)continue;if(h<1.7&&!crouched)continue;
+  if(b.x1<mnx||b.x0>mxx||b.z1<mnz||b.z0>mxz)continue;const t=segBox(ax,az,bx,bz,b.x0,b.x1,b.z0,b.z1);if(t>0.001&&(best<0||t<best))best=t}
+ if(crouched)coverCars((cx,cz,th)=>{const c=Math.cos(th),s=Math.sin(th),l=(x,z)=>[(x-cx)*c-(z-cz)*s,(x-cx)*s+(z-cz)*c],a=l(ax,az),b=l(bx,bz),t=segBox(a[0],a[1],b[0],b[1],-1.25,1.25,-2.7,2.7);if(t>0.001&&(best<0||t<best))best=t});
+ return best}
+function coverNearPlayer(){
+ for(const b of bl){const h=b.hh;if(h===undefined||h<.7||h>4||b.door)continue;if(A.x>b.x0-1.7&&A.x<b.x1+1.7&&A.z>b.z0-1.7&&A.z<b.z1+1.7)return true}
+ let r=false;coverCars((cx,cz)=>{if(Math.hypot(A.x-cx,A.z-cz)<4.2)r=true});return r}
+// ---- foes (patrol cops + bank guards share the same fight API) ----
+function foeDown(f,dt){
+ if(f.stun<=0)return false;const gg=f.m.group;f.stun-=dt;f.v=0;f.fall=Math.min(1,(f.fall||0)+dt*3.2);
+ if(f.kx||f.kz){f.x+=f.kx*dt;f.z+=f.kz*dt;const k=Math.max(0,1-dt*6);f.kx*=k;f.kz*=k;footCollide(f,.5)}
+ const rise=f.stun<.5?Math.max(0,f.stun/.5):1,e=1-(1-f.fall)*(1-f.fall),k=e*rise;
+ gg.rotation.x=-1.45*k;gg.position.set(f.x,.2*k,f.z);animHuman(f.m,0,0,false);
+ if(f.stun<=0){gg.rotation.x=0;gg.position.y=0;f.hp=70;f.fall=0;f.flinch=0}
+ return true}
+function foeAnim(f,dt){
+ const m=f.m,g=m.group;
+ if(f.swing>0){const e=Math.sin(Math.min(1,1-f.swing/.4)*Math.PI);m.armR.rotation.x=-1.5*e;if(m.elbR)m.elbR.rotation.x=.2*(1-e)}
+ else if(f.aimT>0){f.aimT-=dt;m.armR.rotation.x=-1.45;m.armL.rotation.x=-1.3;if(m.elbL){m.elbR.rotation.x=.2;m.elbL.rotation.x=.3}}
+ else if(f.blkT>0){m.armL.rotation.x=-1.8;m.armR.rotation.x=-1.8;if(m.elbL){m.elbL.rotation.x=1.9;m.elbR.rotation.x=1.9}}
+ g.rotation.x=f.flinch>0?.35*Math.min(1,f.flinch/.2):0}
+function foeHit(f,dmg,dx,dz,kind,kn){
+ if(f.stun>0)return false;
+ if(kind==='melee'&&f.blkT>0){sfxBlock();burstAt(f.x,f.z);dmg*=.2;kn=.5}
+ if(f.guard)bankAlertAll();else if(kind==='gun')f.prov=true;
+ f.hp-=dmg;f.flinch=.3;const l=Math.hypot(dx,dz)||1;f.kx=dx/l*(kn||1.2);f.kz=dz/l*(kn||1.2);burstAt(f.x,f.z);
+ if(!f.guard)H.bust=Math.max(0,H.bust-.7);
+ if(f.hp<=0){f.stun=f.guard?16:14;f.fall=0;f.hp=70;f.swing=0;f.aimT=0;f.blkT=0;dropWeapon(f);flashMsg(f.guard?'🛡️ מאבטח הובס':'👮 שוטר הובס');sfxPain();CB.shake=Math.max(CB.shake,.2)}
+ return true}
+function copFire(c,G,dist){
+ const cv=shotCover(c.x,c.z,A.x,A.z,CB.crouch&&CB.expT<=0),ex=cv>=0?c.x+(A.x-c.x)*cv:A.x,ez=cv>=0?c.z+(A.z-c.z)*cv:A.z;
+ tracer(c.x,1.5,c.z,ex,1.2,ez,0xffd0a0);noiseHit(.05,.12,1300,1);beep(220,.04,'square',.06);c.aimT=.35;
+ if(cv>=0){burstAt(ex,ez);return}
+ const acc=G.acc*(dist<8?1.4:1)*(Math.abs(A.v)>3?.8:1)*(CB.crouch?.75:1);
+ if(Math.random()<acc)hurtPlayer(G.dmg,c.x,c.z,'gun')}
+// ---- weapon drops from defeated police ----
+function dropWeapon(f){
+ const lv=f.guard?1:Math.max(1,Math.min(3,H.wanted||1)),r=Math.random();let type,ammo;
+ if(f.guard){type=r<.8?0:3;ammo=type===0?14:6}
+ else if(lv===1){type=0;ammo=12}
+ else if(lv===2){if(r<.65){type=0;ammo=15}else{type=1;ammo=36}}
+ else{if(r<.4){type=2;ammo=30}else if(r<.75){type=1;ammo=45}else{type=3;ammo=8}}
+ let d=drops.find(q=>!q.on);if(!d){d=drops[0];for(const q of drops)if(q.t>d.t)d=q}
+ d.on=true;d.t=0;d.type=type;d.ammo=ammo;d.x=f.x;d.z=f.z;d.box.material.color.setHex(GUNS[type].col);d.box.material.emissive.setHex(GUNS[type].col);d.ring.material.color.setHex(GUNS[type].col);d.g.position.set(f.x,0,f.z);d.g.visible=true}
+function cbDrops(dt,P,now){
+ for(const d of drops){if(!d.on)continue;d.t+=dt;d.g.rotation.y+=dt*2.2;d.box.position.y=.55+Math.sin(now*.004+d.x)*.1;
+  if(d.t>45){d.on=false;d.g.visible=false;continue}
+  if(Math.hypot(P.x-d.x,P.z-d.z)<(H.foot?2.6:4.8)){d.on=false;d.g.visible=false;const gn=GUNS[d.type];W.has[d.type]=true;W.ammo[d.type]=Math.min(300,W.ammo[d.type]+d.ammo);W.sel=d.type;flashMsg('🎒 '+gn.n+' מהשוטר • '+W.ammo[d.type]);beep(1000,.08,'triangle',.25);beep(1400,.1,'triangle',.25,.08)}}}
+// ---- player damage ----
+function hurtPlayer(dmg,fx,fz,kind){
+ if(CB.dead||hOver)return false;
+ if(CB.iT>0)return false;
+ let d=dmg;const a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th)),diff=Math.abs(wrapA(Math.atan2(fz-A.z,fx-A.x)-a0));
+ if(CB.blocking&&diff<1.45){
+  CB.guard-=kind==='melee'?dmg*5:dmg*3;sfxBlock();burstAt(A.x,A.z);d*=kind==='melee'?.15:.5;
+  if(CB.guard<=0){CB.guard=0;CB.blocking=false;CK.block=false;CB.stagger=.45;flashMsg('🛡️ ההגנה נשברה!')}}
+ A.hp-=d;CB.hurtT=.3;CB.sinceHurt=0;CB.shake=Math.max(CB.shake,kind==='melee'?.35:.18);
+ if(kind==='melee'&&!CB.blocking){CB.stagger=.3;A.v*=.3}
+ if(d>1.5){sfxPain();if(kind==='melee')sfxPunch()}else noiseHit(.05,.12,1500,1);
+ return true}
+// ---- player melee ----
+function cbMeleeTarget(maxD){
+ const a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th));let best=null,bs=1e9;
+ const test=f=>{if(!f.active||f.stun>0)return;const dx=f.x-A.x,dz=f.z-A.z,d=Math.hypot(dx,dz);if(d>maxD)return;const an=Math.abs(wrapA(Math.atan2(dz,dx)-a0));if(an>1.25&&d>1.7)return;const sc=d+an*1.5;if(sc<bs){bs=sc;best=f}};
+ for(const c of cops)test(c);for(const g of guards)test(g);return best}
+function cbStartAtk(kind){
+ if(CB.dead||BK.mini||!H.foot||hOver)return;
+ if(CB.kind){CB.queue=kind;return}
+ if(CB.dodgeT>0||CB.stagger>0)return;
+ CB.crouch=false;CB.blocking=false;CB.kind=kind;CB.t=0;CB.hitDone=false;CB.queue='';
+ if(kind==='punch'){CB.combo=CB.comboT>0?(CB.combo%3)+1:1;CB.comboT=.75;CB.hitAt=.1;CB.dur=CB.combo===3?.46:.3;CB.dmg=[0,9,9,17][CB.combo]}
+ else{CB.combo=0;CB.hitAt=.2;CB.dur=.52;CB.dmg=20}
+ const f=cbMeleeTarget(3.2);if(f){const a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th)),diff=wrapA(Math.atan2(f.z-A.z,f.x-A.x)-a0);A.th-=diff*.8}
+ CB.lunge=f&&Math.hypot(f.x-A.x,f.z-A.z)>1.6?4.5:1.5;
+ for(const q of cops.concat(guards))if(q.active&&q.stun<=0&&Math.hypot(q.x-A.x,q.z-A.z)<3.6){const lv=q.guard?1:Math.max(1,Math.min(3,H.wanted||1));if(Math.random()<COPLV[lv].blk+(q.guard?.1:0))q.blkT=.55}
+ sfxWhoosh()}
+function cbMeleeHit(){
+ const kick=CB.kind==='kick',reach=kick?2.7:2.1,a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th));let hit=false;
+ const chk=f=>{if(!f.active||f.stun>0)return;const dx=f.x-A.x,dz=f.z-A.z,d=Math.hypot(dx,dz);if(d>reach)return;if(d>.8&&Math.abs(wrapA(Math.atan2(dz,dx)-a0))>1)return;
+  if(foeHit(f,CB.dmg,dx,dz,'melee',kick||CB.combo===3?7:3)){hit=true}};
+ for(const c of cops)chk(c);for(const g of guards)chk(g);
+ for(const p of peds){if(p.dead||!p.corners)continue;const dx=p.x-A.x,dz=p.z-A.z,d=Math.hypot(dx,dz);if(d>reach)continue;if(d>.8&&Math.abs(wrapA(Math.atan2(dz,dx)-a0))>1)continue;hurtPed(p,CB.dmg*1.6,dx/(d||1),dz/(d||1));burstAt(p.x,p.z);hit=true}
+ if(hit){if(kick)sfxKick();else sfxPunch();CB.shake=Math.max(CB.shake,kick?.22:.14);CB.comboT=.75}}
+function cbStartDodge(){
+ if(CB.dead||BK.mini||!H.foot||CB.dodgeCd>0||CB.kind||CB.stagger>0||!A.grounded)return;
+ const c=Math.cos(A.th),s=Math.sin(A.th);let v=[-s,-c],k='f';
+ if(keys.left){v=[-c,s];k='l'}else if(keys.right){v=[c,-s];k='r'}else if(keys.brake){v=[s,c];k='b'}
+ CB.dv=[v[0]*11.5,v[1]*11.5];CB.dk=k;CB.dodgeT=.42;CB.iT=.32;CB.dodgeCd=.9;CB.crouch=false;CB.blocking=false;H.bust=Math.max(0,H.bust-1);sfxDodge()}
+function cbUpdate(dt,now){
+ if(!H.foot){CB.kind='';CB.queue='';CB.blocking=false;CB.crouch=false;CB.dodgeT=0;CB.busy=false;CB.lock=null;CB.covered=false;if(CB.ring)CB.ring.visible=false;CK.punchQ=CK.kickQ=CK.dodgeQ=CK.coverQ=false;CB.hurtT=Math.max(0,CB.hurtT-dt);return}
+ const frozen=!!BK.mini;
+ if(CB.dead){CB.deadT+=dt;CK.punchQ=CK.kickQ=CK.dodgeQ=CK.coverQ=false;return}
+ CB.hurtT=Math.max(0,CB.hurtT-dt);CB.shake=Math.max(0,CB.shake-dt*2.5);CB.comboT-=dt;CB.dodgeCd-=dt;CB.iT-=dt;CB.stagger-=dt;CB.expT-=dt;CB.sinceHurt+=dt;
+ if(frozen){CK.punchQ=CK.kickQ=CK.dodgeQ=CK.coverQ=false}
+ if(CK.coverQ){CK.coverQ=false;if(!CB.kind&&CB.dodgeT<=0){CB.crouch=!CB.crouch;beep(CB.crouch?300:420,.06,'square',.12);
+  if(CB.crouch)flashMsg(coverNearPlayer()?'🧱 מוסתר — יריות לא פוגעות דרך המחסה':'🧱 כרעת • אין מחסה קרוב (עמוד מאחורי מכונית / קיר / דלפק)')}}
+ if(CB.crouch&&keys.boost&&keys.gas&&A.st>.2)CB.crouch=false;
+ CB.covered=CB.crouch&&coverNearPlayer();
+ CB.blocking=CK.block&&!CB.kind&&CB.dodgeT<=0&&A.grounded&&CB.stagger<=0&&!frozen;
+ if(CB.blocking)CB.crouch=false;else CB.guard=Math.min(100,CB.guard+dt*24);
+ if(CK.dodgeQ){CK.dodgeQ=false;cbStartDodge()}
+ if(CK.punchQ){CK.punchQ=false;cbStartAtk('punch')}
+ if(CK.kickQ){CK.kickQ=false;cbStartAtk('kick')}
+ if(CB.kind){CB.t+=dt;if(!CB.hitDone&&CB.t>=CB.hitAt){CB.hitDone=true;cbMeleeHit()}
+  if(CB.t>=CB.dur){CB.kind='';const q=CB.queue;CB.queue='';if(q)cbStartAtk(q)}}
+ if(CB.dodgeT>0)CB.dodgeT-=dt;
+ CB.busy=!!CB.kind||CB.blocking||CB.dodgeT>0;
+ // lock-on indicator (nearest foe in front)
+ let best=null,bs=1e9;const a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th)),gn=GUNS[W.sel],rng=(W.has[W.sel]&&gn.k==='gun')?Math.min(32,gn.range):3.6;
+ const test=f=>{if(!f.active||f.stun>0)return;const dx=f.x-A.x,dz=f.z-A.z,d=Math.hypot(dx,dz);if(d>rng)return;const an=Math.abs(wrapA(Math.atan2(dz,dx)-a0));if(an>.6)return;const sc=d*(1+an*3);if(sc<bs){bs=sc;best=f}};
+ for(const c of cops)test(c);for(const g of guards)test(g);CB.lock=best;
+ if(CB.ring){CB.ring.visible=!!best;if(best){CB.ring.position.set(best.x,.2,best.z);CB.ring.rotation.z+=dt*2}}
+ // arrest bar + vignette
+ const ar=document.getElementById('cb_arrest');
+ if(ar){const p=H.foot?H.bust/2.6:0;if(p>.03){ar.style.display='block';ar.firstChild.style.width=Math.min(100,p*100)+'%'}else ar.style.display='none'}
+ const v=Math.min(.7,CB.hurtT*2.2+(A.hp<30?.25+.12*Math.sin(now*.01):0));
+ if(CB.ui&&Math.abs(v-CB.vig)>.02){CB.vig=v;CB.ui.vg.style.opacity=v}
+ if(CB.ui){const b=document.getElementById('cb_cover');if(b)b.style.borderColor=CB.crouch?(CB.covered?'#3ddc84':'#ffd24a'):'#ffffff44'}}
+// movement hooks used by footStep
+function cbSpeedMul(){if(CB.dead)return 0;if(CB.kind)return .3;if(CB.blocking)return .5;if(CB.crouch)return .42;if(CB.stagger>0)return .4;return 1}
+function cbDash(dt){
+ if(CB.dodgeT>0){const k=Math.min(1,CB.dodgeT/.3);A.x+=CB.dv[0]*dt*k;A.z+=CB.dv[1]*dt*k;footCollide(A,.5)}
+ else if(CB.kind&&!CB.hitDone&&CB.lunge>0){A.x+=-Math.sin(A.th)*CB.lunge*dt;A.z+=-Math.cos(A.th)*CB.lunge*dt;footCollide(A,.5)}}
+function cbPose(m,g){
+ const S=PSC;let sy=S,rx=0,rz=0,py=0,yaw=0;
+ const L=m.legL,R=m.legR,kL=m.kneeL,kR=m.kneeR,aL=m.armL,aR=m.armR,eL=m.elbL,eR=m.elbR;
+ if(CB.dead){const p=Math.min(1,CB.deadT/.5),e=1-(1-p)*(1-p);rx=-1.45*e;py=.2*e;aL.rotation.x=-.5;aR.rotation.x=-.5}
+ else if(CB.dodgeT>0){const p=1-CB.dodgeT/.42,D=CB.dk;if(D==='f')rx=-6.283*p;else if(D==='b')rx=6.283*p;else rz=(D==='l'?1:-1)*6.283*p;
+  L.rotation.x=-1.7;R.rotation.x=-1.7;if(kL){kL.rotation.x=-1.7;kR.rotation.x=-1.7}aL.rotation.x=-1.5;aR.rotation.x=-1.5;if(eL){eL.rotation.x=1.6;eR.rotation.x=1.6}}
+ else if(CB.kind){
+  const t=CB.t,ha=CB.hitAt,e=Math.max(0,Math.min(1,t<ha?t/ha:1-(t-ha-.04)/Math.max(.05,CB.dur-ha-.04)));
+  if(CB.kind==='punch'){const right=CB.combo%2===1,sa=right?aR:aL,sb=right?aL:aR,se=right?eR:eL,sbe=right?eL:eR;
+   sa.rotation.x=-1.57*e;if(se)se.rotation.x=.15*(1-e);sb.rotation.x=-1.1;if(sbe)sbe.rotation.x=1.5;yaw=(right?-.4:.4)*e*(CB.combo===3?1.5:1);rx=-.08*e;
+   R.rotation.x=right?.3*e:-.3*e;L.rotation.x=right?-.3*e:.3*e}
+  else{R.rotation.x=-1.5*e;if(kR)kR.rotation.x=-.25*e;L.rotation.x=.15*e;if(kL)kL.rotation.x=-.3*e;rx=.2*e;aL.rotation.x=-.5;aR.rotation.x=-.7;if(eL){eL.rotation.x=.9;eR.rotation.x=.9}}}
+ else if(CB.blocking){aL.rotation.x=-1.9;aR.rotation.x=-1.9;if(eL){eL.rotation.x=1.95;eR.rotation.x=1.95}rx=.12;sy=S*.95}
+ else if(CB.stagger>0){const k=Math.min(1,CB.stagger/.3);rx=.35*k;aL.rotation.x=-.9*k;aR.rotation.x=-.9*k}
+ if(CB.crouch&&!CB.dead&&CB.dodgeT<=0&&!CB.kind){sy=S*.74;rx+=.2}
+ if(CB.hurtT>0&&!CB.dead&&!CB.kind&&CB.dodgeT<=0)rx+=.18*Math.min(1,CB.hurtT/.2);
+ g.scale.y=sy;g.rotation.x=rx;g.rotation.z=rz;g.rotation.y+=yaw;g.position.y+=py;
+ if(CB.dodgeT>0&&!CB.dead){const h=.9*S,th=g.rotation.y;
+  if(CB.dk==='f'||CB.dk==='b'){g.position.y+=h*(1-Math.cos(rx));const dz=-h*Math.sin(rx);g.position.x+=Math.sin(th)*dz;g.position.z+=Math.cos(th)*dz}
+  else{g.position.y+=h*(1-Math.cos(rz));const dx=h*Math.sin(rz);g.position.x+=Math.cos(th)*dx;g.position.z+=-Math.sin(th)*dx}}}
+function cbReset(){
+ CB.kind='';CB.queue='';CB.blocking=false;CB.guard=100;CB.dodgeT=0;CB.dodgeCd=0;CB.iT=0;CB.hurtT=0;CB.stagger=0;CB.shake=0;CB.crouch=false;CB.expT=0;CB.dead=false;CB.deadT=0;CB.lock=null;CB.comboT=0;CB.combo=0;CB.sinceHurt=99;CB.busy=false;CB.vig=-1;
+ CK.punchQ=CK.kickQ=CK.dodgeQ=CK.coverQ=CK.block=false;for(const d of drops){d.on=false;d.g.visible=false}if(CB.ring)CB.ring.visible=false;
+ if(CB.ui){CB.ui.vg.style.opacity=0}
+ for(const f of cops.concat(guards)){f.swing=0;f.flinch=0;f.kx=0;f.kz=0;f.blkT=0;f.aimT=0;f.prov=false;f.fall=0;f.rushT=0;f.holdT=0;f.atkT=0}}
+function cbHud(){
+ if(!CB.ui)return;const show=mode==='heist'&&H.foot&&!garageOpen&&!hOver;
+ CB.ui.box.style.display=show?'grid':'none';CB.ui.inv.style.display=(show&&W.has.some(Boolean))?'flex':'none';
+ if(!show)return;
+ const key=W.sel+':'+W.has.map((h,i)=>h?W.ammo[i]:'-').join(',');
+ if(key!==CB.invKey){CB.invKey=key;CB.ui.chips.forEach((c,i)=>{c.style.display=W.has[i]?'block':'none';c.lastChild.textContent=W.ammo[i];c.style.borderColor=i===W.sel?'#ffd24a':'#ffffff44';c.style.background=i===W.sel?'#4a3a10dd':'#13233bcc'})}}
+function cbInitUI(){
+ if(CB.ui)return;const hud=document.getElementById('hud')||document.body;
+ const vg=document.createElement('div');vg.id='cbvig';vg.style.cssText='position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 45%,rgba(210,0,0,.7) 100%);z-index:3';hud.appendChild(vg);
+ const box=document.createElement('div');box.id='cbts';box.style.cssText='position:absolute;right:calc(max(12px,env(safe-area-inset-right)) + 150px);bottom:calc(max(12px,env(safe-area-inset-bottom)) + 76px);display:none;grid-template-columns:repeat(2,50px);gap:8px;pointer-events:auto;z-index:5;direction:ltr';
+ const mkb=(id,ic,label,down,up)=>{const b=document.createElement('button');b.type='button';b.id=id;b.textContent=ic;b.setAttribute('aria-label',label);
+  b.style.cssText='width:50px;height:50px;border-radius:14px;border:2px solid #ffffff44;background:#13233bcc;color:#fff;font-size:23px;touch-action:none;padding:0;-webkit-user-select:none;user-select:none';
+  b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();try{b.setPointerCapture(e.pointerId)}catch(_){}b.style.background='#2c4a7acc';down()});
+  for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>{b.style.background='#13233bcc';if(up)up()});box.appendChild(b);return b};
+ mkb('cb_punch','👊','אגרוף',()=>{CK.punchQ=true});mkb('cb_kick','🦶','בעיטה',()=>{CK.kickQ=true});
+ mkb('cb_block','🛡️','חסימה',()=>{CK.block=true},()=>{CK.block=false});mkb('cb_dodge','💨','התחמקות',()=>{CK.dodgeQ=true});
+ mkb('cb_cover','🧱','הסתתרות',()=>{CK.coverQ=true});
+ const inv=document.createElement('div');inv.id='winv';inv.style.cssText='position:absolute;left:50%;transform:translateX(-50%);bottom:calc(max(12px,env(safe-area-inset-bottom)) + 76px);display:none;gap:6px;pointer-events:auto;z-index:5;direction:ltr';
+ const chips=GUNS.map((g,i)=>{const c=document.createElement('div');c.style.cssText='display:none;min-width:46px;padding:3px 6px;border-radius:10px;border:2px solid #ffffff44;background:#13233bcc;color:#fff;font:800 11px Arial,system-ui;text-align:center;touch-action:manipulation';
+  c.innerHTML='<b style="display:block;color:#'+g.col.toString(16).padStart(6,'0')+'">'+g.lbl+'</b><span>0</span>';
+  c.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();if(W.has[i]){W.sel=i;CB.invKey='';beep(700,.04,'square',.1)}});inv.appendChild(c);return c});
+ const ar=document.createElement('div');ar.id='cb_arrest';ar.style.cssText='position:absolute;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 118px);display:none;z-index:6;pointer-events:none;text-align:center;color:#ff8a8a;font:900 14px Arial,system-ui';
+ ar.innerHTML='<div style="height:10px;width:0;background:#ff3b3b;border-radius:6px;margin:0 auto"></div>';ar.style.width='200px';ar.style.background='#00000066';ar.style.borderRadius='8px';ar.style.padding='3px';
+ const lb=document.createElement('div');lb.textContent='🚔 נעצר!';ar.appendChild(lb);
+ hud.appendChild(box);hud.appendChild(inv);hud.appendChild(ar);CB.ui={vg,box,inv,chips};
+ const kd=e=>{if(e.repeat)return;const k=e.key;
+  if(k==='z'||k==='Z')CK.punchQ=true;else if(k==='x'||k==='X')CK.kickQ=true;else if(k==='v'||k==='V')CK.block=true;else if(k==='q'||k==='Q')CK.dodgeQ=true;else if(k==='b'||k==='B')CK.coverQ=true;
+  else if(k>='1'&&k<='6'&&mode==='heist'){const i=Number(k)-1;if(W.has[i]){W.sel=i;CB.invKey=''}}};
+ addEventListener('keydown',kd);addEventListener('keyup',e=>{if(e.key==='v'||e.key==='V')CK.block=false})}
+function cbInit(){
+ for(let i=0;i<8;i++){const g=new THREE.Group(),box=new THREE.Mesh(new THREE.BoxGeometry(.55,.22,1),new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xffffff,emissiveIntensity:.5,roughness:.5}));box.position.y=.55;g.add(box);
+  const ring=new THREE.Mesh(new THREE.RingGeometry(.9,1.15,18),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.85,side:THREE.DoubleSide}));ring.rotation.x=-Math.PI/2;ring.position.y=.14;g.add(ring);
+  g.visible=false;cityGroup.add(g);drops.push({g,box,ring,x:0,z:0,type:0,ammo:0,on:false,t:0})}
+ CB.ring=new THREE.Mesh(new THREE.RingGeometry(.7,.92,20),new THREE.MeshBasicMaterial({color:0xff3b3b,transparent:true,opacity:.9,side:THREE.DoubleSide,depthTest:false}));
+ CB.ring.rotation.x=-Math.PI/2;CB.ring.renderOrder=5;CB.ring.visible=false;cityGroup.add(CB.ring);cbInitUI();cbReset()}
+// ---- patrol-cop AI (levels 1-3), replaces the old chase-and-shoot step ----
+function copStep(c,dt){
+ const dx=A.x-c.x,dz=A.z-c.z,dist=Math.hypot(dx,dz);
+ if(foeDown(c,dt))return dist;
+ const lv=Math.max(1,Math.min(3,H.wanted||1)),L=COPLV[lv],GL=L.gun>0?L:(c.prov?COPLV[2]:null);
+ if(c.react>0){c.react-=dt;c.th+=wrapA(Math.atan2(-dx,-dz)-c.th)*Math.min(1,dt*10);c.m.group.rotation.y=c.th;animHuman(c.m,0,0,false);return dist}
+ let nav=null;if(BK.ready&&inBank(A.x,A.z,0))nav=bankNav(c,A.x,A.z);else c.navI=null;
+ const a0=nav?Math.atan2(nav.z-c.z,nav.x-c.x):Math.atan2(dz,dx);let ang=a0;
+ if(dist>3.5||nav){for(const o of COP_OFF){const a=a0+o*c.bias;if(!blockedPt(c.x+Math.cos(a)*2.4,c.z+Math.sin(a)*2.4)){ang=a;if(o!==0)c.bias=Math.sign(o*c.bias)||c.bias;break}}}
+ const losF=losClear(c.x,c.z,A.x,A.z),los=dist<46&&losF;
+ c.atkT-=dt;c.blkT-=dt;c.flinch-=dt;if(c.swing>0)c.swing-=dt;
+ let tgt=dist<1.2?0:L.spd,hold=false;
+ if(GL&&los&&!nav&&dist<GL.keep&&dist>3){if(c.rushT>0)c.rushT-=dt;else{hold=true;c.holdT+=dt;if(c.holdT>4.5){c.rushT=2.6;c.holdT=0}}}
+ if(hold)tgt=0;
+ if(c.kx||c.kz){c.x+=c.kx*dt;c.z+=c.kz*dt;const k=Math.max(0,1-dt*7);c.kx*=k;c.kz*=k;if(Math.abs(c.kx)+Math.abs(c.kz)<.05)c.kx=c.kz=0;footCollide(c,.5)}
+ if(c.flinch>0||c.swing>0)tgt*=.2;
+ c.v+=(tgt-c.v)*Math.min(1,dt*5);
+ c.x+=Math.cos(ang)*c.v*dt;c.z+=Math.sin(ang)*c.v*dt;footCollide(c,.5);
+ const face=hold||dist<3.2,th=face?Math.atan2(-dx,-dz):Math.atan2(-Math.cos(ang),-Math.sin(ang));c.th+=wrapA(th-c.th)*Math.min(1,dt*9);
+ if(dist<.9&&dist>.01){c.x-=dx/dist*(.9-dist)*.5;c.z-=dz/dist*(.9-dist)*.5}
+ if(dist<2&&c.atkT<=0&&c.swing<=0&&c.flinch<=0&&!CB.dead){c.swing=.4;c.atkT=1.1+Math.random()*.6;c.hitDone=false;noiseHit(.08,.1,1400,.6)}
+ if(c.swing>0&&!c.hitDone&&c.swing<.22){c.hitDone=true;if(dist<2.5)hurtPlayer(L.melee,c.x,c.z,'melee')}
+ if(GL&&c.flinch<=0&&dist>3&&dist<GL.range&&los){c.fireT-=dt;if(c.fireT<=0){c.fireT=GL.rate*(.8+Math.random()*.5);copFire(c,GL,dist)}}
+ c.ph+=dt*c.v*1.15;const g=c.m.group;g.position.set(c.x,0,c.z);g.rotation.y=c.th;animHuman(c.m,c.ph,Math.min(1,c.v/7)*.9,false);foeAnim(c,dt);
+ if(!nav&&dist>35&&!losF)c.lostT+=dt;else c.lostT=Math.max(0,c.lostT-dt*2);
+ return dist}
+function cbHideUI(){if(!CB.ui)return;CB.ui.box.style.display='none';CB.ui.inv.style.display='none';CB.ui.vg.style.opacity=0;const a=document.getElementById('cb_arrest');if(a)a.style.display='none'}
+
 // ---- mode switching ----
 function setMode(m){
  mode=m;const h=m==='heist';
@@ -1007,14 +1256,14 @@ function setMode(m){
  player.group.visible=!h;for(const r of rivals)r.group.visible=!h;
  if(cityGroup)cityGroup.visible=h;for(const c of heistCars)c.group.visible=h&&(c===hero||c.group.visible);
  hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('brake').textContent=h?'🛑':'בלם';hel('boost').innerHTML=h?'⚡':'⚡<br>טורבו';if(h){hel('item').textContent='⚡0';hel('item2').textContent='🔁'}hel('gas').style.display=h?'':'none';hel('act').style.display=h?'':'none';hel('jump').style.display=h?'':'none';
- if(!h){hel('hprog').style.display='none';bankHideUI()}
+ if(!h){hel('hprog').style.display='none';bankHideUI();cbHideUI()}
  scene.fog.density=h?.0022:.0038;sun.castShadow=!h;if(!h){camera.fov=BASE_FOV;camera.updateProjectionMatrix()}}
 function hReset(){
  H.x=START.x;H.z=START.z;H.th=START.th;H.v=0;H.hp=100;H.turbo=0;H.money=0;H.heists=0;H.hold=0;H.wanted=0;H.bust=0;H.safe=null;H.safeHold=0;H.t=0;H.steer=0;H.sirT=0;H.hitCd=0;H.foot=false;H.actWas=false;H.jumpWas=false;H.actMsgT=0;
  A.x=0;A.z=0;A.y=0;A.vy=0;A.v=0;A.hp=100;A.st=5;A.grounded=true;T.x=H.x;T.z=H.z;T.th=H.th;T.v=0;
  for(const c of cops){c.active=false;c.car=null;c.stun=0;if(c.m){c.m.group.visible=false;c.m.group.rotation.x=0}}if(A.model)A.model.group.visible=false;
  W.sel=0;W.ammo=[0,0,0,0,0,0];W.has=[false,false,false,false,false,false];W.cool=0;W.flash=0;for(const t of tracers){t.t=0;t.m.visible=false}for(let i=0;i<peds.length;i++){peds[i].corners=null}for(const q of projs)q.g.visible=false;projs.length=0;for(const t of strips)t.g.visible=false;strips.length=0;for(const k of wpick){k.on=true;k.g.visible=true}
- hOver=false;hcd=3;hShown=-1;hGo=0;msgT=0;bankReset();
+ hOver=false;hcd=3;hShown=-1;hGo=0;msgT=0;bankReset();cbReset();
  for(const z of ZN){z.done=false;z.ring.visible=true;z.beam.visible=true;z.ring.material.color.setHex(z.c);z.beam.material.color.setHex(z.c)}
  for(const p of pol){p.active=false;p.parked=false;p.dis=0;p.car.group.visible=false;p.v=0;p.stuck=0}
  for(const o of horbs){o.on=true;o.g.visible=true}
@@ -1034,7 +1283,7 @@ function setWanted(w){H.wanted=w;const want=[0,2,3,4][w];let c=pol.filter(p=>p.a
 function copOf(p){return cops.find(c=>c.car===p)}
 function deployCop(p){
  if(p.parked)return;p.parked=true;const c=cops.find(q=>!q.active);if(!c)return;
- c.hp=100;c.fireT=1.5;c.stun=0;c.active=true;c.car=p;c.x=p.x+Math.cos(p.th)*2.6;c.z=p.z-Math.sin(p.th)*2.6;c.th=p.th;c.v=0;c.lostT=0;c.m.group.visible=true;flashMsg('👮 שוטר יצא מהניידת!');beep(520,.12,'square',.2)}
+ c.hp=100;c.fireT=1.5;c.stun=0;c.prov=false;c.atkT=1;c.swing=0;c.flinch=0;c.fall=0;c.kx=0;c.kz=0;c.blkT=0;c.aimT=0;c.rushT=0;c.holdT=0;c.react=.5;c.active=true;c.car=p;c.x=p.x+Math.cos(p.th)*2.6;c.z=p.z-Math.sin(p.th)*2.6;c.th=p.th;c.v=0;c.lostT=0;c.m.group.visible=true;flashMsg('👮 שוטר יצא מהניידת!');beep(520,.12,'square',.2)}
 function loseCar(p){ // the cop chasing on foot lost you: that patrol car gives up
  const c=copOf(p);if(c){c.active=false;c.car=null;c.m.group.visible=false}
  p.active=false;p.parked=false;p.car.group.visible=false;
@@ -1142,7 +1391,7 @@ function shootGun(g){
  const a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th));let best=null,ba=.42;
  const cand=(x,z)=>{const dx=x-A.x,dz=z-A.z,d=Math.hypot(dx,dz);if(d>g.range||d<1)return;const an=wrapA(Math.atan2(dz,dx)-a0);if(Math.abs(an)<ba){ba=Math.abs(an);best=an}};
  for(const c of cops.concat(guards))if(c.active&&c.stun<=0)cand(c.x,c.z);for(const p of pol)if(p.active)cand(p.x,p.z);
- const base=a0+(best||0),ox=A.x+Math.cos(a0)*.7,oz=A.z+Math.sin(a0)*.7;
+ const base=a0+(best||0),ox=A.x+Math.cos(a0)*.7,oz=A.z+Math.sin(a0)*.7;if(best!=null)A.th-=best*.35;CB.expT=.7;
  for(let q=0;q<g.pel;q++){
   const a=base+(Math.random()-.5)*2*g.spread,dx=Math.cos(a),dz=Math.sin(a);
   let tb=g.range;for(let t=1;t<g.range;t+=1){const x=ox+dx*t,z=oz+dz*t;let hit=false;for(const b of bl)if(b.hh>1.6&&x>b.x0&&x<b.x1&&z>b.z0&&z<b.z1){hit=true;break}if(hit){tb=t;break}}
@@ -1153,7 +1402,7 @@ function shootGun(g){
   tracer(ox,1.35,oz,ox+dx*bt,1.2,oz+dz*bt);
   if(bo){_hp.set(ox+dx*bt,0,oz+dz*bt);burst(_hp,false);
    if(isPed)hurtPed(bo,g.dmg,dx,dz);
-   else if(!isCar){if(bo.guard)bankAlertAll();bo.hp-=g.dmg;if(bo.hp<=0){bo.stun=14;bo.hp=70;flashMsg('🔫 שוטר נפל')}}
+   else if(!isCar){foeHit(bo,g.dmg,dx,dz,'gun',g.pel>1?4:1.6)}
    else{bo.hp-=g.dmg*.6;if(bo.hp<=0){bo.hp=120;bo.dis=8;bo.v=Math.max(bo.v,10);bo.spinDir=Math.random()<.5?-1:1;flashMsg('💥 הניידת הושבתה')}}}}
  PEAR.x=A.x;PEAR.z=A.z;PEAR.t=performance.now()/1000;W.flash=.05;const sn=g.snd;beep(sn[0],sn[1],sn[2],.2)}
 function launchRocket(){
@@ -1169,7 +1418,7 @@ function dropSpikes(){
 function explode(x,z){
  _hp.set(x,0,z);burst(_hp,true);beep(90,.4,'sawtooth',.35);pedBlast(x,z,9);PEAR.x=x;PEAR.z=z;PEAR.t=performance.now()/1000;
  for(const p of pol)if(p.active&&Math.hypot(p.x-x,p.z-z)<9){p.dis=6;p.v=Math.max(p.v,12);p.spinDir=Math.random()<.5?-1:1;flashMsg('💥 ניידת הושבתה!')}
- for(const c of cops.concat(guards))if(c.active&&Math.hypot(c.x-x,c.z-z)<6){c.stun=10;if(c.guard)bankAlertAll()}}
+ for(const c of cops.concat(guards))if(c.active&&Math.hypot(c.x-x,c.z-z)<6)foeHit(c,80,c.x-x,c.z-z,'gun',9)}
 function updateWeapons(dt){
  W.cool-=dt;if(W.flash>0)W.flash-=dt;
  for(const t of tracers)if(t.t>0){t.t-=dt;if(t.t<=0)t.m.visible=false}
@@ -1209,15 +1458,16 @@ function animHuman(m,ph,amp,air){
  m.legL.rotation.x=s;m.legR.rotation.x=sR;m.armL.rotation.x=-s*.9;m.armR.rotation.x=-sR*.9;
  if(m.kneeL){m.kneeL.rotation.x=-Math.max(0,-s)*1.2;m.kneeR.rotation.x=-Math.max(0,-sR)*1.2;m.elbL.rotation.x=.2+Math.abs(amp)*.7;m.elbR.rotation.x=.2+Math.abs(amp)*.7}}
 function footStep(dt,now){
- const fz=!!BK.mini,st=fz?0:Number(keys.left)-Number(keys.right);
- A.th+=st*3.5*dt;
- const sprint=keys.boost&&A.st>.15&&!keys.brake;
+ const fz=!!BK.mini||CB.dead,st=fz?0:Number(keys.left)-Number(keys.right);
+ A.th+=st*3.5*dt*(CB.blocking?.6:1);
+ const sprint=keys.boost&&A.st>.15&&!keys.brake&&!CB.kind&&!CB.blocking&&!CB.crouch&&!fz;
  if(sprint)A.st=Math.max(0,A.st-dt);else A.st=Math.min(5,A.st+dt*(keys.gas?.6:1.4));
- const tgt=fz?0:(keys.brake?-3.4:(sprint?13:(keys.gas?8.6:0)));
+ const tgt=fz?0:(keys.brake?-3.4:(sprint?13:(keys.gas?8.6:0)))*cbSpeedMul();
  A.v+=(tgt-A.v)*Math.min(1,dt*(A.grounded?(tgt===0?10:6):1.2));
  if(keys.jump&&!H.jumpWas&&A.grounded&&!fz){A.vy=10.6;A.grounded=false;beep(420,.08,'sine',.12)}
  H.jumpWas=keys.jump;
  for(let q=0;q<2;q++){A.x+=-Math.sin(A.th)*A.v*dt/2;A.z+=-Math.cos(A.th)*A.v*dt/2;footCollide(A,.5)}
+ cbDash(dt);
  const gh=groundAt(A.x,A.z,A.y);
  A.vy-=29*dt;A.y+=A.vy*dt;
  if(A.y<=gh&&A.vy<=0){if(!A.grounded&&A.vy<-9)beep(110,.08,'square',.1);A.y=gh;A.vy=0;A.grounded=true}else if(A.y>gh+.05)A.grounded=false;
@@ -1225,24 +1475,11 @@ function footStep(dt,now){
  const m=A.model,g=m.group;g.position.set(A.x,A.y,A.z);g.rotation.y=A.th;
  A.ph+=dt*Math.abs(A.v)*1.15;animHuman(m,A.ph,Math.min(1,Math.abs(A.v)/8)*.9,!A.grounded);
  if(W.has[W.sel]&&GUNS[W.sel].k!=='spike'&&A.grounded){m.armR.rotation.x=-1.3;m.armL.rotation.x=-1.4;if(m.elbL){m.elbR.rotation.x=.25;m.elbL.rotation.x=.3}}
- m.blob.position.y=gh-A.y+.06;
+ cbPose(m,g);m.blob.position.y=gh-A.y+.06;
  if(A.grounded&&Math.abs(A.v)>3){A.stepT-=dt;if(A.stepT<=0){A.stepT=sprint?.17:.26;beep(95+Math.random()*30,.04,'square',.045)}}
- if(A.hp<100&&!H.hurt)A.hp=Math.min(100,A.hp+dt*.8)}
+ if(A.hp<100&&CB.sinceHurt>4&&!CB.dead)A.hp=Math.min(100,A.hp+dt*.8)}
 function blockedPt(x,z){for(const b of bl)if(x>b.x0-.7&&x<b.x1+.7&&z>b.z0-.7&&z<b.z1+.7)return true;for(const c of tr)if(Math.hypot(x-c.x,z-c.z)<c.r+1)return true;return false}
 const COP_OFF=[0,.5,-.5,1,-1,1.6,-1.6,2.3,-2.3];
-function copStep(c,dt){
- const dx=A.x-c.x,dz=A.z-c.z,dist=Math.hypot(dx,dz);let nav=null;if(BK.ready&&inBank(A.x,A.z,0))nav=bankNav(c,A.x,A.z);else c.navI=null;const a0=nav?Math.atan2(nav.z-c.z,nav.x-c.x):Math.atan2(dz,dx);
- if(c.stun>0){c.stun-=dt;c.v=0;const gg=c.m.group;gg.rotation.x=-1.45;gg.position.set(c.x,.2,c.z);animHuman(c.m,0,0,false);if(c.stun<=0){gg.rotation.x=0;gg.position.y=0;c.hp=70}return dist}
- let ang=a0;
- if(dist>3.5||nav){for(const o of COP_OFF){const a=a0+o*c.bias;if(!blockedPt(c.x+Math.cos(a)*2.4,c.z+Math.sin(a)*2.4)){ang=a;if(o!==0)c.bias=Math.sign(o*c.bias)||c.bias;break}}}
- const tgt=dist<1.2?0:7.4+Math.max(0,H.wanted-1)*.5;
- c.v+=(tgt-c.v)*Math.min(1,dt*5);
- c.x+=Math.cos(ang)*c.v*dt;c.z+=Math.sin(ang)*c.v*dt;footCollide(c,.5);
- const th=Math.atan2(-Math.cos(ang),-Math.sin(ang));c.th+=wrapA(th-c.th)*Math.min(1,dt*9);
- c.ph+=dt*c.v*1.15;const g=c.m.group;g.position.set(c.x,0,c.z);g.rotation.y=c.th;animHuman(c.m,c.ph,Math.min(1,c.v/7)*.9,false);
- if(!nav&&dist>35&&!losClear(c.x,c.z,A.x,A.z))c.lostT+=dt;else c.lostT=Math.max(0,c.lostT-dt*2);
- if(c.stun<=0&&dist>5&&dist<30){c.fireT-=dt;if(c.fireT<=0){c.fireT=1.2+Math.random()*1.2;if(losClear(c.x,c.z,A.x,A.z)){tracer(c.x,1.35,c.z,A.x,1.2,A.z,0xffd0a0);beep(260,.05,'square',.08);if(Math.random()<.35){A.hp-=5;flashMsg('🔫 יורים עליך!')}}}}
- return dist}
 function toggleCar(){
  if(BK.ready&&bankAct())return;
  if(!H.foot){
@@ -1263,11 +1500,12 @@ function endHeist(title,txt,win){
  if(win){beep(784,.15,'triangle',.3);beep(988,.15,'triangle',.3,.15);beep(1318,.4,'triangle',.3,.3)}else{beep(160,.5,'sawtooth',.3);beep(110,.6,'sawtooth',.3,.2)}}
 function hCam(dt,snap){
  const C=H.foot?A:H,ft=H.foot;
- const ind=ft&&BK.ready&&inBank(A.x,A.z,1.2),fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?(ind?5.6:7.8+Math.abs(A.v)*.14):11.5+Math.abs(H.v)*.08,hg=ft?(ind?10.8+A.y*.5:3.9+A.y*.6):6.2+Math.abs(H.v)*.04;
+ const ind=ft&&BK.ready&&inBank(A.x,A.z,1.2),fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?(ind?5.6:7.8+Math.abs(A.v)*.14):11.5+Math.abs(H.v)*.08,hg=ft?(ind?10.8+A.y*.5:3.9+A.y*.6-(CB.crouch?.7:0)):6.2+Math.abs(H.v)*.04;
  _hd.set(C.x-fx*dist,hg,C.z-fz*dist);
  {const dx=_hd.x-C.x,dz=_hd.z-C.z;let k=1;const free=(x,z)=>{for(const b of bl)if(b.hh>4&&x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false;return true};
   while(!ind&&k>.2&&!free(C.x+dx*k,C.z+dz*k))k-=.1;_hd.x=C.x+dx*k;_hd.z=C.z+dz*k;_hd.y+=(1-k)*12}
  if(snap)camera.position.copy(_hd);else camera.position.lerp(_hd,Math.min(1,dt*(ft?7:5)));
+ if(CB.shake>0){camera.position.x+=(Math.random()-.5)*CB.shake*.9;camera.position.y+=(Math.random()-.5)*CB.shake*.6}
  camTarget.set(C.x+fx*(ft?5:10),ft?A.y+1.7:1.2,C.z+fz*(ft?5:10));camera.lookAt(camTarget);
  const fovT=ft?BASE_FOV+Math.min(8,Math.abs(A.v)/13*8):BASE_FOV+Math.min(14,Math.abs(H.v)/70*14);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
  sun.position.set(C.x-80,110,C.z-50);sun.target.position.set(C.x,0,C.z);sun.target.updateMatrixWorld()}
@@ -1275,6 +1513,7 @@ function hPlaceHero(){hero.group.position.set(H.x,.02,H.z);hero.group.rotation.y
 function hStep(dt,now){
  H.t+=dt;
  if(keys.act&&!H.actWas){H.actWas=true;toggleCar()}else if(!keys.act)H.actWas=false;
+ cbUpdate(dt,now);
  const br=keys.brake;let boosting=false;
  if(!H.foot){
   const gas=keys.gas||(keys.boost&&H.turbo>0&&!br);boosting=keys.boost&&!br&&H.turbo>0&&H.v>3;
@@ -1323,8 +1562,9 @@ function hStep(dt,now){
  for(const k of wpick){k.box.rotation.y+=dt*2;k.box.position.y=.9+Math.sin(now*.003+k.x)*.12;
   if(!k.on){k.t-=dt;if(k.t<=0){k.on=true;k.g.visible=true}continue}
   if(Math.hypot(P.x-k.x,P.z-k.z)<(H.foot?2.6:4.8)){k.on=false;k.g.visible=false;k.t=45;const gn=GUNS[k.type];W.has[k.type]=true;W.ammo[k.type]=Math.min(300,W.ammo[k.type]+gn.give);W.sel=k.type;flashMsg('🔫 '+gn.n+' • '+W.ammo[k.type]);beep(1000,.08,'triangle',.25);beep(1400,.1,'triangle',.25,.08)}}
+ cbDrops(dt,P,now);
  updateWeapons(dt);for(const pd of peds)pedStep(pd,dt);pedsFlush();
- if(A.guns){for(let gi=0;gi<A.guns.length;gi++)A.guns[gi].visible=H.foot&&W.has[gi]&&gi===W.sel;
+ if(A.guns){for(let gi=0;gi<A.guns.length;gi++)A.guns[gi].visible=H.foot&&W.has[gi]&&gi===W.sel&&!CB.busy&&!CB.dead;
   if(A.flash){A.flash.visible=W.flash>0&&H.foot&&GUNS[W.sel].k==='gun';A.flash.position.set(.17,1.22,GMUZ[W.sel]-.25)}}
  // police cars
  let near=0,anyNear=false;
@@ -1340,8 +1580,8 @@ function hStep(dt,now){
  if(H.foot){for(const c of cops){if(!c.active)continue;const d=copStep(c,dt);if(d<170)anyNear=true;if(d<1.9&&c.stun<=0)nearCop++;
    if(c.car&&!(BK.ready&&inBank(A.x,A.z,3))&&(c.lostT>6||d>95))loseCar(c.car)}}
  if(H.foot){
-  if(nearCop>0){H.bust+=dt;if(H.bust>1.8)endHeist('🚔 נתפסת ברגל!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
-  if(A.hp<=0&&!hOver)endHeist('🩸 נפצעת קשה','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
+  if(nearCop>0){H.bust+=dt;if(H.bust>2.6)endHeist('🚔 נתפסת ברגל!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
+  if(A.hp<=0&&!hOver){if(!CB.dead){CB.dead=true;CB.deadT=0;CB.blocking=false;CB.kind='';CB.crouch=false;sfxPain();flashMsg('🩸 נפלת!')}else if(CB.deadT>1.2)endHeist('🩸 נפצעת קשה','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false)}
  }else{
   if(near>0&&Math.abs(H.v)<9){H.bust+=dt;if(H.bust>2.5)endHeist('🚔 נתפסת!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
   if(H.hp<=0&&!hOver)endHeist('💥 הרכב נהרס','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
@@ -1359,6 +1599,7 @@ function hStep(dt,now){
  if(H.safe)safeViz.beam.material.opacity=.2+.1*Math.sin(now*.006)}
 function hGridPlace(dt){hPlaceHero();hCam(dt,false);updateAudio(0,false,false,dt)}
 function hHud(now){
+ cbHud();
  const setT=(id,v)=>{const e=hel(id);if(e._v!==v){e._v=v;e.textContent=v}};
  setT('hh_h',String(H.heists));setT('hh_s','★'.repeat(H.wanted)+'☆'.repeat(3-H.wanted));setT('hh_m',H.money.toLocaleString('en-US')+'$');
  hel('hh_hp').style.width=Math.max(0,H.foot?A.hp:H.hp)+'%';hel('hh_t').style.width=(H.foot?A.st/5*100:H.turbo/8*100)+'%';hel('boost').style.opacity=H.foot?(A.st>.2?1:.4):(H.turbo>0?1:.4);
@@ -1382,6 +1623,7 @@ function hMapDraw(now){
  for(const p of pol)if(p.active)dot(p.x,p.z,5,Math.floor(now/250)%2?'#ff4050':'#4a80ff');
  for(const c of cops)if(c.active)dot(c.x,c.z,3,'#7fb0ff');
  for(const k of wpick)if(k.on)dot(k.x,k.z,2.5,'#'+GUNS[k.type].col.toString(16).padStart(6,'0'));
+ for(const d of drops)if(d.on)dot(d.x,d.z,3,'#ffd24a');
  if(H.foot){ctx.fillStyle='#ffd35e';ctx.fillRect(px(H.x)-4,py(H.z)-4,8,8);dot(A.x,A.z,5,'#ffffff')}else dot(H.x,H.z,6,'#ffffff')}
 function heistFrame(dt,now){
  if(garageOpen&&hShown!==-1){setCd('');hShown=-1}
