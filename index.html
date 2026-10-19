@@ -530,7 +530,7 @@ const GAS={x:-273,z:-247.5,c:0x3ddad7},GAR={x:72,z:-337.5,c:0xaab4bd},START={x:-
 const SAFE_POOL=[[-273,-100],[-3,-440],[267,-450],[402,-250],[-138,100],[132,380],[267,200],[-273,300]];
 const H={x:0,z:0,th:0,v:0,hp:100,turbo:0,money:0,heists:0,hold:0,wanted:0,bust:0,safe:null,safeHold:0,t:0,steer:0,sirT:0,sirF:false,hitCd:0,mapT:0,foot:false,actWas:false,jumpWas:false,actMsgT:0,fireWas:false,cycWas:false};
 const A={x:0,z:0,y:0,vy:0,th:0,v:0,hp:100,st:5,ph:0,grounded:true,model:null,hitCd:0,stepT:0},T={x:0,z:0,th:0,v:0},cops=[],peds=[],cellRects=[],wpick=[],projs=[],strips=[],W={sel:0,ammo:[0,0,0,0,0,0],has:[false,false,false,false,false,false],cool:0,flash:0};
-const PED_N=190,PR={},_pd=new THREE.Object3D();
+const PEAR={x:0,z:0,t:-99},PED_N=190,PR={},_pd=new THREE.Object3D(),PSC=1.28;
 const WI=['🔫','🔫','🔫','🔫','🚀','🔻'];
 const GUNS=[
  {n:'אקדח',k:'gun',auto:false,rate:.26,dmg:40,spread:.025,range:60,pel:1,give:36,snd:[330,.07,'square'],col:0xffd23f,lbl:'אקדח'},
@@ -730,8 +730,8 @@ function buildCity(){
  for(let i=0;i<4;i++){const c=buildRoadCar(0xf2f4f5,['wagon','sedan','hatch','wagon'][i],true);
   c.group.visible=false;pol.push({car:c,x:0,z:0,th:0,v:0,active:false,hitCd:0,stuck:0,pathT:0,wp:null,lt:i*.3,lights:c.lights,base:0,parked:false,dis:0,spinDir:1})}
 
- for(let i=0;i<4;i++){const c=buildHuman(0x1d3f8a,0x1a2330,0x10264f,{cop:true});c.group.visible=false;cityGroup.add(c.group);cops.push({m:c,x:0,z:0,th:0,v:0,active:false,car:null,bias:1,lostT:0,ph:i,stun:0,hp:100,fireT:1.5})}
- A.model=buildHuman(0x2a2d33,0x3a4250,0xd7263d,{mask:true,bag:true});A.model.group.visible=false;cityGroup.add(A.model.group);A.guns=buildGuns(A.model.group);
+ for(let i=0;i<4;i++){const c=buildHuman(0x1d3f8a,0x1a2330,0x10264f,{cop:true});c.group.visible=false;c.group.scale.setScalar(PSC);cityGroup.add(c.group);cops.push({m:c,x:0,z:0,th:0,v:0,active:false,car:null,bias:1,lostT:0,ph:i,stun:0,hp:100,fireT:1.5})}
+ A.model=buildHuman(0x2a2d33,0x3a4250,0xd7263d,{mask:true,bag:true});A.model.group.visible=false;A.model.group.scale.setScalar(PSC);cityGroup.add(A.model.group);A.guns=buildGuns(A.model.group);
  A.flash=new THREE.Mesh(new THREE.SphereGeometry(.13,6,4),new THREE.MeshBasicMaterial({color:0xffe27a}));A.flash.visible=false;A.model.group.add(A.flash);
  // crowd: one instanced mesh per body part, positions recycled around the camera
  {const JK=[0xc0392b,0x2980b9,0x27ae60,0xf39c12,0x8e44ad,0xecf0f1,0x34495e,0xe67e22,0x16a085,0x555b66,0xd7c9a5],PN=[0x2c3e50,0x4a4a4a,0x1f3a5f,0x6b5a45,0x39424e,0x8a7a62],HR=[0x222222,0x5a3a22,0xc9a15b,0x999999,0x7a4a2a,0x111111],SK=[0xf1c9a0,0xd9a679,0xa9764f,0x6e4a30];
@@ -743,11 +743,15 @@ function buildCity(){
   PR.hat=mk(G(new THREE.SphereGeometry(.124,8,5),g=>{g.scale(1,.78,1.06);g.translate(0,1.745,.012)}),N);
   PR.legs=mk(G(new THREE.CylinderGeometry(.085,.065,.88,7),g=>g.translate(0,-.44,0)),N*2);
   PR.arms=mk(G(new THREE.CylinderGeometry(.05,.042,.58,7),g=>g.translate(0,-.29,0)),N*2);
+  PR.shoes=mk(G(new THREE.BoxGeometry(.12,.08,.27),g=>g.translate(0,-.9,-.05)),N*2);
+  PR.hands=mk(G(new THREE.SphereGeometry(.052,6,5),g=>g.translate(0,-.6,0)),N*2);
+  PR.neck=mk(G(new THREE.CylinderGeometry(.05,.055,.1,6),g=>g.translate(0,1.58,0)),N);
   const col=new THREE.Color();
   for(let i=0;i<N;i++){const jk=pk(JK),pn=pk(PN),hr=pk(HR),sk=pk(SK);
    PR.torso.setColorAt(i,col.set(jk));PR.head.setColorAt(i,col.set(sk));PR.hat.setColorAt(i,col.set(hr));
+   PR.shoes.setColorAt(2*i,col.set(pk([0xeeeeee,0x222222,0x6b4a2b,0xc0392b])));PR.shoes.setColorAt(2*i+1,col);PR.hands.setColorAt(2*i,col.set(sk));PR.hands.setColorAt(2*i+1,col);PR.neck.setColorAt(i,col);
    PR.legs.setColorAt(2*i,col.set(pn));PR.legs.setColorAt(2*i+1,col.set(pn));PR.arms.setColorAt(2*i,col.set(jk));PR.arms.setColorAt(2*i+1,col.set(jk));
-   const p={i,corners:null,ci:0,dir:1,x:9999,z:9999,th:0,v:0,sp:1.1+Math.random()*.8,wait:0,flee:0,fx:0,fz:0,ph:Math.random()*6};peds.push(p)}
+   const p={i,sc:.93+Math.random()*.17,hp:34,dead:0,y:0,vy:0,vx:0,vz:0,fa:0,fv:0,dt:0,corners:null,ci:0,dir:1,x:9999,z:9999,th:0,v:0,sp:1.1+Math.random()*.8,wait:0,flee:0,fx:0,fz:0,ph:Math.random()*6};peds.push(p)}
   for(const k in PR){if(PR[k].instanceColor)PR[k].instanceColor.needsUpdate=true}}
  // weapon crates lying on the sidewalk corners
  {const tx=GUNS.map(gn=>textTex(64,64,(g,w,h)=>{const c='#'+gn.col.toString(16).padStart(6,'0');g.fillStyle=c;g.fillRect(0,0,w,h);g.fillStyle='rgba(0,0,0,.35)';g.fillRect(0,0,w,6);g.fillRect(0,h-6,w,6);g.fillStyle='#111';g.font='bold 17px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(gn.lbl,w/2,h/2)}));
@@ -855,22 +859,41 @@ function pedRespawn(p){
   const dx=Math.max(c.x0-cx,0,cx-c.x1),dz=Math.max(c.z0-cz,0,cz-c.z1),d=Math.hypot(dx,dz);if(d<28||d>110)continue;
   const m=1.1,corners=[[c.x0+m,c.z0+m],[c.x1-m,c.z0+m],[c.x1-m,c.z1-m],[c.x0+m,c.z1-m]];
   p.corners=corners;p.ci=(Math.random()*4)|0;p.dir=Math.random()<.5?1:-1;const a=corners[p.ci],b=corners[(p.ci+p.dir+4)%4],t=Math.random();
-  p.x=a[0]+(b[0]-a[0])*t;p.z=a[1]+(b[1]-a[1])*t;p.flee=0;p.wait=0;p.v=0;return true}
+  p.x=a[0]+(b[0]-a[0])*t;p.z=a[1]+(b[1]-a[1])*t;p.flee=0;p.wait=0;p.v=0;p.dead=0;p.hp=34;p.y=0;p.fa=0;p.vy=0;return true}
  return false}
 function pedRender(p){
- const i=p.i,s=Math.sin(p.ph)*Math.min(1,p.v/2.2)*.7,cth=Math.cos(p.th),sth=Math.sin(p.th),D=_pd;
- const put=(im,idx,lx,ly,rx)=>{D.rotation.order='YXZ';D.position.set(p.x+lx*cth,ly,p.z-lx*sth);D.rotation.set(rx,p.th,0);D.updateMatrix();im.setMatrixAt(idx,D.matrix)};
- put(PR.torso,i,0,0,0);put(PR.head,i,0,0,0);put(PR.hat,i,0,0,0);
- put(PR.legs,2*i,-.1,.92,s);put(PR.legs,2*i+1,.1,.92,-s);put(PR.arms,2*i,-.275,1.5,-s*.9);put(PR.arms,2*i+1,.275,1.5,s*.9)}
+ const i=p.i,s=p.dead?(Math.sin(p.i*3.7)*.5):Math.sin(p.ph)*Math.min(1,p.v/2.2)*(p.flee>0?1.15:.7),cth=Math.cos(p.th),sth=Math.sin(p.th),D=_pd,SC=PSC*p.sc,a=p.dead?p.fa:0,ca=Math.cos(a),sa=Math.sin(a),by=p.y;
+ D.rotation.order='YXZ';D.scale.setScalar(SC);
+ const put=(im,idx,lx,ly,rx)=>{const yy=ly*SC,xx=lx*SC,y2=yy*ca,z2=yy*sa;D.position.set(p.x+xx*cth+z2*sth,by+y2,p.z-xx*sth+z2*cth);D.rotation.set(rx+a,p.th,0);D.updateMatrix();im.setMatrixAt(idx,D.matrix)};
+ const aw=p.dead?1.2:0,hs=p.flee>0?-1.1:0;
+ put(PR.torso,i,0,0,0);put(PR.head,i,0,0,0);put(PR.hat,i,0,0,0);put(PR.neck,i,0,0,0);
+ put(PR.legs,2*i,-.1,.92,s);put(PR.legs,2*i+1,.1,.92,-s);put(PR.shoes,2*i,-.1,.92,s);put(PR.shoes,2*i+1,.1,.92,-s);
+ put(PR.arms,2*i,-.275,1.5,-s*.9+hs-aw);put(PR.arms,2*i+1,.275,1.5,s*.9+hs+aw*.6);put(PR.hands,2*i,-.275,1.5,-s*.9+hs-aw);put(PR.hands,2*i+1,.275,1.5,s*.9+hs+aw*.6)}
+function killPed(p,vx,vz,up,spin){if(p.dead)return;p.dead=1;p.vx=vx;p.vz=vz;p.vy=up;p.y=0;p.fa=0;p.fv=spin;p.dt=0;p.flee=0;p.v=0;
+ if(Math.hypot(vx,vz)>.3)p.th=Math.atan2(-vx,-vz)+Math.PI;PEAR.x=p.x;PEAR.z=p.z;PEAR.t=performance.now()/1000;beep(150,.1,'square',.18)}
+function hurtPed(p,dmg,dx,dz){if(p.dead)return;p.hp-=dmg;PEAR.x=p.x;PEAR.z=p.z;PEAR.t=performance.now()/1000;
+ if(p.hp<=0)killPed(p,dx*2.5,dz*2.5,2.2,(Math.random()<.5?-1:1)*5);else{p.flee=3;p.fx=-dz*.6+dx*.4;p.fz=dz*.4+dx*.6}}
+function pedBlast(x,z,R){for(const p of peds)if(!p.dead&&p.corners){const dx=p.x-x,dz=p.z-z,d=Math.hypot(dx,dz);if(d<R){const k=1/Math.max(d,1);killPed(p,dx*k*11,dz*k*11,7,10)}}}
 function pedStep(p,dt){
  if(!p.corners||(p.x-camera.position.x)**2+(p.z-camera.position.z)**2>135*135){if(!pedRespawn(p)){p.x=99999;p.z=99999;return}}
+ if(p.dead){p.dt+=dt;
+  if(p.y>0||p.vy>0){p.vy-=22*dt;p.y+=p.vy*dt;p.x+=p.vx*dt;p.z+=p.vz*dt;footCollide(p,.4);p.fa+=p.fv*dt*(p.y>.3?1.7:1);
+   if(p.y<=0){p.y=0;p.vy=0;p.vx*=.45;p.vz*=.45;const tg=(p.fv<0?-1:1)*1.5;p.fa=tg+Math.round((p.fa-tg)/6.2832)*6.2832}}
+  else{p.x+=p.vx*dt;p.z+=p.vz*dt;const f=Math.max(0,1-dt*4);p.vx*=f;p.vz*=f;footCollide(p,.4);p.fa+=((p.fv<0?-1:1)*1.5-p.fa)*Math.min(1,dt*10)}
+  if(p.dt>12){p.y-=dt*1.6}if(p.dt>13){p.corners=null;p.dead=0}
+  pedRender(p);return}
+ {const tn=performance.now()/1000;
+  if(!H.foot&&Math.abs(H.v)>4&&Math.hypot(p.x-H.x,p.z-H.z)<2.5){const fx=-Math.sin(H.th),fz=-Math.cos(H.th),v=Math.abs(H.v)*Math.sign(H.v||1);killPed(p,fx*v*.85+(Math.random()-.5)*3,fz*v*.85+(Math.random()-.5)*3,3+Math.abs(v)*.12,(Math.random()<.5?-1:1)*(6+Math.abs(v)*.1));H.v*=.94;return}
+  for(const q of pol)if(q.active&&Math.abs(q.v)>4&&Math.hypot(p.x-q.x,p.z-q.z)<2.7){const fx=-Math.sin(q.th),fz=-Math.cos(q.th);killPed(p,fx*q.v*.8,fz*q.v*.8,4,7);return}
+  if(H.foot&&A.v>6&&Math.hypot(p.x-A.x,p.z-A.z)<1.1){const fx=-Math.sin(A.th),fz=-Math.cos(A.th);killPed(p,fx*A.v*.6,fz*A.v*.6,2.5,-5);p.hp=0;A.v*=.7;return}
+  if(p.flee<=0&&tn-PEAR.t<4){const dx=p.x-PEAR.x,dz=p.z-PEAR.z,d=Math.hypot(dx,dz);if(d<38&&d>.1){p.flee=3+Math.random()*1.5;p.fx=dx/d;p.fz=dz/d}}}
  if(p.flee<=0){let tx=0,tz=0,th=false;
   if(!H.foot&&Math.abs(H.v)>5&&Math.hypot(p.x-H.x,p.z-H.z)<9){tx=H.x;tz=H.z;th=true}
   else if(H.foot&&Math.abs(A.v)>9&&Math.hypot(p.x-A.x,p.z-A.z)<2.5){tx=A.x;tz=A.z;th=true}
   else for(const q of pol)if(q.active&&Math.abs(q.v)>5&&Math.hypot(p.x-q.x,p.z-q.z)<8){tx=q.x;tz=q.z;th=true;break}
   if(th){p.flee=1.6;const dx=p.x-tx,dz=p.z-tz,d=Math.hypot(dx,dz)||1;p.fx=dx/d;p.fz=dz/d}}
  let spd=0,dx=0,dz=0;
- if(p.flee>0){p.flee-=dt;spd=4.2;dx=p.fx;dz=p.fz;
+ if(p.flee>0){p.flee-=dt;spd=5;dx=p.fx;dz=p.fz;
   if(p.flee<=0){let bi=0,bd=1e9;p.corners.forEach((c,k)=>{const d=Math.hypot(c[0]-p.x,c[1]-p.z);if(d<bd){bd=d;bi=k}});p.ci=(bi-p.dir+4)%4}}
  else if(p.wait>0){p.wait-=dt}
  else{const c=p.corners[(p.ci+p.dir+4)%4],ex=c[0]-p.x,ez=c[1]-p.z,d=Math.hypot(ex,ez);
@@ -914,14 +937,16 @@ function shootGun(g){
  for(let q=0;q<g.pel;q++){
   const a=base+(Math.random()-.5)*2*g.spread,dx=Math.cos(a),dz=Math.sin(a);
   let tb=g.range;for(let t=1;t<g.range;t+=1){const x=ox+dx*t,z=oz+dz*t;let hit=false;for(const b of bl)if(b.hh>1.6&&x>b.x0&&x<b.x1&&z>b.z0&&z<b.z1){hit=true;break}if(hit){tb=t;break}}
-  let bt=tb,bo=null,isCar=false;
+  let bt=tb,bo=null,isCar=false,isPed=false;
   for(const c of cops)if(c.active&&c.stun<=0){const rx=c.x-ox,rz=c.z-oz,t=rx*dx+rz*dz;if(t<0||t>bt)continue;if(Math.abs(rx*dz-rz*dx)<.55){bt=t;bo=c;isCar=false}}
   for(const p of pol)if(p.active){const rx=p.x-ox,rz=p.z-oz,t=rx*dx+rz*dz;if(t<0||t>bt)continue;if(Math.abs(rx*dz-rz*dx)<1.6){bt=t;bo=p;isCar=true}}
+  for(const pd of peds)if(!pd.dead&&pd.corners){const rx=pd.x-ox,rz=pd.z-oz,t=rx*dx+rz*dz;if(t<0||t>=bt)continue;if(Math.abs(rx*dz-rz*dx)<.6){bt=t;bo=pd;isCar=false;isPed=true}}
   tracer(ox,1.35,oz,ox+dx*bt,1.2,oz+dz*bt);
   if(bo){_hp.set(ox+dx*bt,0,oz+dz*bt);burst(_hp,false);
-   if(!isCar){bo.hp-=g.dmg;if(bo.hp<=0){bo.stun=14;bo.hp=70;flashMsg('🔫 שוטר נפל')}}
+   if(isPed)hurtPed(bo,g.dmg,dx,dz);
+   else if(!isCar){bo.hp-=g.dmg;if(bo.hp<=0){bo.stun=14;bo.hp=70;flashMsg('🔫 שוטר נפל')}}
    else{bo.hp-=g.dmg*.6;if(bo.hp<=0){bo.hp=120;bo.dis=8;bo.v=Math.max(bo.v,10);bo.spinDir=Math.random()<.5?-1:1;flashMsg('💥 הניידת הושבתה')}}}}
- W.flash=.05;const sn=g.snd;beep(sn[0],sn[1],sn[2],.2)}
+ PEAR.x=A.x;PEAR.z=A.z;PEAR.t=performance.now()/1000;W.flash=.05;const sn=g.snd;beep(sn[0],sn[1],sn[2],.2)}
 function launchRocket(){
  const P=H.foot?A:H,fx=-Math.sin(P.th),fz=-Math.cos(P.th),y=H.foot?1.3:1,o=H.foot?1.2:3,gp=new THREE.Group();
  gp.add(new THREE.Mesh(new THREE.BoxGeometry(.22,.22,1.1),new THREE.MeshStandardMaterial({color:0xff7a2a,emissive:0xff5a10,emissiveIntensity:1.5})));
@@ -933,7 +958,7 @@ function dropSpikes(){
  gp.add(new THREE.Mesh(new THREE.BoxGeometry(3.6,.12,.08),new THREE.MeshBasicMaterial({color:0xffd23f})));
  gp.position.set(bx2,.06,bz2);gp.rotation.y=P.th;cityGroup.add(gp);strips.push({g:gp,x:bx2,z:bz2,t:30});flashMsg('🔻 הנחת פסי דוקרנים')}
 function explode(x,z){
- _hp.set(x,0,z);burst(_hp,true);beep(90,.4,'sawtooth',.35);
+ _hp.set(x,0,z);burst(_hp,true);beep(90,.4,'sawtooth',.35);pedBlast(x,z,9);PEAR.x=x;PEAR.z=z;PEAR.t=performance.now()/1000;
  for(const p of pol)if(p.active&&Math.hypot(p.x-x,p.z-z)<9){p.dis=6;p.v=Math.max(p.v,12);p.spinDir=Math.random()<.5?-1:1;flashMsg('💥 ניידת הושבתה!')}
  for(const c of cops)if(c.active&&Math.hypot(c.x-x,c.z-z)<6){c.stun=10}}
 function updateWeapons(dt){
@@ -1028,12 +1053,12 @@ function endHeist(title,txt,win){
  if(win){beep(784,.15,'triangle',.3);beep(988,.15,'triangle',.3,.15);beep(1318,.4,'triangle',.3,.3)}else{beep(160,.5,'sawtooth',.3);beep(110,.6,'sawtooth',.3,.2)}}
 function hCam(dt,snap){
  const C=H.foot?A:H,ft=H.foot;
- const fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?6.2+Math.abs(A.v)*.14:11.5+Math.abs(H.v)*.08,hg=ft?3.1+A.y*.6:6.2+Math.abs(H.v)*.04;
+ const fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?7.8+Math.abs(A.v)*.14:11.5+Math.abs(H.v)*.08,hg=ft?3.9+A.y*.6:6.2+Math.abs(H.v)*.04;
  _hd.set(C.x-fx*dist,hg,C.z-fz*dist);
  {const dx=_hd.x-C.x,dz=_hd.z-C.z;let k=1;const free=(x,z)=>{for(const b of bl)if(b.hh>4&&x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false;return true};
   while(k>.2&&!free(C.x+dx*k,C.z+dz*k))k-=.1;_hd.x=C.x+dx*k;_hd.z=C.z+dz*k;_hd.y+=(1-k)*12}
  if(snap)camera.position.copy(_hd);else camera.position.lerp(_hd,Math.min(1,dt*(ft?7:5)));
- camTarget.set(C.x+fx*(ft?5:10),ft?A.y+1.3:1.2,C.z+fz*(ft?5:10));camera.lookAt(camTarget);
+ camTarget.set(C.x+fx*(ft?5:10),ft?A.y+1.7:1.2,C.z+fz*(ft?5:10));camera.lookAt(camTarget);
  const fovT=ft?BASE_FOV+Math.min(8,Math.abs(A.v)/13*8):BASE_FOV+Math.min(14,Math.abs(H.v)/70*14);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
  sun.position.set(C.x-80,110,C.z-50);sun.target.position.set(C.x,0,C.z);sun.target.updateMatrixWorld()}
 function hPlaceHero(){hero.group.position.set(H.x,.02,H.z);hero.group.rotation.y=H.th;hero.group.rotation.z=-H.steer*Math.min(1,Math.abs(H.v)/50)*.05}
