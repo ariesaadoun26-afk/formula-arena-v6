@@ -370,7 +370,7 @@ function buildRoadCar(color,model,police){
   bx(.9,.07,.28,darkM,0,1.5,.15);bx(.38,.09,.24,rm,-.24,1.56,.15);bx(.38,.09,.24,bm,.24,1.56,.15);lights=[rm,bm]}
  const flame=new THREE.Mesh(new THREE.ConeGeometry(.2,1.5,7),new THREE.MeshBasicMaterial({color:0x36d7ff,transparent:true,opacity:.8}));flame.rotation.x=Math.PI/2;flame.position.set(0,.55,L+.8);flame.visible=false;group.add(flame);
  const blob=new THREE.Mesh(new THREE.PlaneGeometry(2.7,L*2+.9),blobMat);blob.rotation.x=-Math.PI/2;blob.position.set(0,.04,0);blob.renderOrder=2;group.add(blob);
- scene.add(group);return {group,flame,kind:'road',wheels,tail:tailM,lights,L}}
+ group.scale.setScalar(1.25);scene.add(group);return {group,flame,kind:'road',wheels,tail:tailM,lights,L}}
 function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/(w.r*car.group.scale.x);if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
@@ -523,7 +523,7 @@ function updateSparks(dt){for(let i=sparks.length-1;i>=0;i--){const s=sparks[i],
 const raceObjs=scene.children.slice();
 // ================= HEIST MODE: "שוד ומשטרה" (free-roam city, police chase) =================
 let mode='race',cityGroup=null,hero=null,heistCars=[];
-const RX=[-273,-138,-3,132,267,402],RWX=[42,18,42,18,42,36],RZ=[-337.5,-172.5,-7.5,157.5,322.5,427.5],RWZ=[42,18,42,18,42,18];
+const RX=[-273,-138,-3,132,267,402],RWX=[28,16,28,16,28,24],RZ=[-337.5,-172.5,-7.5,157.5,322.5,427.5],RWZ=[28,16,28,16,28,16];
 const bl=[],tr=[],NODES=[],horbs=[],pol=[];
 const ZN=[{k:'bank',x:-201,z:-337.5,c:0xffc84a,money:50000,name:'הבנק'},{k:'jewel',x:192,z:-7.5,c:0xc77dff,money:30000,name:'חנות התכשיטים'},{k:'ware',x:402,z:484.5,c:0xff8a3d,money:20000,name:'המחסן בנמל'}];
 const GAS={x:-273,z:-247.5,c:0x3ddad7},GAR={x:72,z:-337.5,c:0xaab4bd},START={x:-273,z:470,th:0};
@@ -695,7 +695,7 @@ function buildCity(){
   for(let a=0;a<nx;a++)for(let b=0;b<nz;b++){
    const bx0=ux+a*(bw+al),bz0=uz+b*(bd+al),ccx=bx0+bw/2,ccz=bz0+bd/2;
    const isSp=sp&&(!sp.maxz||b===nz-1);
-   const dc=Math.hypot(ccx-60,ccz+20),h0=isSp?(sp.h<12?sp.h:sp.h*1.5):(dc<280?50+rnd()*85:24+rnd()*40),h=h0<14?h0:6+Math.max(3,Math.round((h0-6)/4.2))*4.2,col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
+   const dc=Math.hypot(ccx-60,ccz+20),h0=isSp?(sp.h<12?sp.h:sp.h*1.5):(dc<280?40+rnd()*60:22+rnd()*32),h=h0<14?h0:6+Math.max(3,Math.round((h0-6)/4.2))*4.2,col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
    addBuilding(ccx,ccz,bw,bd,h,col,isSp);
    bl.push({x0:bx0,x1:bx0+bw,z0:bz0,z1:bz0+bd,hh:h});
    if(isSp)signs.push([ccx,h+1.6,ccz,0,Math.min(bw*.7,36),3.2,3,sp.sign])}
@@ -795,7 +795,7 @@ function setMode(m){
  if(cityGroup)cityGroup.visible=h;for(const c of heistCars)c.group.visible=h&&(c===hero||c.group.visible);
  hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('brake').textContent=h?'🛑':'בלם';hel('boost').innerHTML=h?'⚡':'⚡<br>טורבו';if(h){hel('item').textContent='⚡0';hel('item2').textContent='🔁'}hel('gas').style.display=h?'':'none';hel('act').style.display=h?'':'none';hel('jump').style.display=h?'':'none';
  if(!h)hel('hprog').style.display='none';
- scene.fog.density=h?.0022:.0038;if(!h){camera.fov=BASE_FOV;camera.updateProjectionMatrix()}}
+ scene.fog.density=h?.0022:.0038;sun.castShadow=!h;if(!h){camera.fov=BASE_FOV;camera.updateProjectionMatrix()}}
 function hReset(){
  H.x=START.x;H.z=START.z;H.th=START.th;H.v=0;H.hp=100;H.turbo=0;H.money=0;H.heists=0;H.hold=0;H.wanted=0;H.bust=0;H.safe=null;H.safeHold=0;H.t=0;H.steer=0;H.sirT=0;H.hitCd=0;H.foot=false;H.actWas=false;H.jumpWas=false;H.actMsgT=0;
  A.x=0;A.z=0;A.y=0;A.vy=0;A.v=0;A.hp=100;A.st=5;A.grounded=true;T.x=H.x;T.z=H.z;T.th=H.th;T.v=0;
@@ -829,8 +829,8 @@ function loseCar(p){ // the cop chasing on foot lost you: that patrol car gives 
  flashMsg('🕶️ הצלחת לאבד את השוטרים!');beep(700,.12,'triangle',.25);beep(900,.15,'triangle',.25,.12)}
 function policeStep(p,dt){
  p.pathT-=dt;p.hitCd-=dt;p.lt+=dt;const on=Math.floor(p.lt*4)%2;p.lights[0].emissiveIntensity=on?3:.2;p.lights[1].emissiveIntensity=on?.2:3;
- if(p.dis>0){p.dis-=dt;p.hitCd=.5;p.v*=Math.max(0,1-dt*2.5);p.th+=dt*5.5*p.spinDir*Math.min(1,p.v/6+.3);p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;hCollide(p,2.3);if(Math.random()<.25){_hp.set(p.x,0,p.z);burst(_hp,false)}p.car.group.position.set(p.x,.02,p.z);p.car.group.rotation.y=p.th;return}
- if(p.parked){p.v*=Math.max(0,1-dt*5);p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;hCollide(p,2.3);p.car.group.position.set(p.x,0.02,p.z);p.car.group.rotation.y=p.th;return}
+ if(p.dis>0){p.dis-=dt;p.hitCd=.5;p.v*=Math.max(0,1-dt*2.5);p.th+=dt*5.5*p.spinDir*Math.min(1,p.v/6+.3);p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;hCollide(p,2.8);if(Math.random()<.25){_hp.set(p.x,0,p.z);burst(_hp,false)}p.car.group.position.set(p.x,.02,p.z);p.car.group.rotation.y=p.th;return}
+ if(p.parked){p.v*=Math.max(0,1-dt*5);p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;hCollide(p,2.8);p.car.group.position.set(p.x,0.02,p.z);p.car.group.rotation.y=p.th;return}
  const dx=T.x-p.x,dz=T.z-p.z,dist=Math.hypot(dx,dz);
  if(H.foot){const a=nearestNode(p.x,p.z),b=nearestNode(T.x,T.z);if(dist<26||(a===b&&Math.hypot(p.x-NODES[a].x,p.z-NODES[a].z)<14)){deployCop(p);return}}
  if(p.pathT<=0){p.pathT=.45;
@@ -843,7 +843,7 @@ function policeStep(p,dt){
  const vt=p.base*(1-.68*Math.min(1,Math.abs(err)/.9))*(dist<14?1.05:1);
  p.v+=(vt-p.v)*Math.min(1,dt*1.5);
  p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;
- const hit=hCollide(p,2.3);if(hit>0)p.v*=.7;
+ const hit=hCollide(p,2.8);if(hit>0)p.v*=.7;
  if(p.v<4&&dist>20){p.stuck+=dt;if(p.stuck>1.6)spawnPolice(p)}else p.stuck=0;
  p.car.group.position.set(p.x,.02,p.z);p.car.group.rotation.y=p.th;spinWheels(p.car,p.v*dt,0)}
 
@@ -1054,7 +1054,7 @@ function hStep(dt,now){
   const turn=H.steer*om*Math.min(1,Math.abs(H.v)/5)*(H.v>=0?1:-1)*dt;
   H.hitCd-=dt;
   const sub=Math.max(1,Math.min(6,Math.ceil(Math.abs(H.v)*dt/1.1)));let hit=0;
-  for(let q=0;q<sub;q++){H.th+=turn/sub;H.x+=-Math.sin(H.th)*H.v*dt/sub;H.z+=-Math.cos(H.th)*H.v*dt/sub;hit=Math.max(hit,hCollide(H,2.1))}
+  for(let q=0;q<sub;q++){H.th+=turn/sub;H.x+=-Math.sin(H.th)*H.v*dt/sub;H.z+=-Math.cos(H.th)*H.v*dt/sub;hit=Math.max(hit,hCollide(H,2.6))}
   if(hit>0){if(hit>12&&H.hitCd<=0){H.hp-=(hit-12)*.35;H.hitCd=.4;burst(_hp.set(H.x,0,H.z),false);beep(80,.25,'sawtooth',.25);flashMsg('💥 התנגשות!')}
    H.v*=hit>12?.45:.8}
  }else{footStep(dt,now);H.hitCd-=dt}
