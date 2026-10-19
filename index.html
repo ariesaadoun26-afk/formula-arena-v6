@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><title>FORMULA ARENA V6 | Coastal Circuit</title>
 <style>#startHeist{margin-top:13px;padding:11px 26px;background:#ff5a5a;border:0;border-radius:12px;font-size:18px;font-weight:900;color:#fff;cursor:pointer;touch-action:manipulation}#hhud{display:none;position:absolute;top:max(9px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));gap:8px;justify-content:center;direction:ltr}#hprog{display:none;position:absolute;top:34%;left:50%;transform:translateX(-50%);text-align:center;background:#000a;padding:10px 16px;border-radius:12px;font-weight:900}#hprog .bar{margin:6px auto 0}#hprog_b{background:linear-gradient(90deg,#ffd34a,#4cff7a)!important}
 
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071522;color:white;font-family:Arial,system-ui;touch-action:none}canvas{display:block}#hud{position:absolute;inset:0;pointer-events:none}#top{position:absolute;top:max(9px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));display:flex;align-items:start;justify-content:space-between;gap:6px;direction:ltr}.pill{background:#071526d9;border:1px solid #ffffff44;border-radius:12px;padding:7px 12px;box-shadow:0 6px 22px #0006;backdrop-filter:blur(6px)}.brand{color:#ffd66b;font-size:13px;font-weight:900;letter-spacing:1px}.small{font-size:10px;color:#c3d4e7}.big{font-size:21px;font-weight:900}.controls{position:absolute;bottom:max(13px,env(safe-area-inset-bottom));left:max(18px,env(safe-area-inset-left));right:max(18px,env(safe-area-inset-right));display:flex;justify-content:space-between;align-items:end;direction:ltr;pointer-events:auto}.cluster{display:flex;gap:10px;align-items:end}.btn{border:1px solid #ffffff77;background:#0b1c33c9;color:#fff;border-radius:19px;width:72px;height:72px;font-size:31px;font-weight:900;touch-action:none;user-select:none;cursor:pointer;box-shadow:0 6px 22px #0008}.btn:active,.btn.active{background:#2c5885}.boost{width:88px;height:88px;border-radius:50%;font-size:17px;background:radial-gradient(circle at 35% 25%,#ffc66e,#e4492b 60%,#8b183e);border:3px solid #ffbf70}.brake{width:65px;height:65px;font-size:13px}.message{position:absolute;top:75px;left:50%;transform:translateX(-50%);background:#091728c9;border:1px solid #ffffff44;border-radius:11px;padding:8px 14px;font-size:12px;white-space:nowrap}#rotate{display:none;position:absolute;inset:0;background:#071526f5;z-index:9;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px;gap:12px}#rotate strong{font-size:24px}#loading{position:absolute;inset:0;display:grid;place-items:center;background:#071526;z-index:12;font-weight:bold;color:#ffdf8b}#finish{display:none;position:absolute;inset:0;z-index:8;background:#04101dd9;align-items:center;justify-content:center;flex-direction:column;gap:15px}#finish h1{font-size:34px;margin:0;color:#ffd56d}#again{border:0;background:#ffd56d;color:#102031;padding:14px 25px;border-radius:14px;font-size:18px;font-weight:bold;cursor:pointer}#map{position:absolute;top:74px;right:max(12px,env(safe-area-inset-right));width:178px;height:158px;border-radius:12px;background:#071526a9;border:1px solid #ffffff44} @media(orientation:portrait){#rotate{display:flex}}@media(max-height:400px){#startHeist{margin-top:7px;padding:7px 18px}.btn{width:58px;height:58px}.boost{width:72px;height:72px}.brake{width:54px;height:54px}.message{display:none}#map{width:140px;height:124px}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071522;color:white;font-family:Arial,system-ui;touch-action:none}canvas{display:block}#hud{position:absolute;inset:0;pointer-events:none}#top{position:absolute;top:max(9px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));display:flex;align-items:start;justify-content:space-between;gap:6px;direction:ltr}.pill{background:#071526d9;border:1px solid #ffffff44;border-radius:12px;padding:7px 12px;box-shadow:0 6px 22px #0006;backdrop-filter:blur(6px)}.brand{color:#ffd66b;font-size:13px;font-weight:900;letter-spacing:1px}.small{font-size:10px;color:#c3d4e7}.big{font-size:21px;font-weight:900}.controls{position:absolute;bottom:max(13px,env(safe-area-inset-bottom));left:max(18px,env(safe-area-inset-left));right:max(18px,env(safe-area-inset-right));display:flex;justify-content:space-between;align-items:end;direction:ltr;pointer-events:auto}.cluster{display:flex;gap:10px;align-items:end}.btn{border:1px solid #ffffff77;background:#0b1c33c9;color:#fff;border-radius:19px;width:72px;height:72px;font-size:31px;font-weight:900;touch-action:none;user-select:none;cursor:pointer;box-shadow:0 6px 22px #0008}.btn:active,.btn.active{background:#2c5885}.boost{width:88px;height:88px;border-radius:50%;font-size:17px;background:radial-gradient(circle at 35% 25%,#ffc66e,#e4492b 60%,#8b183e);border:3px solid #ffbf70}.brake{width:65px;height:65px;font-size:13px}.message{position:absolute;top:75px;left:50%;transform:translateX(-50%);background:#091728c9;border:1px solid #ffffff44;border-radius:11px;padding:8px 14px;font-size:12px;white-space:nowrap}#rotate{display:none;position:absolute;inset:0;background:#071526f5;z-index:9;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px;gap:12px}#rotate strong{font-size:24px}#loading{position:absolute;inset:0;display:grid;place-items:center;background:#071526;z-index:12;font-weight:bold;color:#ffdf8b}#finish{display:none;position:absolute;inset:0;z-index:8;background:#04101dd9;align-items:center;justify-content:center;flex-direction:column;gap:15px}#finish h1{font-size:34px;margin:0;color:#ffd56d}#again{border:0;background:#ffd56d;color:#102031;padding:14px 25px;border-radius:14px;font-size:18px;font-weight:bold;cursor:pointer}#map{position:absolute;top:74px;right:max(12px,env(safe-area-inset-right));width:124px;height:110px;border-radius:12px;background:#071526a9;border:1px solid #ffffff44} @media(orientation:portrait){#rotate{display:flex}}@media(max-height:400px){#startHeist{margin-top:7px;padding:7px 18px}.btn{width:58px;height:58px}.boost{width:72px;height:72px}.brake{width:54px;height:54px}.message{display:none}#map{width:100px;height:88px}}
 
 /* iOS Safari: prevent long-press text selection and callout on game controls */
 html,body,canvas,#hud,#hud *,button{ -webkit-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important;touch-action:none!important; }
@@ -15,8 +15,8 @@ button{ -webkit-appearance:none;appearance:none; }
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 .bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}#countdown{display:none;position:absolute;inset:0;z-index:7;place-items:center;font-size:min(34vh,220px);font-weight:900;color:#fff;text-shadow:0 8px 40px #000a,0 0 30px #ffb347;pointer-events:none;animation:cdpop .9s ease-out}@keyframes cdpop{from{transform:scale(1.9);opacity:0}30%{opacity:1}to{transform:scale(1);opacity:1}}</style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.4 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="356" height="316"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc">גז<br>▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
-<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.4</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startHeist">🚨 שוד ומשטרה ▶</button> <button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.5 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small" id="hh_tl">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn brake" id="act" style="display:none">🚪<br>צא</button><button class="btn" id="jump" style="display:none;background:#3a7bd5cc">⤴<br>קפוץ</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc">גז<br>▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.5</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startHeist">🚨 שוד ומשטרה ▶</button> <button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
 import * as THREE from 'https://esm.sh/three@0.169.0';
@@ -312,14 +312,14 @@ function buildCar(color,kind='formula'){
 function spinWheels(car,dist,st){for(const w of car.wheels){w.spin.rotation.x-=dist/(w.r*car.group.scale.x);if(w.front)w.pivot.rotation.y=-st*.4}}
 let player=buildCar(0xe83439,'formula');const rivals=[buildCar(0x2b84ed,'sport'),buildCar(0xffc12e,'sport'),buildCar(0x21c9a6,'formula')];
 let progress=0,steer=0,speed=0,lap=1,finished=false,start=performance.now();
-const keys={left:false,right:false,boost:false,brake:false,item:false,item2:false,gas:false};
+const keys={left:false,right:false,boost:false,brake:false,item:false,item2:false,gas:false,act:false,jump:false};
 const startPos=curve.getPointAt(0),startTan=curve.getTangentAt(0).normalize();
 let carPos=startPos.clone(),yaw=Math.atan2(-startTan.x,-startTan.z),roadIndex=0,passed=0,checkpoint=0,drift=0;
 const checkpointCount=8;
 function resetDrive(){lastBeepLap=1;laneOffset=0;visualYaw=0;resetRivals();resetPickups();cdT=3;cdShown=-1;goT=0;carPos.copy(startPos);yaw=Math.atan2(-startTan.x,-startTan.z);roadIndex=0;passed=0;checkpoint=0;drift=0;progress=0;speed=0;lap=1;finished=false;start=performance.now();document.getElementById('finish').style.display='none'}
 for(const ev of ['contextmenu','selectstart','dragstart']) document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
 for(let key of Object.keys(keys)){let el=document.getElementById(key);const set=v=>{keys[key]=v;el.classList.toggle('active',v)};el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);set(true)});for(let ev of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(ev,()=>set(false))}
-addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown'||e.key==='s')keys.brake=true;if(e.key==='ArrowUp'||e.key==='w')keys.gas=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown'||e.key==='s')keys.brake=false;if(e.key==='ArrowUp'||e.key==='w')keys.gas=false});
+addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=true;if(e.key==='ArrowRight'||e.key==='d')keys.right=true;if(e.key===' '||e.key==='Shift')keys.boost=true;if(e.key==='ArrowDown'||e.key==='s')keys.brake=true;if(e.key==='ArrowUp'||e.key==='w')keys.gas=true;if(e.key==='e'||e.key==='E')keys.act=true;if(e.key==='j'||e.key==='c')keys.jump=true});addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key==='a')keys.left=false;if(e.key==='ArrowRight'||e.key==='d')keys.right=false;if(e.key===' '||e.key==='Shift')keys.boost=false;if(e.key==='ArrowDown'||e.key==='s')keys.brake=false;if(e.key==='ArrowUp'||e.key==='w')keys.gas=false;if(e.key==='e'||e.key==='E')keys.act=false;if(e.key==='j'||e.key==='c')keys.jump=false});
 
 addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=true});addEventListener('keyup',e=>{if(e.key==='f'||e.key==='F'||e.key==='Enter')keys.item=false});addEventListener('keydown',e=>{if(e.key==='g'||e.key==='G')keys.item2=true});addEventListener('keyup',e=>{if(e.key==='g'||e.key==='G')keys.item2=false});
 // ---------- Sound (synthesized, no files needed) ----------
@@ -466,7 +466,8 @@ const bl=[],tr=[],NODES=[],horbs=[],pol=[];
 const ZN=[{k:'bank',x:-201,z:-337.5,c:0xffc84a,money:50000,name:'הבנק'},{k:'jewel',x:192,z:-7.5,c:0xc77dff,money:30000,name:'חנות התכשיטים'},{k:'ware',x:402,z:484.5,c:0xff8a3d,money:20000,name:'המחסן בנמל'}];
 const GAS={x:-273,z:-247.5,c:0x3ddad7},GAR={x:72,z:-337.5,c:0xaab4bd},START={x:-273,z:470,th:0};
 const SAFE_POOL=[[-273,-100],[-3,-440],[267,-450],[402,-250],[-138,100],[132,380],[267,200],[-273,300]];
-const H={x:0,z:0,th:0,v:0,hp:100,turbo:0,money:0,heists:0,hold:0,wanted:0,bust:0,safe:null,safeHold:0,t:0,steer:0,sirT:0,sirF:false,hitCd:0,mapT:0};
+const H={x:0,z:0,th:0,v:0,hp:100,turbo:0,money:0,heists:0,hold:0,wanted:0,bust:0,safe:null,safeHold:0,t:0,steer:0,sirT:0,sirF:false,hitCd:0,mapT:0,foot:false,actWas:false,jumpWas:false,actMsgT:0};
+const A={x:0,z:0,y:0,vy:0,th:0,v:0,hp:100,st:5,ph:0,grounded:true,model:null,hitCd:0,stepT:0},T={x:0,z:0,th:0,v:0},cops=[];
 let hcd=0,hShown=-1,hGo=0,hOver=false,safeViz=null;
 const _hf=new THREE.Vector3(),_hn=new THREE.Vector3(),_hp=new THREE.Vector3(),_hd=new THREE.Vector3();
 const hel=id=>document.getElementById(id);
@@ -500,7 +501,7 @@ function hCollide(o,r){
  if(o.x>450&&!(Math.abs(o.z-157.5)<7&&o.x<566)){o.x=450;hit=Math.max(hit,Math.abs(o.v))}
  return hit}
 function losClear(ax,az,bx,bz){const d=Math.hypot(bx-ax,bz-az),n=Math.max(2,Math.ceil(d/9));
- for(let i=1;i<n;i++){const x=ax+(bx-ax)*i/n,z=az+(bz-az)*i/n;for(const b of bl)if(x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false}return true}
+ for(let i=1;i<n;i++){const x=ax+(bx-ax)*i/n,z=az+(bz-az)*i/n;for(const b of bl)if((b.hh===undefined||b.hh>4)&&x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false}return true}
 
 // ---- city ----
 function zoneViz(x,z,c,r){
@@ -629,8 +630,20 @@ function buildCity(){
    const isSp=sp&&(!sp.maxz||b===nz-1);
    const dc=Math.hypot(ccx-60,ccz+20),h=isSp?sp.h:(dc<280?30+rnd()*50:14+rnd()*26),col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
    addBuilding(ccx,ccz,bw,bd,h,col,isSp);
-   bl.push({x0:bx0,x1:bx0+bw,z0:bz0,z1:bz0+bd});
+   bl.push({x0:bx0,x1:bx0+bw,z0:bz0,z1:bz0+bd,hh:h});
    if(isSp)signs.push([ccx,h+1.6,ccz,0,Math.min(bw*.7,36),3.2,3,sp.sign])}
+ { const pl=getB('plain',()=>new THREE.MeshStandardMaterial({vertexColors:true,roughness:.9}));
+   const add=(cx,cz,w,d,hgt,col)=>{pushBox(pl.B,cx,hgt/2,cz,w,hgt,d,1,1,col);bl.push({x0:cx-w/2,x1:cx+w/2,z0:cz-d/2,z1:cz+d/2,hh:hgt})};
+   const nP=3+((rnd()*3)|0);
+   for(let q=0;q<nP;q++){const side=(rnd()*4)|0,t=rnd(),kind=rnd();let px,pz;
+    if(side===0){px=x0+10+t*(W-20);pz=z0+2.4}else if(side===1){px=x0+10+t*(W-20);pz=z1-2.4}else if(side===2){px=x0+2.4;pz=z0+10+t*(D-20)}else{px=x1-2.4;pz=z0+10+t*(D-20)}
+    const ax=side<2;
+    if(kind<.35)add(px,pz,ax?2.2:2,ax?2:2.2,1.3,0x9c6b3a);
+    else if(kind<.65)add(px,pz,ax?3.6:1.8,ax?1.8:3.6,1.7,0x2f6b45);
+    else if(kind<.9)add(px,pz,ax?6:.5,ax?.5:6,1.05,0x8b8b86);
+    else{add(px,pz,ax?6.2:2.4,ax?2.4:6.2,2.7,[0x3b6ea5,0xb5472f,0x4e8b5c][(rnd()*3)|0]);add(ax?px+4.8:px,ax?pz:pz+4.8,2,2,1.3,0x9c6b3a)}}
+   if(nx===2)add(ux+bw+al/2,uz+ud*(.3+rnd()*.4),al,.35,1.2,0x6f7378);
+   if(nz===2)add(ux+uw*(.3+rnd()*.4),uz+bd+al/2,.35,al,1.2,0x6f7378)}
  }
 
  // street lamps
@@ -649,23 +662,37 @@ function buildCity(){
  // police cars
  for(let i=0;i<4;i++){const c=buildCar(0x1b3a78,'sport');
   const mk=(col,x)=>{const m=new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:2}),o=new THREE.Mesh(new THREE.BoxGeometry(.6,.2,.5),m);o.position.set(x,2.15,-.1);c.group.add(o);return m};
-  c.group.visible=false;pol.push({car:c,x:0,z:0,th:0,v:0,active:false,hitCd:0,stuck:0,pathT:0,wp:null,lt:i*.3,lights:[mk(0xff2030,-.45),mk(0x2060ff,.45)],base:0})}
+  c.group.visible=false;pol.push({car:c,x:0,z:0,th:0,v:0,active:false,hitCd:0,stuck:0,pathT:0,wp:null,lt:i*.3,lights:[mk(0xff2030,-.45),mk(0x2060ff,.45)],base:0,parked:false})}
+
+ for(let i=0;i<4;i++){const c=buildHuman(0x1d3f8a,0x1a2330,0x10264f,false);c.group.visible=false;cityGroup.add(c.group);cops.push({m:c,x:0,z:0,th:0,v:0,active:false,car:null,bias:1,lostT:0,ph:i})}
+ A.model=buildHuman(0x24262b,0x3a3f4a,0xd7263d,true);A.model.group.visible=false;cityGroup.add(A.model.group);
 }
+function buildHuman(jacket,pants,hat,bag){
+ const g=new THREE.Group(),mat=c=>new THREE.MeshStandardMaterial({color:c,roughness:.8});
+ const mk=(w,h,d,c,x,y,z,par)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat(c));m.position.set(x,y,z);m.castShadow=true;par.add(m);return m};
+ mk(.62,.72,.36,jacket,0,1.16,0,g);mk(.34,.34,.34,0xe0b48c,0,1.7,0,g);mk(.4,.14,.4,hat,0,1.92,0,g);
+ if(bag)mk(.4,.45,.22,0x6b4a2b,0,1.2,.3,g);else mk(.12,.12,.04,0xffd35e,.16,1.3,-.2,g);
+ const limb=(x,y,w,h,c,hand)=>{const p=new THREE.Group();p.position.set(x,y,0);mk(w,h,w+.04,c,0,-h/2,0,p);if(hand)mk(w-.02,.16,w,0xe0b48c,0,-h-.04,0,p);g.add(p);return p};
+ const legL=limb(-.16,.82,.25,.8,pants,false),legR=limb(.16,.82,.25,.8,pants,false),armL=limb(-.41,1.48,.2,.68,jacket,true),armR=limb(.41,1.48,.2,.68,jacket,true);
+ const blob=new THREE.Mesh(new THREE.CircleGeometry(.8,12),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:.35}));blob.rotation.x=-Math.PI/2;blob.position.y=.05;g.add(blob);
+ g.scale.setScalar(1.25);return {group:g,legL,legR,armL,armR,blob}}
 
 // ---- mode switching ----
 function setMode(m){
  mode=m;const h=m==='heist';
- for(const o of raceObjs){if(o.isLight||o===sky||clouds.includes(o))continue;o.visible=!h}
+ for(const o of raceObjs){if(o.isLight||o===sky||clouds.includes(o)||o===hillsIM)continue;o.visible=!h}
  player.group.visible=!h;for(const r of rivals)r.group.visible=!h;
  if(cityGroup)cityGroup.visible=h;for(const c of heistCars)c.group.visible=h&&(c===hero||c.group.visible);
- hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('item').style.display=h?'none':'';hel('item2').style.display=h?'none':'';hel('gas').style.display=h?'':'none';
+ hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('item').style.display=h?'none':'';hel('item2').style.display=h?'none':'';hel('gas').style.display=h?'':'none';hel('act').style.display=h?'':'none';hel('jump').style.display=h?'':'none';
  if(!h)hel('hprog').style.display='none';
  scene.fog.density=h?.0022:.0038;if(!h){camera.fov=BASE_FOV;camera.updateProjectionMatrix()}}
 function hReset(){
- H.x=START.x;H.z=START.z;H.th=START.th;H.v=0;H.hp=100;H.turbo=0;H.money=0;H.heists=0;H.hold=0;H.wanted=0;H.bust=0;H.safe=null;H.safeHold=0;H.t=0;H.steer=0;H.sirT=0;H.hitCd=0;
+ H.x=START.x;H.z=START.z;H.th=START.th;H.v=0;H.hp=100;H.turbo=0;H.money=0;H.heists=0;H.hold=0;H.wanted=0;H.bust=0;H.safe=null;H.safeHold=0;H.t=0;H.steer=0;H.sirT=0;H.hitCd=0;H.foot=false;H.actWas=false;H.jumpWas=false;H.actMsgT=0;
+ A.x=0;A.z=0;A.y=0;A.vy=0;A.v=0;A.hp=100;A.st=5;A.grounded=true;T.x=H.x;T.z=H.z;T.th=H.th;T.v=0;
+ for(const c of cops){c.active=false;c.car=null;if(c.m)c.m.group.visible=false}if(A.model)A.model.group.visible=false;
  hOver=false;hcd=3;hShown=-1;hGo=0;msgT=0;
  for(const z of ZN){z.done=false;z.ring.visible=true;z.beam.visible=true;z.ring.material.color.setHex(z.c);z.beam.material.color.setHex(z.c)}
- for(const p of pol){p.active=false;p.car.group.visible=false;p.v=0;p.stuck=0}
+ for(const p of pol){p.active=false;p.parked=false;p.car.group.visible=false;p.v=0;p.stuck=0}
  for(const o of horbs){o.on=true;o.g.visible=true}
  if(safeViz){safeViz.ring.visible=false;safeViz.beam.visible=false}
  hel('finish').style.display='none'}
@@ -677,96 +704,185 @@ function enterHeist(){
 
 // ---- police ----
 function spawnPolice(p){
- let best=-1,bd=-1;for(let k=0;k<NODES.length;k++){const d=Math.hypot(NODES[k].x-H.x,NODES[k].z-H.z);if(d>170&&d<520&&Math.random()<.4){best=k;break}if(d>bd){bd=d;best=k}}
- const n=NODES[best];p.x=n.x;p.z=n.z;p.th=Math.atan2(-(H.x-n.x),-(H.z-n.z));p.v=25;p.active=true;p.stuck=0;p.pathT=0;p.wp=null;p.car.group.visible=true}
+ let best=-1,bd=-1;for(let k=0;k<NODES.length;k++){const d=Math.hypot(NODES[k].x-T.x,NODES[k].z-T.z);if(d>170&&d<520&&Math.random()<.4){best=k;break}if(d>bd){bd=d;best=k}}
+ const n=NODES[best];p.x=n.x;p.z=n.z;p.th=Math.atan2(-(T.x-n.x),-(T.z-n.z));p.v=25;p.active=true;p.parked=false;p.stuck=0;p.pathT=0;p.wp=null;p.car.group.visible=true}
 function setWanted(w){H.wanted=w;const want=[0,2,3,4][w];let c=pol.filter(p=>p.active).length;for(const p of pol){if(c>=want)break;if(!p.active){spawnPolice(p);c++}}}
+function copOf(p){return cops.find(c=>c.car===p)}
+function deployCop(p){
+ if(p.parked)return;p.parked=true;const c=cops.find(q=>!q.active);if(!c)return;
+ c.active=true;c.car=p;c.x=p.x+Math.cos(p.th)*3;c.z=p.z-Math.sin(p.th)*3;c.th=p.th;c.v=0;c.lostT=0;c.m.group.visible=true;flashMsg('👮 שוטר יצא מהניידת!');beep(520,.12,'square',.2)}
+function loseCar(p){ // the cop chasing on foot lost you: that patrol car gives up
+ const c=copOf(p);if(c){c.active=false;c.car=null;c.m.group.visible=false}
+ p.active=false;p.parked=false;p.car.group.visible=false;
+ H.wanted=Math.max(0,pol.filter(q=>q.active).length-1);if(H.wanted===0){for(const q of pol){q.active=false;q.parked=false;q.car.group.visible=false;const cc=copOf(q);if(cc){cc.active=false;cc.car=null;cc.m.group.visible=false}}}
+ flashMsg('🕶️ הצלחת לאבד את השוטרים!');beep(700,.12,'triangle',.25);beep(900,.15,'triangle',.25,.12)}
 function policeStep(p,dt){
- p.pathT-=dt;
- const dx=H.x-p.x,dz=H.z-p.z,dist=Math.hypot(dx,dz);
+ p.pathT-=dt;p.hitCd-=dt;p.lt+=dt;const on=Math.floor(p.lt*4)%2;p.lights[0].emissiveIntensity=on?3:.2;p.lights[1].emissiveIntensity=on?.2:3;
+ if(p.parked){p.v*=Math.max(0,1-dt*5);p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;hCollide(p,3.4);p.car.group.position.set(p.x,CAR_Y,p.z);p.car.group.rotation.y=p.th;return}
+ const dx=T.x-p.x,dz=T.z-p.z,dist=Math.hypot(dx,dz);
+ if(H.foot){const a=nearestNode(p.x,p.z),b=nearestNode(T.x,T.z);if(dist<26||(a===b&&Math.hypot(p.x-NODES[a].x,p.z-NODES[a].z)<14)){deployCop(p);return}}
  if(p.pathT<=0){p.pathT=.45;
-  if(dist<130&&losClear(p.x,p.z,H.x,H.z))p.wp={x:H.x+(-Math.sin(H.th))*H.v*.35,z:H.z+(-Math.cos(H.th))*H.v*.35,direct:true};
-  else{const a=nearestNode(p.x,p.z),b=nearestNode(H.x,H.z);
-   if(a===b)p.wp={x:H.x,z:H.z,direct:true};
-   else{const path=pathNodes(a,b),n0=NODES[path[0]],pick=(Math.hypot(n0.x-p.x,n0.z-p.z)<15&&path.length>1)?path[1]:path[0];p.wp={x:NODES[pick].x,z:NODES[pick].z,direct:false}}}}
- const w=p.wp||{x:H.x,z:H.z},desired=Math.atan2(-(w.x-p.x),-(w.z-p.z)),err=wrapA(desired-p.th);
+  if(dist<130&&losClear(p.x,p.z,T.x,T.z))p.wp={x:T.x+(-Math.sin(T.th))*T.v*.35,z:T.z+(-Math.cos(T.th))*T.v*.35,direct:true};
+  else{const a=nearestNode(p.x,p.z),b=nearestNode(T.x,T.z);
+   if(a===b)p.wp={x:T.x,z:T.z,direct:true};
+   else{const path=pathNodes(a,b),n0=NODES[path[0]],n1=path.length>1?NODES[path[1]]:n0,pick=(path.length>1&&(Math.hypot(n0.x-p.x,n0.z-p.z)<15||Math.hypot(n1.x-p.x,n1.z-p.z)<Math.hypot(n1.x-n0.x,n1.z-n0.z)-4))?path[1]:path[0];p.wp={x:NODES[pick].x,z:NODES[pick].z,direct:false}}}}
+ const w=p.wp||{x:T.x,z:T.z},desired=Math.atan2(-(w.x-p.x),-(w.z-p.z)),err=wrapA(desired-p.th);
  p.th+=Math.max(-2.8,Math.min(2.8,err*3.6))*dt*Math.min(1,p.v/6);
  const vt=p.base*(1-.68*Math.min(1,Math.abs(err)/.9))*(dist<14?1.05:1);
  p.v+=(vt-p.v)*Math.min(1,dt*1.5);
  p.x+=-Math.sin(p.th)*p.v*dt;p.z+=-Math.cos(p.th)*p.v*dt;
- const hit=hCollide(p,4.0);if(hit>0)p.v*=.7;
+ const hit=hCollide(p,3.4);if(hit>0)p.v*=.7;
  if(p.v<4&&dist>20){p.stuck+=dt;if(p.stuck>1.6)spawnPolice(p)}else p.stuck=0;
- p.hitCd-=dt;p.lt+=dt;const on=Math.floor(p.lt*4)%2;p.lights[0].emissiveIntensity=on?3:.2;p.lights[1].emissiveIntensity=on?.2:3;
  p.car.group.position.set(p.x,CAR_Y,p.z);p.car.group.rotation.y=p.th;spinWheels(p.car,p.v*dt,0)}
+
+// ---- on-foot: avatar + officers ----
+function footCollide(o,r){
+ let hit=false;
+ for(const b of bl){if(o.y!==undefined&&o.y>=b.hh-.4)continue;if(o.x<b.x0-r||o.x>b.x1+r||o.z<b.z0-r||o.z>b.z1+r)continue;
+  const cx=Math.max(b.x0,Math.min(o.x,b.x1)),cz=Math.max(b.z0,Math.min(o.z,b.z1)),dx=o.x-cx,dz=o.z-cz,d2=dx*dx+dz*dz;
+  if(d2<r*r){hit=true;
+   if(d2<1e-6){const l=o.x-b.x0,rr=b.x1-o.x,t=o.z-b.z0,bt=b.z1-o.z,m=Math.min(l,rr,t,bt);
+    if(m===l)o.x=b.x0-r;else if(m===rr)o.x=b.x1+r;else if(m===t)o.z=b.z0-r;else o.z=b.z1+r}
+   else{const d=Math.sqrt(d2),pen=r-d;o.x+=dx/d*pen;o.z+=dz/d*pen}}}
+ for(const c of tr){const dx=o.x-c.x,dz=o.z-c.z;if(Math.abs(dx)>r+2||Math.abs(dz)>r+2)continue;const d2=dx*dx+dz*dz,rr=r+c.r*.6;
+  if(d2<rr*rr&&d2>1e-6){const d=Math.sqrt(d2),pen=rr-d;o.x+=dx/d*pen;o.z+=dz/d*pen;hit=true}}
+ if(o.z<-526)o.z=-526;if(o.z>526)o.z=526;if(o.x<-432)o.x=-432;
+ if(o.x>450&&!(Math.abs(o.z-157.5)<7&&o.x<566))o.x=450;
+ return hit}
+function groundAt(x,z,y){let top=0;for(const b of bl)if(b.hh<=y+.5&&b.hh>top&&x>b.x0-.55&&x<b.x1+.55&&z>b.z0-.55&&z<b.z1+.55)top=b.hh;return top}
+function animHuman(m,ph,amp,air){const s=Math.sin(ph)*amp;m.legL.rotation.x=air?-.7:s;m.legR.rotation.x=air?.5:-s;m.armL.rotation.x=air?-2.4:-s*.9;m.armR.rotation.x=air?-2.4:s*.9}
+function footStep(dt,now){
+ const st=Number(keys.left)-Number(keys.right);
+ A.th+=st*3.5*dt;
+ const sprint=keys.boost&&A.st>.15&&!keys.brake;
+ if(sprint)A.st=Math.max(0,A.st-dt);else A.st=Math.min(5,A.st+dt*(keys.gas?.6:1.4));
+ const tgt=keys.brake?-3.4:(sprint?13:(keys.gas?8.6:0));
+ A.v+=(tgt-A.v)*Math.min(1,dt*(A.grounded?(tgt===0?10:6):1.2));
+ if(keys.jump&&!H.jumpWas&&A.grounded){A.vy=10.6;A.grounded=false;beep(420,.08,'sine',.12)}
+ H.jumpWas=keys.jump;
+ for(let q=0;q<2;q++){A.x+=-Math.sin(A.th)*A.v*dt/2;A.z+=-Math.cos(A.th)*A.v*dt/2;footCollide(A,.9)}
+ const gh=groundAt(A.x,A.z,A.y);
+ A.vy-=29*dt;A.y+=A.vy*dt;
+ if(A.y<=gh&&A.vy<=0){if(!A.grounded&&A.vy<-9)beep(110,.08,'square',.1);A.y=gh;A.vy=0;A.grounded=true}else if(A.y>gh+.05)A.grounded=false;
+ A.hitCd-=dt;
+ const m=A.model,g=m.group;g.position.set(A.x,A.y,A.z);g.rotation.y=A.th;
+ A.ph+=dt*Math.abs(A.v)*1.15;animHuman(m,A.ph,Math.min(1,Math.abs(A.v)/8)*.9,!A.grounded);
+ m.blob.position.y=(gh-A.y+.06)/1.25;
+ if(A.grounded&&Math.abs(A.v)>3){A.stepT-=dt;if(A.stepT<=0){A.stepT=sprint?.17:.26;beep(95+Math.random()*30,.04,'square',.045)}}
+ if(A.hp<100&&!H.hurt)A.hp=Math.min(100,A.hp+dt*.8)}
+function blockedPt(x,z){for(const b of bl)if(x>b.x0-.9&&x<b.x1+.9&&z>b.z0-.9&&z<b.z1+.9)return true;for(const c of tr)if(Math.hypot(x-c.x,z-c.z)<c.r+1.2)return true;return false}
+const COP_OFF=[0,.5,-.5,1,-1,1.6,-1.6,2.3,-2.3];
+function copStep(c,dt){
+ const dx=A.x-c.x,dz=A.z-c.z,dist=Math.hypot(dx,dz),a0=Math.atan2(dz,dx);
+ let ang=a0;
+ if(dist>3.5){for(const o of COP_OFF){const a=a0+o*c.bias;if(!blockedPt(c.x+Math.cos(a)*2.4,c.z+Math.sin(a)*2.4)){ang=a;if(o!==0)c.bias=Math.sign(o*c.bias)||c.bias;break}}}
+ const tgt=dist<1.6?0:7.4+Math.max(0,H.wanted-1)*.5;
+ c.v+=(tgt-c.v)*Math.min(1,dt*5);
+ c.x+=Math.cos(ang)*c.v*dt;c.z+=Math.sin(ang)*c.v*dt;footCollide(c,.8);
+ const th=Math.atan2(-Math.cos(ang),-Math.sin(ang));c.th+=wrapA(th-c.th)*Math.min(1,dt*9);
+ c.ph+=dt*c.v*1.15;const g=c.m.group;g.position.set(c.x,0,c.z);g.rotation.y=c.th;animHuman(c.m,c.ph,Math.min(1,c.v/7)*.9,false);
+ if(dist>35&&!losClear(c.x,c.z,A.x,A.z))c.lostT+=dt;else c.lostT=Math.max(0,c.lostT-dt*2);
+ return dist}
+function toggleCar(){
+ if(!H.foot){
+  if(Math.abs(H.v)>6){flashMsg('🛑 עצור את הרכב לפני שיוצאים');return}
+  H.v=0;H.steer=0;const sx=-Math.cos(H.th),sz=Math.sin(H.th);
+  A.x=H.x+sx*3.9;A.z=H.z+sz*3.9;A.th=H.th;A.y=0;A.vy=0;A.v=0;A.grounded=true;A.st=5;footCollide(A,.9);
+  H.foot=true;A.model.group.visible=true;flashMsg('🚶 יצאת מהרכב • E כדי לחזור')}
+ else{
+  if(Math.hypot(A.x-H.x,A.z-H.z)<7.5&&A.y<2){H.foot=false;A.model.group.visible=false;
+   for(const c of cops){c.active=false;c.car=null;c.m.group.visible=false}
+   for(const p of pol)p.parked=false;
+   flashMsg('🚗 חזרת לרכב')}
+  else flashMsg('🚗 התקרב לרכב כדי להיכנס')}}
 
 // ---- main heist frame ----
 function endHeist(title,txt,win){
  hOver=true;hel('finish').querySelector('h1').textContent=title;hel('result').textContent=txt;hel('finish').style.display='flex';
  if(win){beep(784,.15,'triangle',.3);beep(988,.15,'triangle',.3,.15);beep(1318,.4,'triangle',.3,.3)}else{beep(160,.5,'sawtooth',.3);beep(110,.6,'sawtooth',.3,.2)}}
 function hCam(dt,snap){
- const fx=-Math.sin(H.th),fz=-Math.cos(H.th),dist=24+Math.abs(H.v)*.14,hg=14+Math.abs(H.v)*.07;
- _hd.set(H.x-fx*dist,hg,H.z-fz*dist);
- {const dx=_hd.x-H.x,dz=_hd.z-H.z;let k=1;const free=(x,z)=>{for(const b of bl)if(x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false;return true};
-  while(k>.2&&!free(H.x+dx*k,H.z+dz*k))k-=.1;_hd.x=H.x+dx*k;_hd.z=H.z+dz*k;_hd.y+=(1-k)*12}
- if(snap)camera.position.copy(_hd);else camera.position.lerp(_hd,Math.min(1,dt*5));
- camTarget.set(H.x+fx*14,2,H.z+fz*14);camera.lookAt(camTarget);
- const fovT=BASE_FOV+Math.min(14,Math.abs(H.v)/83*14);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
- sun.position.set(H.x-80,110,H.z-50);sun.target.position.set(H.x,0,H.z);sun.target.updateMatrixWorld()}
+ const C=H.foot?A:H,ft=H.foot;
+ const fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?11+Math.abs(A.v)*.12:24+Math.abs(H.v)*.14,hg=ft?5.6+A.y*.6:14+Math.abs(H.v)*.07;
+ _hd.set(C.x-fx*dist,hg,C.z-fz*dist);
+ {const dx=_hd.x-C.x,dz=_hd.z-C.z;let k=1;const free=(x,z)=>{for(const b of bl)if(b.hh>4&&x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false;return true};
+  while(k>.2&&!free(C.x+dx*k,C.z+dz*k))k-=.1;_hd.x=C.x+dx*k;_hd.z=C.z+dz*k;_hd.y+=(1-k)*12}
+ if(snap)camera.position.copy(_hd);else camera.position.lerp(_hd,Math.min(1,dt*(ft?7:5)));
+ camTarget.set(C.x+fx*(ft?7:14),ft?A.y+1.6:2,C.z+fz*(ft?7:14));camera.lookAt(camTarget);
+ const fovT=ft?BASE_FOV+Math.min(8,Math.abs(A.v)/13*8):BASE_FOV+Math.min(14,Math.abs(H.v)/83*14);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
+ sun.position.set(C.x-80,110,C.z-50);sun.target.position.set(C.x,0,C.z);sun.target.updateMatrixWorld()}
 function hPlaceHero(){hero.group.position.set(H.x,CAR_Y,H.z);hero.group.rotation.y=H.th;hero.group.rotation.z=-H.steer*Math.min(1,Math.abs(H.v)/50)*.05}
 function hStep(dt,now){
  H.t+=dt;
- const br=keys.brake,gas=keys.gas||(keys.boost&&H.turbo>0&&!br),boosting=keys.boost&&!br&&H.turbo>0&&H.v>3;
- if(boosting)H.turbo=Math.max(0,H.turbo-dt);
- const st=Number(keys.left)-Number(keys.right);H.steer+=(st-H.steer)*Math.min(1,dt*17);
- // throttle / brake / coasting: the car only accelerates while gas is held
- if(br){if(H.v>.5)H.v=Math.max(0,H.v-40*dt);else H.v=Math.max(-11,H.v-10*dt)}
- else if(gas){
-  if(H.v<0)H.v=Math.min(0,H.v+34*dt);
-  else{const tgt=(boosting?83:52)*(1-.1*Math.abs(H.steer));H.v+=(tgt-H.v)*Math.min(1,dt*(boosting?2.2:.95))}}
- else{const dr=Math.min(Math.abs(H.v),(5+Math.abs(H.v)*.14)*dt);H.v-=Math.sign(H.v)*dr}
- const om=Math.max(1.55,3.2-Math.abs(H.v)*.022);
- const turn=H.steer*om*Math.min(1,.3+Math.abs(H.v)/6)*(H.v>=0?1:-1)*dt;
- H.hitCd-=dt;
- // sub-steps so the car can never tunnel through a wall at boost speed
- const sub=Math.max(1,Math.min(6,Math.ceil(Math.abs(H.v)*dt/1.1)));let hit=0;
- for(let q=0;q<sub;q++){H.th+=turn/sub;H.x+=-Math.sin(H.th)*H.v*dt/sub;H.z+=-Math.cos(H.th)*H.v*dt/sub;hit=Math.max(hit,hCollide(H,4.3))}
- if(hit>0){if(hit>12&&H.hitCd<=0){H.hp-=(hit-12)*.35;H.hitCd=.4;burst(_hp.set(H.x,0,H.z),false);beep(80,.25,'sawtooth',.25);flashMsg('💥 התנגשות!')}
-  H.v*=hit>12?.45:.8}
- // heists
+ if(keys.act&&!H.actWas){H.actWas=true;toggleCar()}else if(!keys.act)H.actWas=false;
+ const br=keys.brake;let boosting=false;
+ if(!H.foot){
+  const gas=keys.gas||(keys.boost&&H.turbo>0&&!br);boosting=keys.boost&&!br&&H.turbo>0&&H.v>3;
+  if(boosting)H.turbo=Math.max(0,H.turbo-dt);
+  const st=Number(keys.left)-Number(keys.right);H.steer+=(st-H.steer)*Math.min(1,dt*12);
+  if(br){if(H.v>.5)H.v=Math.max(0,H.v-40*dt);else H.v=Math.max(-11,H.v-10*dt)}
+  else if(gas){
+   if(H.v<0)H.v=Math.min(0,H.v+34*dt);
+   else{const tgt=(boosting?83:52)*(1-.1*Math.abs(H.steer));H.v+=(tgt-H.v)*Math.min(1,dt*(boosting?2.2:.95))}}
+  else{const dr=Math.min(Math.abs(H.v),(5+Math.abs(H.v)*.14)*dt);H.v-=Math.sign(H.v)*dr}
+  const om=Math.max(1.55,3.2-Math.abs(H.v)*.022);
+  const turn=H.steer*om*Math.min(1,Math.abs(H.v)/5)*(H.v>=0?1:-1)*dt;
+  H.hitCd-=dt;
+  const sub=Math.max(1,Math.min(6,Math.ceil(Math.abs(H.v)*dt/1.1)));let hit=0;
+  for(let q=0;q<sub;q++){H.th+=turn/sub;H.x+=-Math.sin(H.th)*H.v*dt/sub;H.z+=-Math.cos(H.th)*H.v*dt/sub;hit=Math.max(hit,hCollide(H,3.2))}
+  if(hit>0){if(hit>12&&H.hitCd<=0){H.hp-=(hit-12)*.35;H.hitCd=.4;burst(_hp.set(H.x,0,H.z),false);beep(80,.25,'sawtooth',.25);flashMsg('💥 התנגשות!')}
+   H.v*=hit>12?.45:.8}
+ }else{footStep(dt,now);H.hitCd-=dt}
+ const P=H.foot?A:H;T.x=P.x;T.z=P.z;T.th=P.th;T.v=P.v;
+ // heists (on foot or by car)
  let inside=false;
- for(const z of ZN){if(z.done)continue;const d=Math.hypot(H.x-z.x,H.z-z.z);
+ for(const z of ZN){if(z.done)continue;const d=Math.hypot(P.x-z.x,P.z-z.z);
   if(d<12){inside=true;H.hold+=dt;hel('hprog').style.display='block';hel('hprog_t').textContent='שודד: '+z.name+'…';hel('hprog_b').style.width=Math.min(100,H.hold/3.5*100)+'%';
    if(H.hold>=3.5){z.done=true;H.hold=0;H.heists++;H.money+=z.money;z.ring.visible=false;z.beam.visible=false;hel('hprog').style.display='none';
     beep(660,.12,'triangle',.28);beep(880,.12,'triangle',.28,.12);beep(1100,.25,'triangle',.28,.24);
     flashMsg('💰 שדדת את '+z.name+'! '+z.money.toLocaleString('en-US')+'$');setWanted(H.heists);
-    if(H.heists>=3){const cand=SAFE_POOL.filter(p=>Math.hypot(p[0]-H.x,p[1]-H.z)>320);const pick=(cand.length?cand:SAFE_POOL)[(Math.random()*(cand.length||SAFE_POOL.length))|0];
+    if(H.heists>=3){const cand=SAFE_POOL.filter(p=>Math.hypot(p[0]-P.x,p[1]-P.z)>320);const pick=(cand.length?cand:SAFE_POOL)[(Math.random()*(cand.length||SAFE_POOL.length))|0];
      H.safe={x:pick[0],z:pick[1]};safeViz.ring.position.set(pick[0],.3,pick[1]);safeViz.beam.position.set(pick[0],40,pick[1]);safeViz.ring.visible=true;safeViz.beam.visible=true;
-     flashMsg('🏠 בית המפלט נחשף — הגע אליו!')}}
+     flashMsg('🏠 בית המפלט נחשף — להיכנס אליו ברגל!')}}
    break}}
  if(!inside){H.hold=Math.max(0,H.hold-dt*2);if(H.hold<=0)hel('hprog').style.display='none'}
- // gas station + garage + orbs
- if(Math.hypot(H.x-GAS.x,H.z-GAS.z)<14&&H.turbo<8){H.turbo=Math.min(8,H.turbo+dt*3);flashMsg('⛽ ממלא טורבו')}
- if(Math.hypot(H.x-GAR.x,H.z-GAR.z)<14&&H.hp<100){H.hp=Math.min(100,H.hp+dt*20);flashMsg('🔧 מתקן את הרכב')}
+ // gas station + garage (car only) + turbo orbs (also refill sprint stamina)
+ if(!H.foot){
+  if(Math.hypot(H.x-GAS.x,H.z-GAS.z)<14&&H.turbo<8){H.turbo=Math.min(8,H.turbo+dt*3);flashMsg('⛽ ממלא טורבו')}
+  if(Math.hypot(H.x-GAR.x,H.z-GAR.z)<14&&H.hp<100){H.hp=Math.min(100,H.hp+dt*20);flashMsg('🔧 מתקן את הרכב')}}
  for(const o of horbs){o.g.rotation.y+=dt*3;if(!o.on){o.t-=dt;if(o.t<=0){o.on=true;o.g.visible=true}continue}
-  if(Math.hypot(H.x-o.x,H.z-o.z)<7){H.turbo=Math.min(8,H.turbo+1.8);o.on=false;o.g.visible=false;o.t=20;beep(900+H.turbo*40,.1,'sine',.25)}}
- // safehouse
- if(H.safe){if(Math.hypot(H.x-H.safe.x,H.z-H.safe.z)<13){H.safeHold+=dt;hel('hprog').style.display='block';hel('hprog_t').textContent='נכנס לבית המפלט…';hel('hprog_b').style.width=Math.min(100,H.safeHold/3*100)+'%';
-   if(H.safeHold>=3)endHeist('🏆 הצלחת לברוח!','שלל: '+H.money.toLocaleString('en-US')+'$ • זמן: '+H.t.toFixed(0)+' שניות',true)}else H.safeHold=Math.max(0,H.safeHold-dt*2)}
- // police
+  if(Math.hypot(P.x-o.x,P.z-o.z)<7){if(H.foot)A.st=5;else H.turbo=Math.min(8,H.turbo+1.8);o.on=false;o.g.visible=false;o.t=20;beep(900+H.turbo*40,.1,'sine',.25)}}
+ // safehouse: only on foot
+ if(H.safe){const d=Math.hypot(P.x-H.safe.x,P.z-H.safe.z);
+  if(d<13&&H.foot){H.safeHold+=dt;hel('hprog').style.display='block';hel('hprog_t').textContent='נכנס לבית המפלט…';hel('hprog_b').style.width=Math.min(100,H.safeHold/2.5*100)+'%';
+   if(H.safeHold>=2.5)endHeist('🏆 הצלחת לברוח!','שלל: '+H.money.toLocaleString('en-US')+'$ • זמן: '+H.t.toFixed(0)+' שניות',true)}
+  else{H.safeHold=Math.max(0,H.safeHold-dt*2);H.actMsgT-=dt;if(d<13&&!H.foot&&H.actMsgT<=0){H.actMsgT=3;flashMsg('🚶 רד מהרכב (E) כדי להיכנס לבית המפלט')}}}
+ // police cars
  let near=0,anyNear=false;
  for(const p of pol){if(!p.active)continue;p.base=[0,42,46,50][Math.max(1,H.wanted)]+(pol.indexOf(p)%2)*2;policeStep(p,dt);
-  const d=Math.hypot(H.x-p.x,H.z-p.z);if(d<170)anyNear=true;
-  if(d<7.4){const nx=(H.x-p.x)/(d||1),nz=(H.z-p.z)/(d||1),ov=7.4-d;H.x+=nx*ov*.5;H.z+=nz*ov*.5;p.x-=nx*ov*.5;p.z-=nz*ov*.5;
-   if(p.hitCd<=0){p.hitCd=1;H.hp-=5;H.v*=.82;p.v*=.55;burst(_hp.set(H.x,0,H.z),false);beep(90,.2,'square',.25);flashMsg('🚔 המשטרה פגעה בך!')}}
-  if(d<11)near++}
- if(near>0&&Math.abs(H.v)<9){H.bust+=dt;if(H.bust>2.5)endHeist('🚔 נתפסת!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
- if(H.hp<=0&&!hOver)endHeist('💥 הרכב נהרס','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
+  const d=Math.hypot(P.x-p.x,P.z-p.z);if(d<170)anyNear=true;
+  if(!H.foot){
+   if(d<7.4){const nx=(H.x-p.x)/(d||1),nz=(H.z-p.z)/(d||1),ov=7.4-d;H.x+=nx*ov*.5;H.z+=nz*ov*.5;p.x-=nx*ov*.5;p.z-=nz*ov*.5;
+    if(p.hitCd<=0){p.hitCd=1;H.hp-=5;H.v*=.82;p.v*=.55;burst(_hp.set(H.x,0,H.z),false);beep(90,.2,'square',.25);flashMsg('🚔 המשטרה פגעה בך!')}}
+   if(d<11)near++}
+  else if(d<3.6&&Math.abs(p.v)>8&&p.hitCd<=0){p.hitCd=1.2;A.hp-=24;const nx=(A.x-p.x)/(d||1),nz=(A.z-p.z)/(d||1);A.x+=nx*3;A.z+=nz*3;A.vy=6;A.grounded=false;burst(_hp.set(A.x,0,A.z),false);beep(90,.2,'square',.25);flashMsg('🚔 נפגעת מניידת!')}}
+ // foot officers
+ let nearCop=0;
+ if(H.foot){for(const c of cops){if(!c.active)continue;const d=copStep(c,dt);if(d<170)anyNear=true;if(d<2.4)nearCop++;
+   if(c.car&&(c.lostT>6||d>95))loseCar(c.car)}}
+ if(H.foot){
+  if(nearCop>0){H.bust+=dt;if(H.bust>1.8)endHeist('🚔 נתפסת ברגל!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
+  if(A.hp<=0&&!hOver)endHeist('🩸 נפצעת קשה','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
+ }else{
+  if(near>0&&Math.abs(H.v)<9){H.bust+=dt;if(H.bust>2.5)endHeist('🚔 נתפסת!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
+  if(H.hp<=0&&!hOver)endHeist('💥 הרכב נהרס','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
+ }
  if(anyNear){H.sirT-=dt;if(H.sirT<=0){H.sirT=.55;H.sirF=!H.sirF;beep(H.sirF?880:660,.3,'sine',.07)}}
  // visuals
- hPlaceHero();spinWheels(hero,H.v*dt,-H.steer);
+ hPlaceHero();if(!H.foot)spinWheels(hero,H.v*dt,-H.steer);
  if(boosting){for(let e=0;e<3;e++){_hf.set(-Math.sin(H.th),0,-Math.cos(H.th));_hn.set(Math.cos(H.th),0,-Math.sin(H.th));_hp.set(H.x,0,H.z);spawnSpark(_hp,_hf,_hn,true)}}
- else if(H.hp<35&&Math.random()<.4){_hf.set(-Math.sin(H.th),0,-Math.cos(H.th));_hn.set(Math.cos(H.th),0,-Math.sin(H.th));_hp.set(H.x,0,H.z);spawnSpark(_hp,_hf,_hn,false)}
- hero.flame.visible=boosting;hero.flame.scale.setScalar(.85+Math.sin(now*.024)*.2);hero.tail.emissiveIntensity=br?3.2:.9;
- updateAudio(Math.abs(H.v)*3.6,boosting,br,dt);
+ else if(!H.foot&&H.hp<35&&Math.random()<.4){_hf.set(-Math.sin(H.th),0,-Math.cos(H.th));_hn.set(Math.cos(H.th),0,-Math.sin(H.th));_hp.set(H.x,0,H.z);spawnSpark(_hp,_hf,_hn,false)}
+ hero.flame.visible=boosting;hero.flame.scale.setScalar(.85+Math.sin(now*.024)*.2);hero.tail.emissiveIntensity=(br&&!H.foot)?3.2:.9;
+ updateAudio(H.foot?0:Math.abs(H.v)*3.6,boosting,br&&!H.foot,dt);
  hCam(dt,false);
  for(const z of ZN){if(!z.done)z.beam.material.opacity=.18+.08*Math.sin(now*.004)}
  if(H.safe)safeViz.beam.material.opacity=.2+.1*Math.sin(now*.006)}
@@ -774,9 +890,10 @@ function hGridPlace(dt){hPlaceHero();hCam(dt,false);updateAudio(0,false,false,dt
 function hHud(now){
  const setT=(id,v)=>{const e=hel(id);if(e._v!==v){e._v=v;e.textContent=v}};
  setT('hh_h',String(H.heists));setT('hh_s','★'.repeat(H.wanted)+'☆'.repeat(3-H.wanted));setT('hh_m',H.money.toLocaleString('en-US')+'$');
- hel('hh_hp').style.width=Math.max(0,H.hp)+'%';hel('hh_t').style.width=(H.turbo/8*100)+'%';hel('boost').style.opacity=H.turbo>0?1:.4;
+ hel('hh_hp').style.width=Math.max(0,H.foot?A.hp:H.hp)+'%';hel('hh_t').style.width=(H.foot?A.st/5*100:H.turbo/8*100)+'%';hel('boost').style.opacity=H.foot?(A.st>.2?1:.4):(H.turbo>0?1:.4);
+ setT('hh_tl',H.foot?'🏃 סטמינה':'⚡ טורבו');setT('act',H.foot?'🚗 היכנס':'🚪 צא');
  if(!garageOpen){let t;
-  if(msgT>0)t=msgText;else if(H.safe)t='🏠 הגע לבית המפלט (העיגול הירוק)';else if(H.heists===0)t='⛽ גז = ▲ / W • בלם = ▼ / S • נסע לעיגול זוהר וחכה בתוכו כדי לשדוד';else t='🚓 עוד '+(3-H.heists)+' שודים — המשטרה בעקבותיך';
+  if(msgT>0)t=msgText;else if(H.safe)t=H.foot?'🏠 רוץ לבית המפלט (העיגול הירוק)':'🏠 הגע לבית המפלט וצא ברגל (E)';else if(H.heists===0)t=H.foot?'🏃 גז = ▲ • ספרינט = רווח • קפיצה = J • E לחזור לרכב':'⛽ גז = ▲ / W • בלם = ▼ / S • E לצאת מהרכב • נסע לעיגול זוהר וחכה בתוכו';else t='🚓 עוד '+(3-H.heists)+' שודים — המשטרה בעקבותיך';
   setT('msg',t)}
  H.mapT-=1;if(H.mapT<=0){H.mapT=5;hMapDraw(now)}}
 function hMapDraw(now){
@@ -790,7 +907,8 @@ function hMapDraw(now){
  dot(GAS.x,GAS.z,5,'#3ddad7');dot(GAR.x,GAR.z,5,'#aab4bd');
  if(H.safe&&Math.floor(now/400)%2)dot(H.safe.x,H.safe.z,8,'#66ff88');
  for(const p of pol)if(p.active)dot(p.x,p.z,5,Math.floor(now/250)%2?'#ff4050':'#4a80ff');
- dot(H.x,H.z,6,'#ffffff')}
+ for(const c of cops)if(c.active)dot(c.x,c.z,3,'#7fb0ff');
+ if(H.foot){ctx.fillStyle='#ffd35e';ctx.fillRect(px(H.x)-4,py(H.z)-4,8,8);dot(A.x,A.z,5,'#ffffff')}else dot(H.x,H.z,6,'#ffffff')}
 function heistFrame(dt,now){
  if(garageOpen&&hShown!==-1){setCd('');hShown=-1}
  let running=false;
