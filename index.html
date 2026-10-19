@@ -523,7 +523,7 @@ function updateSparks(dt){for(let i=sparks.length-1;i>=0;i--){const s=sparks[i],
 const raceObjs=scene.children.slice();
 // ================= HEIST MODE: "שוד ומשטרה" (free-roam city, police chase) =================
 let mode='race',cityGroup=null,hero=null,heistCars=[];
-const RX=[-273,-138,-3,132,267,402],RWX=[28,16,28,16,28,24],RZ=[-337.5,-172.5,-7.5,157.5,322.5,427.5],RWZ=[28,16,28,16,28,16];
+const RX=[-273,-138,-3,132,267,402],RWX=[18,12,18,12,18,16],RZ=[-337.5,-172.5,-7.5,157.5,322.5,427.5],RWZ=[18,12,18,12,18,12];
 const bl=[],tr=[],NODES=[],horbs=[],pol=[];
 const ZN=[{k:'bank',x:-201,z:-337.5,c:0xffc84a,money:50000,name:'הבנק'},{k:'jewel',x:192,z:-7.5,c:0xc77dff,money:30000,name:'חנות התכשיטים'},{k:'ware',x:402,z:484.5,c:0xff8a3d,money:20000,name:'המחסן בנמל'}];
 const GAS={x:-273,z:-247.5,c:0x3ddad7},GAR={x:72,z:-337.5,c:0xaab4bd},START={x:-273,z:470,th:0};
@@ -568,7 +568,7 @@ function hCollide(o,r){
    hit=Math.max(hit,Math.abs(o.v))}}
  for(const c of tr){const dx=o.x-c.x,dz=o.z-c.z;if(Math.abs(dx)>r+2||Math.abs(dz)>r+2)continue;const d2=dx*dx+dz*dz,rr=r*.7+c.r;
   if(d2<rr*rr&&d2>1e-6){const d=Math.sqrt(d2),pen=rr-d;o.x+=dx/d*pen;o.z+=dz/d*pen;hit=Math.max(hit,Math.abs(o.v)*.6)}}
- if(o.z<-526){o.z=-526;hit=Math.max(hit,Math.abs(o.v))}if(o.z>526){o.z=526;hit=Math.max(hit,Math.abs(o.v))}if(o.x<-432){o.x=-432;hit=Math.max(hit,Math.abs(o.v))}
+ if(o.z<-526){o.z=-526;hit=Math.max(hit,Math.abs(o.v))}if(o.z>526){o.z=526;hit=Math.max(hit,Math.abs(o.v))}if(o.x<-437){o.x=-437;hit=Math.max(hit,Math.abs(o.v))}
  if(o.x>450&&!(Math.abs(o.z-157.5)<7&&o.x<566)){o.x=450;hit=Math.max(hit,Math.abs(o.v))}
  return hit}
 function losClear(ax,az,bx,bz){const d=Math.hypot(bx-ax,bz-az),n=Math.max(2,Math.ceil(d/9));
@@ -691,11 +691,11 @@ function buildCity(){
     const H0=9+rnd()*7;trunks.push([x,H0*.26,z,0,1.4,H0*.52,1.4,0x7a5636]);balls.push([x,H0*.52+H0*.3,z,rnd()*3,H0*.36,H0*.32,H0*.36,[0x4c9a45,0x5aa84a,0x3f8c4e,0x6aae4a][(rnd()*4)|0]]);tr.push({x,z,r:1.5})}
    continue}
   slabs.push([mx,.12,mz,0,W,.08,D,0xbab8b0]);
-  const ins=5,al=10,ux=x0+ins,uz=z0+ins,uw=W-2*ins,ud=D-2*ins,nx=uw>150?2:1,nz=ud>150?2:1,bw=(uw-(nx-1)*al)/nx,bd=(ud-(nz-1)*al)/nz,sp=SPECIAL[ci+','+rj];
+  const ins=5,al=10,ux=x0+ins,uz=z0+ins,uw=W-2*ins,ud=D-2*ins,nx=uw>85?Math.round(uw/60):1,nz=ud>85?Math.round(ud/60):1,bw=(uw-(nx-1)*al)/nx,bd=(ud-(nz-1)*al)/nz,sp=SPECIAL[ci+','+rj];
   for(let a=0;a<nx;a++)for(let b=0;b<nz;b++){
    const bx0=ux+a*(bw+al),bz0=uz+b*(bd+al),ccx=bx0+bw/2,ccz=bz0+bd/2;
    const isSp=sp&&(!sp.maxz||b===nz-1);
-   const dc=Math.hypot(ccx-60,ccz+20),h0=isSp?(sp.h<12?sp.h:sp.h*1.5):(dc<280?40+rnd()*60:22+rnd()*32),h=h0<14?h0:6+Math.max(3,Math.round((h0-6)/4.2))*4.2,col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
+   const dc=Math.hypot(ccx-60,ccz+20),h0=isSp?(sp.h<12?sp.h:sp.h*1.5):(dc<280?28+rnd()*44:16+rnd()*26),h=h0<14?h0:6+Math.max(3,Math.round((h0-6)/4.2))*4.2,col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
    addBuilding(ccx,ccz,bw,bd,h,col,isSp);
    bl.push({x0:bx0,x1:bx0+bw,z0:bz0,z1:bz0+bd,hh:h});
    if(isSp)signs.push([ccx,h+1.6,ccz,0,Math.min(bw*.7,36),3.2,3,sp.sign])}
@@ -790,7 +790,7 @@ function buildHuman(jacket,pants,hat,o={}){
 // ---- mode switching ----
 function setMode(m){
  mode=m;const h=m==='heist';
- for(const o of raceObjs){if(o.isLight||o===sky||clouds.includes(o)||o===hillsIM)continue;o.visible=!h}
+ for(const o of raceObjs){if(o.isLight||o===sky||clouds.includes(o)||o===hillsIM)continue;o.visible=!h}if(hillsIM)hillsIM.visible=!h;
  player.group.visible=!h;for(const r of rivals)r.group.visible=!h;
  if(cityGroup)cityGroup.visible=h;for(const c of heistCars)c.group.visible=h&&(c===hero||c.group.visible);
  hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('brake').textContent=h?'🛑':'בלם';hel('boost').innerHTML=h?'⚡':'⚡<br>טורבו';if(h){hel('item').textContent='⚡0';hel('item2').textContent='🔁'}hel('gas').style.display=h?'':'none';hel('act').style.display=h?'':'none';hel('jump').style.display=h?'':'none';
@@ -965,7 +965,7 @@ function footCollide(o,r){
    else{const d=Math.sqrt(d2),pen=r-d;o.x+=dx/d*pen;o.z+=dz/d*pen}}}
  for(const c of tr){const dx=o.x-c.x,dz=o.z-c.z;if(Math.abs(dx)>r+2||Math.abs(dz)>r+2)continue;const d2=dx*dx+dz*dz,rr=r+c.r*.6;
   if(d2<rr*rr&&d2>1e-6){const d=Math.sqrt(d2),pen=rr-d;o.x+=dx/d*pen;o.z+=dz/d*pen;hit=true}}
- if(o.z<-526)o.z=-526;if(o.z>526)o.z=526;if(o.x<-432)o.x=-432;
+ if(o.z<-526)o.z=-526;if(o.z>526)o.z=526;if(o.x<-437)o.x=-437;
  if(o.x>450&&!(Math.abs(o.z-157.5)<7&&o.x<566))o.x=450;
  return hit}
 function groundAt(x,z,y){let top=0;for(const b of bl)if(b.hh<=y+.5&&b.hh>top&&x>b.x0-.55&&x<b.x1+.55&&z>b.z0-.55&&z<b.z1+.55)top=b.hh;return top}
