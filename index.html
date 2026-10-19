@@ -15,7 +15,7 @@ button{ -webkit-appearance:none;appearance:none; }
 @media(max-height:400px){.garagebox{padding:8px}.garagetitle{font-size:18px}.garagehint{margin:4px}.carart{height:40px;font-size:37px}.carchoice{padding:6px}.cardesc{display:none}#startRace{margin-top:7px;padding:7px 24px}#changeCar{top:65px}}
 .bar{width:64px;height:9px;background:#ffffff30;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd34a,#ff7a2a);border-radius:6px}#countdown{display:none;position:absolute;inset:0;z-index:7;place-items:center;font-size:min(34vh,220px);font-weight:900;color:#fff;text-shadow:0 8px 40px #000a,0 0 30px #ffb347;pointer-events:none;animation:cdpop .9s ease-out}@keyframes cdpop{from{transform:scale(1.9);opacity:0}30%{opacity:1}to{transform:scale(1);opacity:1}}</style></head><body>
 <div id="loading">🏎️ טוען מסלול חוף תלת־ממדי...</div>
-<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V7.7 • LOW POLY EDITION</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small" id="hh_tl">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn brake" id="act" style="display:none" aria-label="יציאה/כניסה לרכב">🚪</button><button class="btn" id="jump" style="display:none;background:#3a7bd5cc" aria-label="קפיצה">⤴</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc" aria-label="גז">▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
+<div id="hud"><div id="top"><div class="pill"><div class="brand">FORMULA ARENA</div><div class="small">V8.1 • BANK HEIST</div></div><div class="pill" style="text-align:center"><div class="small">הקפה</div><div class="big"><span id="lap">1</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">⚡ טורבו</div><div class="bar"><i id="fuelbar"></i></div></div><div class="pill" style="text-align:center"><div class="small">נשק</div><div class="big" id="slot">—</div></div><div class="pill" style="text-align:center"><div class="small">מקום</div><div class="big"><span id="place">4</span> / 4</div></div><div class="pill" style="text-align:center"><div class="big"><span id="speed">0</span></div><div class="small">KM/H</div></div></div><div id="hhud"><div class="pill" style="text-align:center"><div class="small">שודים</div><div class="big"><span id="hh_h">0</span> / 3</div></div><div class="pill" style="text-align:center"><div class="small">מבוקש</div><div class="big" id="hh_s" style="color:#ff5a5a">☆☆☆</div></div><div class="pill" style="text-align:center"><div class="small">שלל</div><div class="big" id="hh_m">0$</div></div><div class="pill" style="text-align:center"><div class="small">❤ נזק</div><div class="bar"><i id="hh_hp" style="background:linear-gradient(90deg,#ff4a4a,#7dff7d);width:100%"></i></div></div><div class="pill" style="text-align:center"><div class="small" id="hh_tl">⚡ טורבו</div><div class="bar"><i id="hh_t"></i></div></div></div><div id="hprog"><div id="hprog_t">שודד…</div><div class="bar" style="width:220px;height:12px"><i id="hprog_b"></i></div></div><canvas id="map" width="248" height="220"></canvas><button id="changeCar" type="button">🚗 החלף רכב</button><div class="message" id="msg">היגוי חופשי • בלימה בפניות • שלוש הקפות</div><div class="controls"><div class="cluster"><button class="btn" id="left" aria-label="פנייה שמאלה">◀</button><button class="btn" id="right" aria-label="פנייה ימינה">▶</button></div><div class="cluster"><button class="btn brake" id="brake">בלם</button><button class="btn brake" id="item">🚀0<br>טיל</button><button class="btn brake" id="item2">🛢️0<br>שמן</button><button class="btn brake" id="act" style="display:none" aria-label="יציאה/כניסה לרכב">🚪</button><button class="btn" id="jump" style="display:none;background:#3a7bd5cc" aria-label="קפיצה">⤴</button><button class="btn" id="gas" style="display:none;background:#2fbf5fcc" aria-label="גז">▲</button><button class="btn boost" id="boost">⚡<br>טורבו</button></div></div></div>
 <div id="garage"><div class="garagebox"><h1 class="garagetitle">🏁 FORMULA ARENA V7.7</h1><div class="garagehint">בחר את המכונית שלך לפני הזינוק • אפשר להחליף גם בהמשך</div><div class="carchoices"><button type="button" class="carchoice selected" data-kind="formula"><div class="carart">🏎️</div><div class="carname">FORMULA</div><div class="cardesc">גלגלים חשופים • כנפיים • מכונית מרוץ</div></button><button type="button" class="carchoice" data-kind="sport"><div class="carart">🚘</div><div class="carname">SPORT GT</div><div class="cardesc">מרכב סגור • ספוילר • מכונית ספורט</div></button></div><button type="button" id="startHeist">🚨 שוד ומשטרה ▶</button> <button type="button" id="startRace">צא למרוץ ▶</button></div></div><div id="countdown"></div><div id="rotate"><div style="font-size:55px">📱↻</div><strong>סובב את האייפון לרוחב</strong><div>המרוץ מיועד למסך אופקי</div></div>
 <div id="finish"><h1>🏆 סיימת את המרוץ!</h1><div id="result"></div><button id="again">מרוץ נוסף ↻</button></div>
 <script type="module">
@@ -525,7 +525,7 @@ const raceObjs=scene.children.slice();
 let mode='race',cityGroup=null,hero=null,heistCars=[];
 const RX=[-273,-138,-3,132,267,402],RWX=[18,12,18,12,18,16],RZ=[-337.5,-172.5,-7.5,157.5,322.5,427.5],RWZ=[18,12,18,12,18,12];
 const bl=[],tr=[],NODES=[],horbs=[],pol=[];
-const ZN=[{k:'bank',x:-201,z:-337.5,c:0xffc84a,money:50000,name:'הבנק'},{k:'jewel',x:192,z:-7.5,c:0xc77dff,money:30000,name:'חנות התכשיטים'},{k:'ware',x:402,z:484.5,c:0xff8a3d,money:20000,name:'המחסן בנמל'}];
+const ZN=[{k:'bank',x:-178,z:-349,c:0xffc84a,money:50000,name:'הבנק'},{k:'jewel',x:192,z:-7.5,c:0xc77dff,money:30000,name:'חנות התכשיטים'},{k:'ware',x:402,z:484.5,c:0xff8a3d,money:20000,name:'המחסן בנמל'}];
 const GAS={x:-273,z:-247.5,c:0x3ddad7},GAR={x:72,z:-337.5,c:0xaab4bd},START={x:-273,z:470,th:0};
 const SAFE_POOL=[[-273,-100],[-3,-440],[267,-450],[402,-250],[-138,100],[132,380],[267,200],[-273,300]];
 const H={x:0,z:0,th:0,v:0,hp:100,turbo:0,money:0,heists:0,hold:0,wanted:0,bust:0,safe:null,safeHold:0,t:0,steer:0,sirT:0,sirF:false,hitCd:0,mapT:0,foot:false,actWas:false,jumpWas:false,actMsgT:0,fireWas:false,cycWas:false};
@@ -694,7 +694,8 @@ function buildCity(){
   const ins=5,al=10,ux=x0+ins,uz=z0+ins,uw=W-2*ins,ud=D-2*ins,nx=uw>85?Math.round(uw/60):1,nz=ud>85?Math.round(ud/60):1,bw=(uw-(nx-1)*al)/nx,bd=(ud-(nz-1)*al)/nz,sp=SPECIAL[ci+','+rj];
   for(let a=0;a<nx;a++)for(let b=0;b<nz;b++){
    const bx0=ux+a*(bw+al),bz0=uz+b*(bd+al),ccx=bx0+bw/2,ccz=bz0+bd/2;
-   const isSp=sp&&(!sp.maxz||b===nz-1);
+   const bankCell=ci===1&&rj===0&&b===nz-1;const isSp=sp&&!bankCell&&(!sp.maxz||b===nz-1);
+   if(bankCell&&a===nx-1)continue;
    const dc=Math.hypot(ccx-60,ccz+20),h0=isSp?(sp.h<12?sp.h:sp.h*1.5):(dc<280?28+rnd()*44:16+rnd()*26),h=h0<14?h0:6+Math.max(3,Math.round((h0-6)/4.2))*4.2,col=isSp?sp.c:PAL[(rnd()*PAL.length)|0];
    addBuilding(ccx,ccz,bw,bd,h,col,isSp);
    bl.push({x0:bx0,x1:bx0+bw,z0:bz0,z1:bz0+bd,hh:h});
@@ -702,7 +703,7 @@ function buildCity(){
  { const pl=getB('plain',()=>new THREE.MeshStandardMaterial({vertexColors:true,roughness:.9}));
    const add=(cx,cz,w,d,hgt,col)=>{pushBox(pl.B,cx,hgt/2,cz,w,hgt,d,1,1,col);bl.push({x0:cx-w/2,x1:cx+w/2,z0:cz-d/2,z1:cz+d/2,hh:hgt})};
    const nP=3+((rnd()*3)|0);
-   for(let q=0;q<nP;q++){const side=(rnd()*4)|0,t=rnd(),kind=rnd();let px,pz;
+   for(let q=0;q<nP;q++){const side=(rnd()*4)|0,t=rnd(),kind=rnd();let px,pz;if(ci===1&&rj===0&&side===1)continue;
     if(side===0){px=x0+10+t*(W-20);pz=z0+2.4}else if(side===1){px=x0+10+t*(W-20);pz=z1-2.4}else if(side===2){px=x0+2.4;pz=z0+10+t*(D-20)}else{px=x1-2.4;pz=z0+10+t*(D-20)}
     const ax=side<2;
     if(kind<.35)add(px,pz,ax?2.2:2,ax?2:2.2,1.3,0x9c6b3a);
@@ -713,6 +714,7 @@ function buildCity(){
    if(nz===2)add(ux+uw*(.3+rnd()*.4),uz+bd+al/2,.35,al,1.2,0x6f7378)}
  }
 
+ buildBank();
  // street lamps
  RX.forEach((x,i)=>{if(i===1||i===3)return;for(let z=-500;z<500;z+=70){if(RZ.some((rz,j)=>Math.abs(z-rz)<RWZ[j]/2+4))continue;for(const sd of [-1,1]){const lx=x+sd*(RWX[i]/2+2);lamps.push([lx,6.5,z,0,.5,13,.5,0x6a7782]);lampHeads.push([lx-sd*1.4,13.2,z,0,3.4,.4,.9,0xfff2c4])}}});
  I(unitBox,iMat,slabs);flushBuildings();
@@ -720,7 +722,7 @@ function buildCity(){
  // pier
  const pier=new THREE.Mesh(new THREE.BoxGeometry(120,.5,14),new THREE.MeshStandardMaterial({color:0x8a6a3b,roughness:.9}));pier.position.set(510,.0,157.5);cityGroup.add(pier);
  // zones
- for(const z of ZN){const v=zoneViz(z.x,z.z,z.c,12);z.ring=v.ring;z.beam=v.beam;z.done=false}
+ for(const z of ZN){const v=zoneViz(z.x,z.z,z.c,z.k==='bank'?5.5:12);z.ring=v.ring;z.beam=v.beam;z.done=false}
  const gv=zoneViz(GAS.x,GAS.z,GAS.c,14);const rv=zoneViz(GAR.x,GAR.z,GAR.c,14);
  safeViz=zoneViz(0,0,0x66ff88,13);safeViz.ring.visible=false;safeViz.beam.visible=false;
  // turbo orbs on the roads
@@ -791,6 +793,213 @@ function buildHuman(jacket,pants,hat,o={}){
  const blob=new THREE.Mesh(new THREE.CircleGeometry(.6,12),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:.35}));blob.rotation.x=-Math.PI/2;blob.position.y=.05;g.add(blob);
  return {group:g,legL:lL.p,legR:lR.p,kneeL:lL.knee,kneeR:lR.knee,armL:aL.p,armR:aR.p,elbL:aL.el,elbR:aR.el,blob}}
 
+// ================= BANK HEIST: an enterable 3D bank =================
+const BKX0=-207,BKX1=-149,BKZ0=-411,BKZ1=-351.5,BKDX=-178;
+const BKN=[[-178,-347],[-178,-356],[-165,-366],[-160,-377],[-160,-387],[-160,-395],[-172,-395],[-184,-395],[-196,-396]];
+const BK={ready:false,doorOpen:false,vaultOpen:false,door:0,vdoor:0,alarm:false,carry:0,looted:0,loot:[],guards:[],mini:null,fails:0,obj:'',mx:0,mz:0,mOn:false,done:false,indoor:false,partK:1,
+ doorBox:null,vaultBox:null,leafL:null,leafR:null,vd:null,roof:null,part:null,mk:null,iw:false,jw:false,ui:null};
+const guards=BK.guards;
+const inBank=(x,z,pad=0)=>x>BKX0-pad&&x<BKX1+pad&&z>BKZ0-pad&&z<BKZ1+pad;
+function bankIdx(x,z){
+ if(!inBank(x,z,-.5))return -1;
+ if(z>-375){const a=Math.hypot(x-BKN[1][0],z-BKN[1][1]),b=Math.hypot(x-BKN[2][0],z-BKN[2][1]);return a<b?1:2}
+ let bi=3,bd=1e9;for(let k=3;k<BKN.length;k++){const d=Math.hypot(x-BKN[k][0],z-BKN[k][1]);if(d<bd){bd=d;bi=k}}return bi}
+// waypoint for a foot unit (cop / guard) heading to a target inside the bank, or null = walk straight
+function bankNav(e,px,pz){
+ const iT=bankIdx(px,pz);if(iT<0){e.navI=null;return null}
+ const iE=bankIdx(e.x,e.z);
+ if(iE>=1&&iE<=2&&iT<=2){e.navI=null;return null}
+ if(e.navI==null)e.navI=iE<0?0:iE;
+ let n=BKN[e.navI];
+ if(Math.hypot(n[0]-e.x,n[1]-e.z)<2.8){
+  if(e.navI<iT)e.navI++;else if(e.navI>iT)e.navI--;else{e.navI=null;return null}
+  n=BKN[e.navI]}
+ return {x:n[0],z:n[1]}}
+function bankIconTex(txt,w,h,bg,fg,fs){return textTex(w,h,(g,W,Hh)=>{g.fillStyle=bg;g.fillRect(0,0,W,Hh);g.strokeStyle=fg;g.lineWidth=5;g.strokeRect(4,4,W-8,Hh-8);g.fillStyle=fg;g.font='900 '+fs+'px Arial,sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(txt,W/2,Hh/2+2)})}
+function buildBank(){
+ const MS=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.85,metalness:.04}),MB=new THREE.MeshBasicMaterial({vertexColors:true});
+ const shell=mkBatch(),part=mkBatch(),prop=mkBatch(),roof=mkBatch(),glow=mkBatch();
+ const R=(B,x0,x1,z0,z1,y0,y1,col,solid)=>{pushBox(B,(x0+x1)/2,(y0+y1)/2,(z0+z1)/2,x1-x0,y1-y0,z1-z0,1,1,col);if(solid)bl.push({x0,x1,z0,z1,hh:y1})};
+ const H8=8,STONE=0xd9cfba,CREAM=0xe9e0cc,TRIM=0xd7b25a,DARK=0x2f3338;
+ // ---- outer shell ----
+ R(shell,BKX0,-180.5,-352.7,-351.5,0,H8,STONE,true);R(shell,-175.5,BKX1,-352.7,-351.5,0,H8,STONE,true);R(shell,-180.5,-175.5,-352.7,-351.5,5.4,H8,STONE,false);
+ R(shell,BKX0,BKX0+1.2,BKZ0,BKZ1,0,H8,STONE,true);R(shell,BKX1-1.2,BKX1,BKZ0,BKZ1,0,H8,STONE,true);R(shell,BKX0,BKX1,BKZ0,BKZ0+1.2,0,H8,STONE,true);
+ // facade details: window frames + dark glass, plinth, door frame, entrance portico
+ for(const wx of [-199,-192,-185.5,-170.5,-164,-157]){R(shell,wx-1.9,wx+1.9,-351.5,-351.3,1.5,5.1,TRIM,false);R(shell,wx-1.65,wx+1.65,-351.3,-351.2,1.75,4.85,DARK,false)}
+ R(shell,BKX0-.3,BKX1+.3,-351.5,-351.1,0,.9,0xa79f8c,false);
+ R(shell,-181.2,-180.5,-352.4,-351.0,0,5.6,TRIM,false);R(shell,-175.5,-174.8,-352.4,-351.0,0,5.6,TRIM,false);R(shell,-181.2,-174.8,-352.4,-351.0,5.4,5.9,TRIM,false);
+ R(shell,-204,-152,-351.3,-348.4,8.2,8.8,0xcfc6b2,false);
+ for(const cxp of [-200,-193,-186.5,-169.5,-163,-156]){R(shell,cxp-.6,cxp+.6,-350.2,-349,0,8.2,0xece5d4,true);R(shell,cxp-.9,cxp+.9,-350.5,-348.7,7.6,8.2,0xcfc6b2,false);R(shell,cxp-.9,cxp+.9,-350.5,-348.7,0,.5,0xcfc6b2,false)}
+ // ---- interior partitions (scaled down while the player is inside = cut-away view) ----
+ R(part,-205.8,-163,-382.2,-375,0,H8,CREAM,true);R(part,-157,-150.2,-398,-375,0,H8,CREAM,true);
+ R(part,-184.8,-163,-392,-382.2,0,H8,CREAM,true);R(part,-184.8,-150.2,-409.8,-398,0,H8,CREAM,true);
+ R(part,-186,-184.8,-409.8,-398,0,H8,0x8a9298,true);R(part,-186,-184.8,-392,-382.2,0,H8,0x8a9298,true);
+ // doors in the partitions: frames & signs
+ R(prop,-163.4,-163,-375.2,-374.6,0,4.4,TRIM,false);R(prop,-157,-156.6,-375.2,-374.6,0,4.4,TRIM,false);R(prop,-163.4,-156.6,-375.2,-374.6,4.1,4.4,TRIM,false);
+ // floors
+ const mk=(w,d,x,z,y,tex,col)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,d),tex?new THREE.MeshStandardMaterial({map:tex,roughness:.5}):new THREE.MeshStandardMaterial({color:col,roughness:.8}));m.rotation.x=-Math.PI/2;m.position.set(x,y,z);m.receiveShadow=true;cityGroup.add(m);return m};
+ const mt=textTex(64,64,(g,w,h)=>{g.fillStyle='#e6dcc6';g.fillRect(0,0,w,h);g.fillStyle='#b9ab8a';g.fillRect(0,0,32,32);g.fillRect(32,32,32,32);g.strokeStyle='#8c7f64';g.lineWidth=2;g.strokeRect(0,0,w,h)});
+ mt.wrapS=mt.wrapT=THREE.RepeatWrapping;mt.repeat.set(55.6/3.5,22.3/3.5);
+ mk(55.6,22.3,-178,-363.85,.19,mt);mk(55.6,34.8,-178,-392.4,.19,null,0x8d8a82);mk(19.8,27.6,-195.9,-396,.21,null,0x59616a);
+ R(shell,-179.6,-176.4,-375,-352.5,.19,.22,0x8c2530,false);
+ // ---- lobby: teller counter, desks, benches, plants, ATMs ----
+ R(prop,-205.8,-186,-366.2,-364.4,0,1.2,0x6f4a2e,true);R(prop,-206,-185.8,-366.5,-364.1,1.2,1.32,0xe2dac8,false);
+ for(let i=0;i<5;i++){const gx=-205+i*4.6;R(prop,gx-.06,gx+.06,-365.5,-365.3,1.32,2.9,0x8d9890,false);R(glow,gx+1.1,gx+3.4,-366.6,-366.45,3.3,3.9,0xffc857,false)}
+ R(prop,-206,-185.8,-365.5,-365.3,2.8,2.95,0x8d9890,false);
+ R(prop,-203,-197,-372.5,-370.8,0,1,0x7a5a3a,true);R(prop,-193,-189,-372.5,-370.8,0,1,0x7a5a3a,true);R(prop,-205.3,-203.8,-380,-374,0,1.8,0x6d7479,true);
+ R(prop,-172,-166,-360.6,-359.2,0,.9,0x5b4630,true);R(prop,-172,-166,-366.6,-365.2,0,.9,0x5b4630,true);
+ for(const [px,pz] of [[-204,-353.8],[-151.8,-353.8],[-151.8,-373.6],[-204,-373.6]]){R(prop,px-.6,px+.6,pz-.6,pz+.6,0,.8,0x8a5a3a,true);R(prop,px-.8,px+.8,pz-.8,pz+.8,.8,2.2,0x3f8a4a,false)}
+ for(const az of [-358.5,-361.5,-364.5]){R(prop,-151.4,-149.6,az-.7,az+.7,0,2.7,0x2d3135,true);R(glow,-151.45,-151.3,az-.45,az+.45,1.6,2.3,0x7bd88f,false)}
+ // security cameras
+ for(const [cx,cz] of [[-205,-353.5],[-151,-353.5],[-182,-395],[-195,-383]]){R(prop,cx-.3,cx+.3,cz-.3,cz+.3,6.4,6.9,0x222428,false);R(glow,cx-.1,cx+.1,cz-.1,cz+.1,6.5,6.7,0xff3030,false)}
+ // ---- corridor lamps (visible when walls are cut down) ----
+ for(const [lx,lz] of [[-160,-382],[-160,-392],[-170,-395],[-178,-395]])R(glow,lx-.5,lx+.5,lz-.5,lz+.5,.22,.3,0xfff3c8,false);
+ // ---- vault: lockers + loot pallets ----
+ for(let i=0;i<12;i++)for(let r=0;r<3;r++){const lx=-205+i*1.6+.8,y0=.2+r*1.4;R(prop,lx-.7,lx+.7,-409.6,-409.3,y0,y0+1.2,(i+r)%2?0x7f8a92:0x6f7a82,false);R(prop,lx+.45,lx+.55,-409.3,-409.2,y0+.5,y0+.65,TRIM,false)}
+ for(let i=0;i<16;i++)for(let r=0;r<3;r++){const lz=-409+i*1.6+.8,y0=.2+r*1.4;if(lz>-383.5)continue;R(prop,-205.6,-205.3,lz-.7,lz+.7,y0,y0+1.2,(i+r)%2?0x7f8a92:0x6f7a82,false);R(prop,-205.3,-205.2,lz+.45,lz+.55,y0+.5,y0+.65,TRIM,false)}
+ // ---- roof (hidden while inside) ----
+ R(roof,BKX0-.3,BKX1+.3,BKZ0-.3,BKZ1+.3,H8,H8+.5,0x8a8479,false);
+ R(roof,BKX0-.3,BKX1+.3,BKZ1-.2,BKZ1+.3,H8+.5,H8+1.6,STONE,false);R(roof,BKX0-.3,BKX1+.3,BKZ0-.3,BKZ0+.2,H8+.5,H8+1.2,STONE,false);
+ R(roof,BKX0-.3,BKX0+.2,BKZ0,BKZ1,H8+.5,H8+1.2,STONE,false);R(roof,BKX1-.2,BKX1+.3,BKZ0,BKZ1,H8+.5,H8+1.2,STONE,false);
+ R(roof,-192,-164,BKZ1-.4,BKZ1+.4,H8+1.6,H8+4.2,0xe4dcc8,false);R(roof,-182,-174,-375,-362,H8+.5,H8+2.5,0x6d7479,false);R(roof,-198,-190,-392,-382,H8+.5,H8+2,0x8e9399,false);
+ const sg=new THREE.Mesh(new THREE.PlaneGeometry(22,2.1),new THREE.MeshBasicMaterial({map:bankIconTex('🏦  BANK',512,48,'#1d2430','#ffd24a',34)}));sg.position.set(BKDX,H8+3,BKZ1+.45);roof.__sg=sg;
+ // ---- door sign (always visible) ----
+ const ds=new THREE.Mesh(new THREE.PlaneGeometry(9,1.5),new THREE.MeshBasicMaterial({map:bankIconTex('BANK • בנק',512,86,'#1d2430','#ffd24a',46)}));ds.position.set(BKDX,6.7,-351.15);cityGroup.add(ds);
+ const ss=new THREE.Mesh(new THREE.PlaneGeometry(5.6,1),new THREE.MeshBasicMaterial({map:bankIconTex('STAFF ONLY',256,50,'#7a1d1d','#ffffff',26)}));ss.position.set(-160,4.8,-374.5);cityGroup.add(ss);
+ const vs=new THREE.Mesh(new THREE.PlaneGeometry(3.4,.9),new THREE.MeshBasicMaterial({map:bankIconTex('VAULT',200,52,'#222a31','#ffd24a',28)}));vs.position.set(-183.4,6.8,-392.2);vs.rotation.y=Math.PI;cityGroup.add(vs);
+ const addB=(B,m)=>{const me=batchMesh(B,m);if(me){me.frustumCulled=true;cityGroup.add(me)}return me};
+ addB(shell,MS);BK.part=addB(part,MS);addB(prop,MS);addB(glow,MB);
+ BK.roof=new THREE.Group();const rm=batchMesh(roof,MS);if(rm){rm.frustumCulled=true;BK.roof.add(rm)}BK.roof.add(sg);cityGroup.add(BK.roof);
+ // ---- front door leaves + vault door ----
+ const dm=new THREE.MeshStandardMaterial({color:0x5b3a22,roughness:.6}),gm=new THREE.MeshStandardMaterial({color:0xcdd6cd,roughness:.2,metalness:.2});
+ const leaf=(px,dir)=>{const g=new THREE.Group();g.position.set(px,0,-352.1);const b=new THREE.Mesh(new THREE.BoxGeometry(2.4,5.2,.3),dm);b.position.set(dir*1.25,2.6,0);g.add(b);const w=new THREE.Mesh(new THREE.BoxGeometry(1.5,2.6,.34),gm);w.position.set(dir*1.25,3.2,0);g.add(w);
+  const h=new THREE.Mesh(new THREE.BoxGeometry(.12,.9,.12),new THREE.MeshStandardMaterial({color:TRIM,metalness:.8,roughness:.3}));h.position.set(dir*2.1,2.4,.22);g.add(h);cityGroup.add(g);return g};
+ BK.leafL=leaf(-180.5,1);BK.leafR=leaf(-175.5,-1);
+ BK.doorBox={x0:-180.5,x1:-175.5,z0:-352.7,z1:-351.5,hh:H8,door:1};bl.push(BK.doorBox);
+ {const g=new THREE.Group();g.position.set(-185.4,0,-398);const sm=new THREE.MeshStandardMaterial({color:0x8a9298,roughness:.35,metalness:.85});
+  const dg=new THREE.CylinderGeometry(3.1,3.1,.7,22);dg.rotateZ(Math.PI/2);const d=new THREE.Mesh(dg,sm);d.position.set(0,3.1,3);g.add(d);
+  const wm=new THREE.MeshStandardMaterial({color:TRIM,metalness:.9,roughness:.3});for(let k=0;k<3;k++){const sp=new THREE.Mesh(new THREE.BoxGeometry(.25,.25,2.6),wm);sp.position.set(.5,3.1,3);sp.rotation.x=k*Math.PI/3;g.add(sp)}
+  const hub=new THREE.Mesh(new THREE.BoxGeometry(.5,.7,.7),wm);hub.position.set(.5,3.1,3);g.add(hub);cityGroup.add(g);BK.vd=g}
+ BK.vaultBox={x0:-186,x1:-184.8,z0:-398,z1:-392,hh:H8,door:2};bl.push(BK.vaultBox);
+ // loot
+ const cashM=new THREE.MeshStandardMaterial({color:0x4f9a52,roughness:.7}),bandM=new THREE.MeshStandardMaterial({color:0xe9e2c8,roughness:.6}),goldM=new THREE.MeshStandardMaterial({color:0xf2c230,roughness:.25,metalness:.9,emissive:0x5b4300}),palM=new THREE.MeshStandardMaterial({color:0x59616a,roughness:.8});
+ const piles=[[-203,-390,5000,0],[-203,-402,5000,0],[-190,-389,5000,0],[-190,-404,5000,0],[-196,-393,7500,1],[-196,-399,7500,1],[-199.5,-396,7500,1],[-192.5,-396,7500,1]];
+ for(const [lx,lz,v,kind] of piles){const g=new THREE.Group();g.position.set(lx,0,lz);
+  if(kind===0){for(let k=0;k<3;k++){const c=new THREE.Mesh(new THREE.BoxGeometry(1.1,.42,.7),cashM);c.position.set((k-1)*.28,.25+k*.42,0);c.rotation.y=k*.35;g.add(c);const b=new THREE.Mesh(new THREE.BoxGeometry(.2,.46,.72),bandM);b.position.copy(c.position);b.rotation.y=c.rotation.y;g.add(b)}}
+  else{const p=new THREE.Mesh(new THREE.BoxGeometry(1.8,.3,1.8),palM);p.position.y=.15;g.add(p);for(let r=0;r<3;r++)for(let k=0;k<3-r;k++){const b=new THREE.Mesh(new THREE.BoxGeometry(.55,.3,.9),goldM);b.position.set((k-(2-r)/2)*.6,.45+r*.3,0);g.add(b)}}
+  const ring=new THREE.Mesh(new THREE.RingGeometry(1,1.25,18),new THREE.MeshBasicMaterial({color:0xffd24a,transparent:true,opacity:.8,side:THREE.DoubleSide}));ring.rotation.x=-Math.PI/2;ring.position.y=.26;g.add(ring);
+  cityGroup.add(g);BK.loot.push({x:lx,z:lz,v,g,on:true})}
+ // guards
+ const gp=[[[-201,-358],[-188,-358]],[[-166,-362],[-153,-362]],[[-201,-371],[-190,-369]],[[-176,-395],[-166,-395]]];
+ gp.forEach((pts,i)=>{const m=buildHuman(0x23262b,0x15171b,0x111214,{cop:true});m.group.scale.setScalar(PSC);cityGroup.add(m.group);
+  guards.push({m,x:pts[0][0],z:pts[0][1],th:0,v:0,hp:90,stun:0,active:true,guard:true,alert:false,fireT:1.2,pts,pi:1,ph:i,navI:null,lostT:0,home:pts[0]})});
+ BK.mk=zoneViz(BKDX,-349,0xffd24a,2.6);
+ bankInitUI();BK.ready=true;bankReset()}
+function bankInitUI(){
+ if(BK.ui)return;const hud=document.getElementById('hud')||document.body;
+ const o=document.createElement('div');o.id='hobj';o.style.cssText='position:absolute;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 76px);z-index:6;max-width:72vw;padding:6px 14px;border-radius:12px;background:rgba(15,20,30,.8);border:1px solid #ffd24a66;color:#ffe9a8;font:800 15px/1.3 Arial,system-ui;text-align:center;pointer-events:none;display:none';
+ const p=document.createElement('div');p.id='hpick';p.style.cssText='position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:20;background:rgba(10,14,20,.9);border:2px solid #ffd24a;border-radius:16px;padding:12px 18px;color:#fff;text-align:center;font:800 16px Arial,system-ui;display:none;pointer-events:auto;touch-action:manipulation';
+ p.innerHTML='<div id="hpick_t">🔐 פצח את המנעול — לחץ כשהסמן בירוק</div><div id="hpick_bar" style="position:relative;width:min(320px,62vw);height:34px;margin:10px auto;background:#222a33;border-radius:9px;overflow:hidden"><div id="hpick_z" style="position:absolute;top:0;bottom:0;background:#38d46a"></div><div id="hpick_n" style="position:absolute;top:-2px;bottom:-2px;width:5px;background:#fff;box-shadow:0 0 8px #fff"></div></div><div id="hpick_s" style="font-size:20px;letter-spacing:6px;margin-bottom:8px">○○○</div><button id="hpick_btn" type="button" style="padding:10px 26px;font:900 18px Arial;border:0;border-radius:12px;background:#ffd24a;color:#222">🔓 עכשיו!</button> <button id="hpick_x" type="button" style="padding:10px 14px;font:900 16px Arial;border:0;border-radius:12px;background:#444;color:#fff">✖</button>';
+ hud.appendChild(o);hud.appendChild(p);BK.ui={o,p};
+ const on=(id,f)=>{const e=document.getElementById(id);if(e)e.addEventListener('pointerdown',ev=>{ev.preventDefault();ev.stopPropagation();f()})};
+ on('hpick_btn',()=>bankPick());on('hpick_x',()=>bankCancelMini())}
+function bankHideUI(){if(!BK.ui)return;BK.ui.o.style.display='none';BK.ui.p.style.display='none'}
+function bankReset(){
+ if(!BK.ready)return;
+ BK.doorOpen=false;BK.vaultOpen=false;BK.door=0;BK.vdoor=0;BK.alarm=false;BK.carry=0;BK.looted=0;BK.mini=null;BK.fails=0;BK.done=false;BK.indoor=false;BK.partK=1;BK.obj='';BK.iw=BK.jw=false;
+ if(!bl.includes(BK.doorBox))bl.push(BK.doorBox);if(!bl.includes(BK.vaultBox))bl.push(BK.vaultBox);
+ BK.leafL.rotation.y=0;BK.leafR.rotation.y=0;BK.vd.rotation.y=0;BK.roof.visible=true;BK.part.scale.y=1;
+ for(const l of BK.loot){l.on=true;l.g.visible=true}
+ for(const g of guards){g.x=g.home[0];g.z=g.home[1];g.hp=90;g.stun=0;g.alert=false;g.pi=1;g.navI=null;g.lostT=0;g.m.group.rotation.x=0;g.m.group.position.set(g.x,0,g.z);g.m.group.visible=true}
+ BK.mk.ring.visible=true;BK.mk.beam.visible=true;bankHideUI()}
+function bankAlertAll(){for(const g of guards){if(g.stun<=0)g.alert=true}bankAlarm()}
+function bankAlarm(){if(BK.alarm||BK.done)return;BK.alarm=true;setWanted(Math.max(1,H.wanted));flashMsg('🚨 אזעקה שקטה! המשטרה בדרך');beep(880,.15,'square',.2);beep(660,.15,'square',.2,.18)}
+function openBankDoor(){BK.doorOpen=true;const i=bl.indexOf(BK.doorBox);if(i>=0)bl.splice(i,1);beep(300,.12,'square',.2);beep(420,.18,'square',.2,.1);flashMsg('🚪 דלת הבנק נפתחה')}
+function startMini(){
+ BK.mini={stage:0,p:0,dir:1,c:.5,w:.24,t:0};bankNewZone();BK.ui.p.style.display='block';bankAlarm();A.v=0;beep(500,.08,'square',.2)}
+function bankNewZone(){const m=BK.mini,W=[.24,.19,.14][m.stage]||.14;m.w=W;m.c=.18+Math.random()*.64}
+function bankCancelMini(){if(!BK.mini)return;BK.mini=null;BK.ui.p.style.display='none'}
+function bankPick(){
+ const m=BK.mini;if(!m)return;
+ if(Math.abs(m.p-m.c)<=m.w/2){m.stage++;beep(600+m.stage*200,.12,'triangle',.28);
+  if(m.stage>=3){BK.mini=null;BK.ui.p.style.display='none';BK.vaultOpen=true;const i=bl.indexOf(BK.vaultBox);if(i>=0)bl.splice(i,1);beep(220,.5,'sawtooth',.25);beep(330,.4,'triangle',.25,.25);flashMsg('🔓 הכספת נפתחה! אסוף את השלל');setWanted(Math.max(2,H.wanted));return}
+  bankNewZone()}
+ else{BK.fails++;beep(120,.25,'sawtooth',.25);A.hp-=3;flashMsg('❌ החטאת! נסה שוב');if(BK.fails>=2)bankAlertAll()}
+ }
+function bankAct(){
+ if(!BK.ready||!H.foot||hOver)return false;
+ if(BK.mini){bankPick();return true}
+ if(!BK.doorOpen&&Math.hypot(A.x-BKDX,A.z+350.6)<6.5){openBankDoor();return true}
+ if(BK.doorOpen&&!BK.vaultOpen&&Math.hypot(A.x+183.5,A.z+395)<6){startMini();return true}
+ return false}
+function guardStep(g,dt){
+ const m=g.m,gg=m.group;
+ if(g.stun>0){g.stun-=dt;g.v=0;gg.rotation.x=-1.45;gg.position.set(g.x,.2,g.z);animHuman(m,0,0,false);if(g.stun<=0){gg.rotation.x=0;gg.position.y=0;g.hp=60;g.alert=true}return}
+ const dx=T.x-g.x,dz=T.z-g.z,dist=Math.hypot(dx,dz),see=dist<(g.alert?42:18)&&losClear(g.x,g.z,T.x,T.z);
+ if(!g.alert&&see&&(inBank(T.x,T.z,2)||dist<12))bankAlertAll();
+ let tx=g.x,tz=g.z,spd=0;
+ if(g.alert){
+  if(see)g.lostT=0;else{g.lostT+=dt;if(g.lostT>10&&!inBank(T.x,T.z,3)){g.alert=false;g.navI=null}}
+  const nav=inBank(T.x,T.z,0)?bankNav(g,T.x,T.z):null;
+  if(nav){tx=nav.x;tz=nav.z;spd=5.4}
+  else if(dist>9&&dist<70){tx=T.x;tz=T.z;spd=5.4}
+  else if(dist<5){tx=2*g.x-T.x;tz=2*g.z-T.z;spd=2.4}}
+ else{const q=g.pts[g.pi];if(Math.hypot(q[0]-g.x,q[1]-g.z)<.8)g.pi=(g.pi+1)%g.pts.length;else{tx=q[0];tz=q[1];spd=1.8}}
+ if(spd>0){const ex=tx-g.x,ez=tz-g.z,d=Math.hypot(ex,ez)||1;g.x+=ex/d*spd*dt;g.z+=ez/d*spd*dt;footCollide(g,.5);
+  const th=Math.atan2(-ex/d,-ez/d);g.th+=wrapA(th-g.th)*Math.min(1,dt*8);g.ph+=dt*spd*1.15}
+ else if(g.alert){const th=Math.atan2(-dx,-dz);g.th+=wrapA(th-g.th)*Math.min(1,dt*8)}
+ g.v=spd;gg.position.set(g.x,0,g.z);gg.rotation.y=g.th;animHuman(m,g.ph,Math.min(1,spd/6)*.9,false);
+ if(g.alert&&see&&dist<28){g.fireT-=dt;if(g.fireT<=0){g.fireT=1.2+Math.random()*1;tracer(g.x,1.5,g.z,T.x,1.2,T.z,0xffd0a0);beep(200,.06,'square',.09);
+  if(Math.random()<.3){if(H.foot)A.hp-=4;else H.hp-=2.5;flashMsg('🔫 מאבטח יורה עליך!')}}}}
+function bankUpdate(dt,now){
+ if(!BK.ready)return;
+ // door / vault animation
+ const dT=BK.doorOpen?1:0;BK.door+=(dT-BK.door)*Math.min(1,dt*5);BK.leafL.rotation.y=BK.door*1.5;BK.leafR.rotation.y=-BK.door*1.5;
+ const vT=BK.vaultOpen?1:0;BK.vdoor+=(vT-BK.vdoor)*Math.min(1,dt*2.2);BK.vd.rotation.y=BK.vdoor*1.55;
+ // cut-away view: roof off and partitions low while the player is inside
+ BK.indoor=H.foot&&inBank(A.x,A.z,1.2);
+ BK.roof.visible=!(H.foot&&inBank(A.x,A.z,2.5));
+ const pk=BK.indoor?.36:1;BK.partK+=(pk-BK.partK)*Math.min(1,dt*7);BK.part.scale.y=BK.partK;
+ // lock-pick mini-game
+ if(BK.mini){const m=BK.mini;m.t+=dt;const sp=.75+m.stage*.3+BK.fails*.05;m.p+=m.dir*sp*dt;if(m.p>1){m.p=1;m.dir=-1}if(m.p<0){m.p=0;m.dir=1}
+  const u=BK.ui;document.getElementById('hpick_n').style.left=(m.p*100)+'%';const z=document.getElementById('hpick_z');z.style.left=((m.c-m.w/2)*100)+'%';z.style.width=(m.w*100)+'%';
+  document.getElementById('hpick_s').textContent='●'.repeat(m.stage)+'○'.repeat(3-m.stage);
+  if(keys.item&&!BK.iw)bankPick();if(keys.jump&&!BK.jw&&BK.mini)bankPick()}
+ BK.iw=keys.item;BK.jw=keys.jump;
+ // loot pick-up
+ if(BK.vaultOpen&&H.foot)for(const l of BK.loot){if(!l.on)continue;l.g.rotation.y+=dt*1.5;
+  if(Math.hypot(A.x-l.x,A.z-l.z)<2.6){l.on=false;l.g.visible=false;BK.carry+=l.v;BK.looted++;beep(900,.08,'triangle',.25);beep(1300,.1,'triangle',.25,.08);flashMsg('💵 +'+l.v.toLocaleString('en-US')+'$ • בתיק: '+BK.carry.toLocaleString('en-US')+'$')}}
+ // escape = leave the building with loot
+ if(BK.carry>0&&!BK.done&&H.foot&&A.z>-349.2&&Math.abs(A.x-BKDX)<34){
+  BK.done=true;const z=ZN[0];z.done=true;H.heists++;H.money+=BK.carry;z.ring.visible=false;z.beam.visible=false;BK.mk.ring.visible=false;BK.mk.beam.visible=false;
+  beep(660,.12,'triangle',.28);beep(880,.12,'triangle',.28,.12);beep(1100,.25,'triangle',.28,.24);flashMsg('💰 שדדת את הבנק! '+BK.carry.toLocaleString('en-US')+'$');
+  setWanted(Math.min(3,Math.max(H.heists,H.wanted,1)));
+  if(H.heists>=3){const cand=SAFE_POOL.filter(p=>Math.hypot(p[0]-A.x,p[1]-A.z)>320);const pick=(cand.length?cand:SAFE_POOL)[(Math.random()*(cand.length||SAFE_POOL.length))|0];
+   H.safe={x:pick[0],z:pick[1]};safeViz.ring.position.set(pick[0],.3,pick[1]);safeViz.beam.position.set(pick[0],40,pick[1]);safeViz.ring.visible=true;safeViz.beam.visible=true;flashMsg('🏠 בית המפלט נחשף — להיכנס אליו ברגל!')}}
+ // guards
+ for(const g of guards){if(Math.hypot(T.x-g.x,T.z-g.z)<150||g.alert)guardStep(g,dt)}
+ // objective text + marker
+ let o='',mx=BKDX,mz=-349,on=true;
+ const dd=Math.hypot(A.x-BKDX,A.z+350.6),inb=inBank(A.x,A.z,0);
+ if(BK.done){o='';on=false}
+ else if(BK.mini){o='🔐 פצח את המנעול — לחץ כשהסמן בירוק (E / 🔓)';on=false}
+ else if(BK.carry>0){o='🏃 ברח מהבנק! שלל בתיק: '+BK.carry.toLocaleString('en-US')+'$';mx=BKDX;mz=-347;if(BK.looted<BK.loot.length)o+=' • (עוד שלל בכספת)'}
+ else if(BK.vaultOpen){o='💰 אסוף את השלל בכספת ('+BK.looted+'/'+BK.loot.length+')';const l=BK.loot.find(q=>q.on);if(l){mx=l.x;mz=l.z}}
+ else if(!H.foot&&!BK.doorOpen){o='🏦 עצור ליד הבנק וצא מהרכב (E)';mx=BKDX;mz=-349}
+ else if(!BK.doorOpen){o=dd<7?'🚪 לחץ E / 🚪 כדי לפתוח את דלת הבנק':'🏦 גש אל דלת הבנק';mx=BKDX;mz=-349}
+ else if(!inb){o='🏦 היכנס לבנק';mx=BKDX;mz=-356}
+ else{const ix=bankIdx(A.x,A.z);
+  if(Math.hypot(A.x+183.5,A.z+395)<6){o='🔐 לחץ E / 🚪 כדי לפצח את הכספת';mx=-185.4;mz=-395}
+  else if(ix<=2){o='➡️ התקדם לדלת "STAFF ONLY" ולמסדרון';mx=-160;mz=-377}
+  else if(ix<=5){o='➡️ המשך במסדרון אל חדר הכספת';mx=-160;mz=-395}
+  else{o='➡️ המשך במסדרון אל דלת הכספת';mx=-184;mz=-395}}
+ const ga=guards.some(g=>g.alert&&g.stun<=0);if(o&&!BK.done)o+=ga?'  ⚠️ מאבטחים בכוננות':'';
+ if(o&&on){const dm=Math.round(Math.hypot((H.foot?A.x:H.x)-mx,(H.foot?A.z:H.z)-mz));o+='  •  '+dm+'מ׳'}
+ BK.obj=o;BK.mOn=on&&!!o;BK.mx=mx;BK.mz=mz;
+ BK.mk.ring.visible=BK.mOn;BK.mk.beam.visible=BK.mOn;
+ if(BK.mOn){BK.mk.ring.position.set(mx,.35,mz);BK.mk.beam.position.set(mx,40,mz);BK.mk.beam.material.opacity=.2+.1*Math.sin(now*.006)}
+ if(BK.ui){const e=BK.ui.o;if(o){if(e._t!==o){e._t=o;e.textContent=o}e.style.display='block'}else e.style.display='none'}}
+
 // ---- mode switching ----
 function setMode(m){
  mode=m;const h=m==='heist';
@@ -798,14 +1007,14 @@ function setMode(m){
  player.group.visible=!h;for(const r of rivals)r.group.visible=!h;
  if(cityGroup)cityGroup.visible=h;for(const c of heistCars)c.group.visible=h&&(c===hero||c.group.visible);
  hel('top').style.display=h?'none':'';hel('hhud').style.display=h?'flex':'none';hel('brake').textContent=h?'🛑':'בלם';hel('boost').innerHTML=h?'⚡':'⚡<br>טורבו';if(h){hel('item').textContent='⚡0';hel('item2').textContent='🔁'}hel('gas').style.display=h?'':'none';hel('act').style.display=h?'':'none';hel('jump').style.display=h?'':'none';
- if(!h)hel('hprog').style.display='none';
+ if(!h){hel('hprog').style.display='none';bankHideUI()}
  scene.fog.density=h?.0022:.0038;sun.castShadow=!h;if(!h){camera.fov=BASE_FOV;camera.updateProjectionMatrix()}}
 function hReset(){
  H.x=START.x;H.z=START.z;H.th=START.th;H.v=0;H.hp=100;H.turbo=0;H.money=0;H.heists=0;H.hold=0;H.wanted=0;H.bust=0;H.safe=null;H.safeHold=0;H.t=0;H.steer=0;H.sirT=0;H.hitCd=0;H.foot=false;H.actWas=false;H.jumpWas=false;H.actMsgT=0;
  A.x=0;A.z=0;A.y=0;A.vy=0;A.v=0;A.hp=100;A.st=5;A.grounded=true;T.x=H.x;T.z=H.z;T.th=H.th;T.v=0;
  for(const c of cops){c.active=false;c.car=null;c.stun=0;if(c.m){c.m.group.visible=false;c.m.group.rotation.x=0}}if(A.model)A.model.group.visible=false;
  W.sel=0;W.ammo=[0,0,0,0,0,0];W.has=[false,false,false,false,false,false];W.cool=0;W.flash=0;for(const t of tracers){t.t=0;t.m.visible=false}for(let i=0;i<peds.length;i++){peds[i].corners=null}for(const q of projs)q.g.visible=false;projs.length=0;for(const t of strips)t.g.visible=false;strips.length=0;for(const k of wpick){k.on=true;k.g.visible=true}
- hOver=false;hcd=3;hShown=-1;hGo=0;msgT=0;
+ hOver=false;hcd=3;hShown=-1;hGo=0;msgT=0;bankReset();
  for(const z of ZN){z.done=false;z.ring.visible=true;z.beam.visible=true;z.ring.material.color.setHex(z.c);z.beam.material.color.setHex(z.c)}
  for(const p of pol){p.active=false;p.parked=false;p.dis=0;p.car.group.visible=false;p.v=0;p.stuck=0}
  for(const o of horbs){o.on=true;o.g.visible=true}
@@ -932,19 +1141,19 @@ function tryFire(edge){
 function shootGun(g){
  const a0=Math.atan2(-Math.cos(A.th),-Math.sin(A.th));let best=null,ba=.42;
  const cand=(x,z)=>{const dx=x-A.x,dz=z-A.z,d=Math.hypot(dx,dz);if(d>g.range||d<1)return;const an=wrapA(Math.atan2(dz,dx)-a0);if(Math.abs(an)<ba){ba=Math.abs(an);best=an}};
- for(const c of cops)if(c.active&&c.stun<=0)cand(c.x,c.z);for(const p of pol)if(p.active)cand(p.x,p.z);
+ for(const c of cops.concat(guards))if(c.active&&c.stun<=0)cand(c.x,c.z);for(const p of pol)if(p.active)cand(p.x,p.z);
  const base=a0+(best||0),ox=A.x+Math.cos(a0)*.7,oz=A.z+Math.sin(a0)*.7;
  for(let q=0;q<g.pel;q++){
   const a=base+(Math.random()-.5)*2*g.spread,dx=Math.cos(a),dz=Math.sin(a);
   let tb=g.range;for(let t=1;t<g.range;t+=1){const x=ox+dx*t,z=oz+dz*t;let hit=false;for(const b of bl)if(b.hh>1.6&&x>b.x0&&x<b.x1&&z>b.z0&&z<b.z1){hit=true;break}if(hit){tb=t;break}}
   let bt=tb,bo=null,isCar=false,isPed=false;
-  for(const c of cops)if(c.active&&c.stun<=0){const rx=c.x-ox,rz=c.z-oz,t=rx*dx+rz*dz;if(t<0||t>bt)continue;if(Math.abs(rx*dz-rz*dx)<.55){bt=t;bo=c;isCar=false}}
+  for(const c of cops.concat(guards))if(c.active&&c.stun<=0){const rx=c.x-ox,rz=c.z-oz,t=rx*dx+rz*dz;if(t<0||t>bt)continue;if(Math.abs(rx*dz-rz*dx)<.55){bt=t;bo=c;isCar=false}}
   for(const p of pol)if(p.active){const rx=p.x-ox,rz=p.z-oz,t=rx*dx+rz*dz;if(t<0||t>bt)continue;if(Math.abs(rx*dz-rz*dx)<1.6){bt=t;bo=p;isCar=true}}
   for(const pd of peds)if(!pd.dead&&pd.corners){const rx=pd.x-ox,rz=pd.z-oz,t=rx*dx+rz*dz;if(t<0||t>=bt)continue;if(Math.abs(rx*dz-rz*dx)<.6){bt=t;bo=pd;isCar=false;isPed=true}}
   tracer(ox,1.35,oz,ox+dx*bt,1.2,oz+dz*bt);
   if(bo){_hp.set(ox+dx*bt,0,oz+dz*bt);burst(_hp,false);
    if(isPed)hurtPed(bo,g.dmg,dx,dz);
-   else if(!isCar){bo.hp-=g.dmg;if(bo.hp<=0){bo.stun=14;bo.hp=70;flashMsg('🔫 שוטר נפל')}}
+   else if(!isCar){if(bo.guard)bankAlertAll();bo.hp-=g.dmg;if(bo.hp<=0){bo.stun=14;bo.hp=70;flashMsg('🔫 שוטר נפל')}}
    else{bo.hp-=g.dmg*.6;if(bo.hp<=0){bo.hp=120;bo.dis=8;bo.v=Math.max(bo.v,10);bo.spinDir=Math.random()<.5?-1:1;flashMsg('💥 הניידת הושבתה')}}}}
  PEAR.x=A.x;PEAR.z=A.z;PEAR.t=performance.now()/1000;W.flash=.05;const sn=g.snd;beep(sn[0],sn[1],sn[2],.2)}
 function launchRocket(){
@@ -960,7 +1169,7 @@ function dropSpikes(){
 function explode(x,z){
  _hp.set(x,0,z);burst(_hp,true);beep(90,.4,'sawtooth',.35);pedBlast(x,z,9);PEAR.x=x;PEAR.z=z;PEAR.t=performance.now()/1000;
  for(const p of pol)if(p.active&&Math.hypot(p.x-x,p.z-z)<9){p.dis=6;p.v=Math.max(p.v,12);p.spinDir=Math.random()<.5?-1:1;flashMsg('💥 ניידת הושבתה!')}
- for(const c of cops)if(c.active&&Math.hypot(c.x-x,c.z-z)<6){c.stun=10}}
+ for(const c of cops.concat(guards))if(c.active&&Math.hypot(c.x-x,c.z-z)<6){c.stun=10;if(c.guard)bankAlertAll()}}
 function updateWeapons(dt){
  W.cool-=dt;if(W.flash>0)W.flash-=dt;
  for(const t of tracers)if(t.t>0){t.t-=dt;if(t.t<=0)t.m.visible=false}
@@ -1000,13 +1209,13 @@ function animHuman(m,ph,amp,air){
  m.legL.rotation.x=s;m.legR.rotation.x=sR;m.armL.rotation.x=-s*.9;m.armR.rotation.x=-sR*.9;
  if(m.kneeL){m.kneeL.rotation.x=-Math.max(0,-s)*1.2;m.kneeR.rotation.x=-Math.max(0,-sR)*1.2;m.elbL.rotation.x=.2+Math.abs(amp)*.7;m.elbR.rotation.x=.2+Math.abs(amp)*.7}}
 function footStep(dt,now){
- const st=Number(keys.left)-Number(keys.right);
+ const fz=!!BK.mini,st=fz?0:Number(keys.left)-Number(keys.right);
  A.th+=st*3.5*dt;
  const sprint=keys.boost&&A.st>.15&&!keys.brake;
  if(sprint)A.st=Math.max(0,A.st-dt);else A.st=Math.min(5,A.st+dt*(keys.gas?.6:1.4));
- const tgt=keys.brake?-3.4:(sprint?13:(keys.gas?8.6:0));
+ const tgt=fz?0:(keys.brake?-3.4:(sprint?13:(keys.gas?8.6:0)));
  A.v+=(tgt-A.v)*Math.min(1,dt*(A.grounded?(tgt===0?10:6):1.2));
- if(keys.jump&&!H.jumpWas&&A.grounded){A.vy=10.6;A.grounded=false;beep(420,.08,'sine',.12)}
+ if(keys.jump&&!H.jumpWas&&A.grounded&&!fz){A.vy=10.6;A.grounded=false;beep(420,.08,'sine',.12)}
  H.jumpWas=keys.jump;
  for(let q=0;q<2;q++){A.x+=-Math.sin(A.th)*A.v*dt/2;A.z+=-Math.cos(A.th)*A.v*dt/2;footCollide(A,.5)}
  const gh=groundAt(A.x,A.z,A.y);
@@ -1022,19 +1231,20 @@ function footStep(dt,now){
 function blockedPt(x,z){for(const b of bl)if(x>b.x0-.7&&x<b.x1+.7&&z>b.z0-.7&&z<b.z1+.7)return true;for(const c of tr)if(Math.hypot(x-c.x,z-c.z)<c.r+1)return true;return false}
 const COP_OFF=[0,.5,-.5,1,-1,1.6,-1.6,2.3,-2.3];
 function copStep(c,dt){
- const dx=A.x-c.x,dz=A.z-c.z,dist=Math.hypot(dx,dz),a0=Math.atan2(dz,dx);
+ const dx=A.x-c.x,dz=A.z-c.z,dist=Math.hypot(dx,dz);let nav=null;if(BK.ready&&inBank(A.x,A.z,0))nav=bankNav(c,A.x,A.z);else c.navI=null;const a0=nav?Math.atan2(nav.z-c.z,nav.x-c.x):Math.atan2(dz,dx);
  if(c.stun>0){c.stun-=dt;c.v=0;const gg=c.m.group;gg.rotation.x=-1.45;gg.position.set(c.x,.2,c.z);animHuman(c.m,0,0,false);if(c.stun<=0){gg.rotation.x=0;gg.position.y=0;c.hp=70}return dist}
  let ang=a0;
- if(dist>3.5){for(const o of COP_OFF){const a=a0+o*c.bias;if(!blockedPt(c.x+Math.cos(a)*2.4,c.z+Math.sin(a)*2.4)){ang=a;if(o!==0)c.bias=Math.sign(o*c.bias)||c.bias;break}}}
+ if(dist>3.5||nav){for(const o of COP_OFF){const a=a0+o*c.bias;if(!blockedPt(c.x+Math.cos(a)*2.4,c.z+Math.sin(a)*2.4)){ang=a;if(o!==0)c.bias=Math.sign(o*c.bias)||c.bias;break}}}
  const tgt=dist<1.2?0:7.4+Math.max(0,H.wanted-1)*.5;
  c.v+=(tgt-c.v)*Math.min(1,dt*5);
  c.x+=Math.cos(ang)*c.v*dt;c.z+=Math.sin(ang)*c.v*dt;footCollide(c,.5);
  const th=Math.atan2(-Math.cos(ang),-Math.sin(ang));c.th+=wrapA(th-c.th)*Math.min(1,dt*9);
  c.ph+=dt*c.v*1.15;const g=c.m.group;g.position.set(c.x,0,c.z);g.rotation.y=c.th;animHuman(c.m,c.ph,Math.min(1,c.v/7)*.9,false);
- if(dist>35&&!losClear(c.x,c.z,A.x,A.z))c.lostT+=dt;else c.lostT=Math.max(0,c.lostT-dt*2);
+ if(!nav&&dist>35&&!losClear(c.x,c.z,A.x,A.z))c.lostT+=dt;else c.lostT=Math.max(0,c.lostT-dt*2);
  if(c.stun<=0&&dist>5&&dist<30){c.fireT-=dt;if(c.fireT<=0){c.fireT=1.2+Math.random()*1.2;if(losClear(c.x,c.z,A.x,A.z)){tracer(c.x,1.35,c.z,A.x,1.2,A.z,0xffd0a0);beep(260,.05,'square',.08);if(Math.random()<.35){A.hp-=5;flashMsg('🔫 יורים עליך!')}}}}
  return dist}
 function toggleCar(){
+ if(BK.ready&&bankAct())return;
  if(!H.foot){
   if(Math.abs(H.v)>6){flashMsg('🛑 עצור את הרכב לפני שיוצאים');return}
   H.v=0;H.steer=0;const sx=-Math.cos(H.th),sz=Math.sin(H.th);
@@ -1053,10 +1263,10 @@ function endHeist(title,txt,win){
  if(win){beep(784,.15,'triangle',.3);beep(988,.15,'triangle',.3,.15);beep(1318,.4,'triangle',.3,.3)}else{beep(160,.5,'sawtooth',.3);beep(110,.6,'sawtooth',.3,.2)}}
 function hCam(dt,snap){
  const C=H.foot?A:H,ft=H.foot;
- const fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?7.8+Math.abs(A.v)*.14:11.5+Math.abs(H.v)*.08,hg=ft?3.9+A.y*.6:6.2+Math.abs(H.v)*.04;
+ const ind=ft&&BK.ready&&inBank(A.x,A.z,1.2),fx=-Math.sin(C.th),fz=-Math.cos(C.th),dist=ft?(ind?5.6:7.8+Math.abs(A.v)*.14):11.5+Math.abs(H.v)*.08,hg=ft?(ind?10.8+A.y*.5:3.9+A.y*.6):6.2+Math.abs(H.v)*.04;
  _hd.set(C.x-fx*dist,hg,C.z-fz*dist);
  {const dx=_hd.x-C.x,dz=_hd.z-C.z;let k=1;const free=(x,z)=>{for(const b of bl)if(b.hh>4&&x>b.x0-2&&x<b.x1+2&&z>b.z0-2&&z<b.z1+2)return false;return true};
-  while(k>.2&&!free(C.x+dx*k,C.z+dz*k))k-=.1;_hd.x=C.x+dx*k;_hd.z=C.z+dz*k;_hd.y+=(1-k)*12}
+  while(!ind&&k>.2&&!free(C.x+dx*k,C.z+dz*k))k-=.1;_hd.x=C.x+dx*k;_hd.z=C.z+dz*k;_hd.y+=(1-k)*12}
  if(snap)camera.position.copy(_hd);else camera.position.lerp(_hd,Math.min(1,dt*(ft?7:5)));
  camTarget.set(C.x+fx*(ft?5:10),ft?A.y+1.7:1.2,C.z+fz*(ft?5:10));camera.lookAt(camTarget);
  const fovT=ft?BASE_FOV+Math.min(8,Math.abs(A.v)/13*8):BASE_FOV+Math.min(14,Math.abs(H.v)/70*14);camera.fov+=(fovT-camera.fov)*Math.min(1,dt*3);camera.updateProjectionMatrix();
@@ -1086,7 +1296,7 @@ function hStep(dt,now){
  const P=H.foot?A:H;T.x=P.x;T.z=P.z;T.th=P.th;T.v=P.v;
  // heists (on foot or by car)
  let inside=false;
- for(const z of ZN){if(z.done)continue;const d=Math.hypot(P.x-z.x,P.z-z.z);
+ for(const z of ZN){if(z.done||z.k==='bank')continue;const d=Math.hypot(P.x-z.x,P.z-z.z);
   if(d<12){inside=true;H.hold+=dt;hel('hprog').style.display='block';hel('hprog_t').textContent='שודד: '+z.name+'…';hel('hprog_b').style.width=Math.min(100,H.hold/3.5*100)+'%';
    if(H.hold>=3.5){z.done=true;H.hold=0;H.heists++;H.money+=z.money;z.ring.visible=false;z.beam.visible=false;hel('hprog').style.display='none';
     beep(660,.12,'triangle',.28);beep(880,.12,'triangle',.28,.12);beep(1100,.25,'triangle',.28,.24);
@@ -1108,7 +1318,7 @@ function hStep(dt,now){
    if(H.safeHold>=2.5)endHeist('🏆 הצלחת לברוח!','שלל: '+H.money.toLocaleString('en-US')+'$ • זמן: '+H.t.toFixed(0)+' שניות',true)}
   else{H.safeHold=Math.max(0,H.safeHold-dt*2);H.actMsgT-=dt;if(d<13&&!H.foot&&H.actMsgT<=0){H.actMsgT=3;flashMsg('🚶 רד מהרכב (E) כדי להיכנס לבית המפלט')}}}
  // weapons, pickups, pedestrians
- {const gn=GUNS[W.sel],edge=keys.item&&!H.fireWas;if(keys.item&&(gn.auto||edge))tryFire(edge);H.fireWas=keys.item}
+ {const gn=GUNS[W.sel],edge=keys.item&&!H.fireWas;if(keys.item&&(gn.auto||edge)&&!BK.mini)tryFire(edge);H.fireWas=keys.item}
  if(keys.item2&&!H.cycWas){H.cycWas=true;nextWeapon()}else if(!keys.item2)H.cycWas=false;
  for(const k of wpick){k.box.rotation.y+=dt*2;k.box.position.y=.9+Math.sin(now*.003+k.x)*.12;
   if(!k.on){k.t-=dt;if(k.t<=0){k.on=true;k.g.visible=true}continue}
@@ -1128,7 +1338,7 @@ function hStep(dt,now){
  // foot officers
  let nearCop=0;
  if(H.foot){for(const c of cops){if(!c.active)continue;const d=copStep(c,dt);if(d<170)anyNear=true;if(d<1.9&&c.stun<=0)nearCop++;
-   if(c.car&&(c.lostT>6||d>95))loseCar(c.car)}}
+   if(c.car&&!(BK.ready&&inBank(A.x,A.z,3))&&(c.lostT>6||d>95))loseCar(c.car)}}
  if(H.foot){
   if(nearCop>0){H.bust+=dt;if(H.bust>1.8)endHeist('🚔 נתפסת ברגל!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
   if(A.hp<=0&&!hOver)endHeist('🩸 נפצעת קשה','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
@@ -1136,6 +1346,7 @@ function hStep(dt,now){
   if(near>0&&Math.abs(H.v)<9){H.bust+=dt;if(H.bust>2.5)endHeist('🚔 נתפסת!','שלל שנשאר בידי המשטרה: '+H.money.toLocaleString('en-US')+'$',false)}else H.bust=Math.max(0,H.bust-dt*1.5);
   if(H.hp<=0&&!hOver)endHeist('💥 הרכב נהרס','שדדת '+H.heists+' מתוך 3 • '+H.money.toLocaleString('en-US')+'$',false);
  }
+ bankUpdate(dt,now);
  if(anyNear){H.sirT-=dt;if(H.sirT<=0){H.sirT=.55;H.sirF=!H.sirF;beep(H.sirF?880:660,.3,'sine',.07)}}
  // visuals
  hPlaceHero();if(!H.foot)spinWheels(hero,H.v*dt,-H.steer);
@@ -1163,7 +1374,9 @@ function hMapDraw(now){
  RZ.forEach((z,j)=>{ctx.lineWidth=RWZ[j]*S;ctx.beginPath();ctx.moveTo(px(-438),py(z));ctx.lineTo(px(438),py(z));ctx.stroke()});
  ctx.fillStyle='#8a6a3b';ctx.fillRect(px(450),py(150),116*S,14*S);
  const dot=(x,z,r,c)=>{ctx.fillStyle=c;ctx.beginPath();ctx.arc(px(x),py(z),r,0,6.283);ctx.fill()};
+ ctx.fillStyle='#9aa0a8';ctx.fillRect(px(BKX0),py(BKZ0),(BKX1-BKX0)*S,(BKZ1-BKZ0)*S);
  for(const z of ZN)if(!z.done)dot(z.x,z.z,7,'#'+z.c.toString(16).padStart(6,'0'));
+ if(BK.ready){if(BK.mOn&&Math.floor(now/300)%2)dot(BK.mx,BK.mz,6,'#ffd24a');for(const g of guards)if(g.alert&&g.stun<=0)dot(g.x,g.z,3,'#ff8844')}
  dot(GAS.x,GAS.z,5,'#3ddad7');dot(GAR.x,GAR.z,5,'#aab4bd');
  if(H.safe&&Math.floor(now/400)%2)dot(H.safe.x,H.safe.z,8,'#66ff88');
  for(const p of pol)if(p.active)dot(p.x,p.z,5,Math.floor(now/250)%2?'#ff4050':'#4a80ff');
